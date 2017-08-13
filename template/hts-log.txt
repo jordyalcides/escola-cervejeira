@@ -1,0 +1,16 @@
+HTTrack3.48-21 launched on Mon, 17 Oct 2016 09:36:35 at http://tavern-html.axiomthemes.com/
+(winhttrack http://tavern-html.axiomthemes.com/ -O "/home/acensjr/websites/ok" -%v )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+10:08:51	Warning: 	Link tavern-html.axiomthemes.com/cdn-cgi/l/email-protection not scanned (follow robots meta tag)
+10:09:32	Error: 	"Not Found" (404) at link tavern-html.axiomthemes.com/"https://player.vimeo.com/video/78577161?autoplay=1%22 (from tavern-html.axiomthemes.com/features-staff-member-profile.html)
+10:10:00	Error: 	"Not Found" (404) at link tavern-html.axiomthemes.com/"https://youtube.com/embed/CH5eN6pVK1A?autoplay=1%22 (from tavern-html.axiomthemes.com/features-shortcodes.html)
+10:10:00	Error: 	"Not Found" (404) at link tavern-html.axiomthemes.com/"video/Beer_Pour.mp4?autoplay=1%22 (from tavern-html.axiomthemes.com/features-shortcodes.html)
+10:11:02	Error: 	"Not Found" (404) at link tavern-html.axiomthemes.com/js/vendor/the-events-calendar/css/images/tribe-tooltips@2x.png (from tavern-html.axiomthemes.com/js/vendor/the-events-calendar/css/tribe-events-full.min.css)
+
+HTTrack Website Copier/3.48-21 mirror complete in 34 minutes 52 seconds : 432 links scanned, 427 files written (52805396 bytes overall) [50354734 bytes received at 24070 bytes/sec], 3814161 bytes transferred using HTTP compression in 119 files, ratio 29%, 2.5 requests per connection
+(4 errors, 1 warnings, 0 messages)

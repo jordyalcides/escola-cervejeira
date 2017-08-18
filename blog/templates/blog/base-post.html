@@ -1,0 +1,381 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}"/>
+	<title>Escola Cervejeira</title>
+	<link rel='stylesheet' href="{% static 'js/vendor/prettyphoto/css/prettyPhoto.css' %}" type='text/css' media='all'/>
+	<link rel='stylesheet' href="{% static 'css/fontello/css/fontello.css' %}" type='text/css' media='all'/>
+	<link rel='stylesheet' href="{% static 'js/vendor/swiper/idangerous.swiper.css' %}" type='text/css' media='all'/>
+	<link rel='stylesheet' href="{% static 'css/style.css' %}" type='text/css' media='all'/>
+	<link rel='stylesheet' href="{% static 'css/shortcodes.css' %}" type='text/css' media='all'/>
+	<link rel='stylesheet' href="{% static 'css/core.animation.css' %}" type='text/css' media='all'/>
+	<link rel='stylesheet' href="{% static 'css/skin.css' %}" type='text/css' media='all'/>
+	<link rel='stylesheet' href="{% static 'css/responsive.css' %}" type='text/css' media='all'/>
+	<link rel='stylesheet' href="{% static 'js/custom/core.messages/core.messages.css' %}" type='text/css' media='all'/>
+
+	<!--<link rel='stylesheet' href='custom_tools/css/front.customizer.css' type='text/css' media='all'/>-->
+
+</head>
+
+<body class="single single-post body_style_wide article_style_stretch top_panel_style_dark top_panel_opacity_solid top_panel_below menu_right sidebar_hide bg_image_7 bg_color_1">
+
+
+	<div class="body_wrap">
+		<div class="page_wrap">
+
+			<div class="top_panel_fixed_wrap"> </div>
+			<header class="top_panel_wrap bg_tint_dark bg_header_1">
+				<div class="menu_main_wrap logo_left">
+					<div class="content_wrap clearfix">
+						<div class="logo">
+							<a href="{% url 'index' }">
+								<img src="{% static 'images/logec1.png' %}" class="logo_main" alt="">
+								<img src="{% static 'images/logec2.png' %}" class="logo_fixed" alt="">
+								<span class="logo_slogan">Irish Tavern - pub Theme</span>
+							</a>
+						</div>
+						<a href="#" class="menu_main_responsive_button icon-menu-1">
+						</a>
+						<nav class="menu_main_nav_area">
+							<ul id="menu_main" class="menu_main_nav">
+								<li class="menu-item">
+									<a href="{% url 'index' %}">Home</a>
+								</li>
+								<li class="menu-item">
+									<a href="{% url 'beershop' %}">Busca Cervejeira</a>
+								</li>
+								<li class="menu-item">
+									<a href="{% url 'gallery' %}">Galeria</a>
+								</li>
+								<li class="menu-item">
+									<a href="{% url 'blog' %}">Blog</a>
+								</li>
+								<li class="booking menu-item">
+									<a href=""></a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</header>
+
+			<div class="page_top_wrap page_top_title page_top_breadcrumbs">
+				<div class="content_wrap">
+					<div class="breadcrumbs">
+						<a class="breadcrumbs_item home" href="{% url 'index' %}">Home</a>
+						<span class="breadcrumbs_delimiter"></span>
+						<span class="breadcrumbs_item current">Blog Posts</span>
+					</div>
+					<h1 class="page_title">Blog Posts</h1>
+				</div>
+			</div>
+
+			<div class="page_content_wrap wrap_custom">
+
+					<section class="content_wrap">
+						<div class="container">
+							<div class="row">
+
+								{% block content %}
+								{% endblock %}
+
+								<section class="related_wrap scroll_wrap">
+									<div class="content_wrap">
+										<h2 class="section_title">Posts Relacionados</h2>
+										<div class="sc_scroll_container sc_scroll_controls sc_scroll_controls_horizontal sc_scroll_controls_type_top">
+											<div class="sc_scroll sc_scroll_horizontal swiper-slider-container scroll-container" id="related_scroll">
+												<div class="sc_scroll_wrapper swiper-wrapper">
+													<div class="sc_scroll_slide swiper-slide">
+														<article class="post_item post_item_related post_item_1">
+															<div class="post_content">
+																<div class="post_featured">
+																	<div class="post_thumb sc_image_styled" data-image="images/Depositphotos_57986203_original.jpg" data-title="Ideal Dinner in the Beer Garden">
+																		<a class="hover_icon hover_icon_link" href="#">
+																			<img alt="Ideal Dinner in the Beer Garden" src="images/Depositphotos_57986203_original-400x225.jpg">
+																		</a>
+																	</div>
+																</div>
+																<div class="post_content_wrap">
+																	<h4 class="post_title">
+																	<a href="#">Ideal Dinner in the Beer Garden</a>
+																	</h4>
+																</div>
+															</div>
+														</article>
+														<article class="post_item post_item_related post_item_2">
+															<div class="post_content">
+																<div class="post_featured">
+																	<div class="post_thumb sc_image_styled" data-image="images/Depositphotos_5022744_original.jpg" data-title="Searching for the Perfect Pint">
+																		<a class="hover_icon hover_icon_link" href="#">
+																			<img alt="Searching for the Perfect Pint" src="images/Depositphotos_5022744_original-400x225.jpg">
+																		</a>
+																	</div>
+																</div>
+																<div class="post_content_wrap">
+																	<h4 class="post_title">
+																	<a href="#">Searching for the Perfect Pint</a>
+																	</h4>
+																</div>
+															</div>
+														</article>
+														<article class="post_item post_item_related post_item_3">
+															<div class="post_content">
+																<div class="post_featured">
+																	<div class="post_thumb sc_image_styled" data-image="images/Depositphotos_41735639_original.jpg" data-title="Grilled Beer-cooked Sausages">
+																		<a class="hover_icon hover_icon_link" href="#">
+																			<img alt="Grilled Beer-cooked Sausages" src="images/Depositphotos_41735639_original-400x225.jpg">
+																		</a>
+																	</div>
+																</div>
+																<div class="post_content_wrap">
+																	<h4 class="post_title">
+																	<a href="#">Grilled Beer-cooked Sausages</a>
+																	</h4>
+																</div>
+															</div>
+														</article>
+														<article class="post_item post_item_related post_item_4">
+															<div class="post_content">
+																<div class="post_featured">
+																	<div id="sc_slider_1348231858" class="sc_slider sc_slider_swiper swiper-slider-container sc_slider_controls sc_slider_pagination" data-old-width="400" data-old-height="225" data-interval="6070">
+																		<div class="slides swiper-wrapper">
+																			<div class="swiper-slide">
+																				<a href="#">
+																					<img alt="Depositphotos_20067713_original.jpg" src="images/Depositphotos_20067713_original-400x225.jpg">
+																				</a>
+																			</div>
+																			<div class="swiper-slide">
+																				<a href="#">
+																					<img alt="beers.jpg" src="images/beers-400x225.jpg">
+																				</a>
+																			</div>
+																			<div class="swiper-slide">
+																				<a href="#">
+																					<img alt="Depositphotos_18772761_original1.jpg" src="images/Depositphotos_18772761_original1-400x225.jpg">
+																				</a>
+																			</div>
+																		</div>
+																		<div class="sc_slider_controls_wrap">
+																			<a class="sc_slider_prev" href="#"> </a>
+																			<a class="sc_slider_next" href="#"> </a>
+																		</div>
+																		<div class="sc_slider_pagination_wrap"> </div>
+																	</div>
+																</div>
+																<div class="post_content_wrap">
+																	<h4 class="post_title">
+																	<a href="#">The Best Pairings for Dark Beer</a>
+																	</h4>
+																</div>
+															</div>
+														</article>
+													</div>
+												</div>
+												<div id="related_scroll_bar" class="sc_scroll_bar sc_scroll_bar_horizontal related_scroll_bar">
+												</div>
+											</div>
+											<div class="sc_scroll_controls_wrap">
+												<a class="sc_scroll_prev" href="#"> </a>
+												<a class="sc_scroll_next" href="#"> </a>
+											</div>
+										</div>
+									</div>
+								</section>
+
+								<section class="comments_wrap">
+									<div class="comments_form_wrap">
+										<h2 class="section_title comments_form_title">Deixe um Comentário</h2>
+										<div class="comments_form">
+											<div id="respond" class="comment-respond">
+												<h3 id="reply-title" class="comment-reply-title">
+												<small>
+												<a rel="nofollow" id="cancel-comment-reply-link" href="#respond">Cancel reply</a>
+												</small>
+												</h3>
+												<form action="#" method="post" id="commentform" class="comment-form">
+													<p class="comments_notes">Seu email não será divulgado. Os campos marcados são obrigatórios. *</p>
+													<div class="columns_wrap">
+														<div class="comments_field comments_author column-1_2">
+															<label for="author" class="required">Nome</label>
+															<input id="author" name="author" type="text" placeholder="Name *" value="" size="30" aria-required="true" />
+														</div>
+														<div class="comments_field comments_email column-1_2">
+															<label for="email" class="required">Email</label>
+															<input id="email" name="email" type="text" placeholder="Email *" value="" size="30" aria-required="true" />
+														</div>
+														<div class="comments_field comments_site column-1_1">
+															<label for="url" class="optional">Website</label>
+															<input id="url" name="url" type="text" placeholder="Website" value="" size="30" aria-required="true" />
+														</div>
+													</div>
+													<div class="comments_field comments_message">
+														<label for="comment" class="required">Sua Mensagem</label>
+														<textarea id="comment" name="comment" placeholder="Comment" aria-required="true">
+														</textarea>
+													</div>
+													<p class="form-submit">
+														<input name="submit" type="submit" id="send_comment" class="submit" value="Post Comment" />
+														<input type='hidden' name='comment_post_ID' value='144' id='comment_post_ID' />
+														<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+													</p>
+												</form>
+											</div>
+										</div>
+									</div>
+								</section>
+
+							</div>
+						</div>
+					</section>
+
+			</div>
+
+			<footer class="footer_wrap bg_tint_dark footer_style_dark widget_area">
+				<div class="content_wrap">
+					<div class="columns_wrap">
+						<aside class="column-1_4 widget widget_socials">
+							<div class="widget_inner">
+								<center>
+									<div class="logo">
+										<a href="index.html">
+											<img src="images/200.png" alt="">
+										</a>
+									</div>
+								</center>
+								<center>
+								<div class="logo_descr"><b><i>Beba menos, beba melhor!</i></b></div>
+								</center>
+								<center>
+								<div class="sc_socials sc_socials_size_small">
+									<div class="sc_socials_item">
+										<a href="#" target="_blank" class="social_icons social_facebook icons">
+											<span class="icon-facebook"> </span>
+										</a>
+									</div>
+									<div class="sc_socials_item">
+										<a href="#" target="_blank" class="social_icons social_dribbble icons">
+											<span class="icon-dribbble"> </span>
+										</a>
+									</div>
+									<div class="sc_socials_item">
+										<a href="#" target="_blank" class="social_icons social_gplus icons">
+											<span class="icon-gplus"> </span>
+										</a>
+									</div>
+									<div class="sc_socials_item">
+										<a href="#" target="_blank" class="social_icons social_tumblr icons">
+											<span class="icon-tumblr"> </span>
+										</a>
+									</div>
+								</div>
+								</center>
+							</div>
+						</aside>
+						<aside class="column-1_4 widget widget_text">
+							<h5 class="widget_title">Contatos</h5>
+							<div class="textwidget">
+								<div class="widget_contacts">
+									<span class="sc_icon icon-geolocalizator"></span>
+									R. Cuiabá, 160 - Jóquei Clube
+									Fortaleza - CE, 60510-055
+									<br/>
+									<span class="sc_icon icon-tablet"></span>
+									+55 85 98504-8232<br>
+									85 99934-2980</br>
+									<br/>
+									<span class="sc_icon icon-mail-3"></span>
+									urllanbrito@escolacervejeira.com.br
+								</div>
+							</div>
+						</aside>
+						<aside class="column-1_4 widget widget_text">
+							<h5 class="widget_title">Horários</h5>
+							<div class="textwidget">
+								<ul class="dotted_bg">
+									<li>
+										<span>Monday</span>
+										<span>Closed</span>
+									</li>
+									<li>
+										<span>Tue-Fri</span>
+										<span>10 am - 12 pm</span>
+									</li>
+									<li>
+										<span>Sat-Sun</span>
+										<span>8 am - 11 pm</span>
+									</li>
+									<li>
+										<span>Holidays</span>
+										<span>8 am - 11 pm</span>
+									</li>
+								</ul>
+							</div>
+						</aside>
+						<aside class="column-1_4 widget widget_text">
+							<h5 class="widget_title">Buscar</h5>
+							<div class="textwidget">Faça sua busca com base nas palavras mais relevantes.
+								<div class="search_wrap search_style_regular search_opened" title="Open/close search form">
+									<a href="#" class="search_icon icon-search">
+									</a>
+									<div class="search_form_wrap">
+										<form method="get" class="search_form" action="#">
+											<button type="submit" class="search_submit icon-search-1" title="Start search"></button>
+											<input type="text" class="search_field" placeholder="" value="" name="s" title=""/>
+										</form>
+									</div>
+									<div class="search_results widget_area bg_tint_light">
+										<a class="search_results_close icon-cancel-1"> </a>
+										<div class="search_results_content"> </div>
+									</div>
+								</div>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</footer>
+
+			<div class="copyright_wrap">
+				<div class="content_wrap">
+					Desenvolvido por ©<a href="http://acens.uece.br/">ACENS</a> 2016 All Rights Reserved.
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<a href="#" class="scroll_to_top icon-angle-up-1" title="Scroll to top"> </a>
+
+	<div class="preloader">
+	    <div class="preloader_image"></div>
+	</div>
+
+
+	<script type='text/javascript' src="{% static 'js/vendor/jquery-1.11.3.min.js' %}"></script>
+	<script type='text/javascript' src="{% static 'js/vendor/jquery-migrate.min.js' %}"></script>
+
+	<script type='text/javascript' src="{% static 'js/custom/_main.js' %}"></script>
+
+	<script type='text/javascript' src="{% static 'js/vendor/superfish.min.js' %}"></script>
+	<script type='text/javascript' src="{% static 'js/custom/core.utils.min.js' %}"></script>
+	<script type='text/javascript' src="{% static 'js/custom/core.init.min.js' %}"></script>
+	<script type='text/javascript' src="{% static 'js/custom/shortcodes.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/vendor/core.min.js' %}"></script>
+	<script type='text/javascript' src="{% static 'js/vendor/widget.min.js' %}"></script>
+	<script type='text/javascript' src="{% static 'js/vendor/accordion.min.js' %}"></script>
+	<script type='text/javascript' src="{% static 'js/vendor/tabs.min.js' %}"></script>
+	<script type='text/javascript' src="{% static 'js/vendor/effect.min.js' %}"></script>
+	<script type='text/javascript' src="{% static 'js/vendor/effect-fade.min.js' %}"></script>
+	<script type='text/javascript' src="{% static 'js/vendor/diagram/chart.min.js' %}"></script>
+	<script type='text/javascript' src="{% static 'js/custom/core.messages/core.messages.js' %}"></script>
+	<script type='text/javascript' src="{% static 'js/vendor/swiper/idangerous.swiper-2.7.js' %}"></script>
+	<script type='text/javascript' src="{% static 'js/vendor/swiper/idangerous.swiper.scrollbar-2.4.js' %}"></script>
+	<script type='text/javascript' src="{% static 'js/vendor/prettyphoto/jquery.prettyPhoto.js' %}"></script>
+
+	<!--<script type='text/javascript' src='custom_tools/js/skin.customizer.js'></script>
+	<script type='text/javascript' src='custom_tools/js/front.customizer.js'></script>-->
+
+</body>
+</html>

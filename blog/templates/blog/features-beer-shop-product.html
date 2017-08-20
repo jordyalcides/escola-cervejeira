@@ -2,16 +2,11 @@
 {% load staticfiles %}
 
 {% block content %}
-	<link rel='stylesheet' href="{% static 'css/woo/woocommerce-layout.css' %}" type='text/css' media='all'/>
-	<link rel='stylesheet' href="{% static 'css/woo/woocommerce-smallscreen.css' %}" type='text/css' media='only screen and (max-width: 768px)'/>
-	<link rel='stylesheet' href="{% static 'css/woo/woocommerce.css' %}" type='text/css' media='all'/>
-	<link rel='stylesheet' href="{% static 'css/woo/woo-style.css' %}" type='text/css' media='all'/>
-	<link rel='stylesheet' href="{% static 'js/vendor/prettyphoto/css/prettyPhoto.css' %}" type='text/css' media='all'/>
 
 			<div class="page_top_wrap page_top_title page_top_breadcrumbs">
 				<div class="content_wrap">
 					<div class="breadcrumbs">
-						<a class="breadcrumbs_item home" href="{% url 'index' %}">Home</a>
+						<a class="breadcrumbs_item home" href="{% url 'index' %}">Início</a>
 						<span class="breadcrumbs_delimiter"></span>
 						<span class="breadcrumbs_item current">Busca Cervejeira</span>
 					</div>
@@ -262,20 +257,5 @@
 				</section>
 
 			</div>
-
-	<script type='text/javascript' src="{% static 'js/vendor/superfish.min.js' %}"></script>
-	<script type="text/javascript" src="{% static 'js/vendor/core.min.js' %}"></script>
-	<script type='text/javascript' src="{% static 'js/vendor/widget.min.js' %}"></script>
-	<script type='text/javascript' src="{% static 'js/vendor/tabs.min.js' %}"></script>
-	<script type='text/javascript' src="{% static 'js/vendor/effect.min.js' %}"></script>
-	<script type='text/javascript' src="{% static 'js/vendor/effect-fade.min.js' %}"></script>
-	<script type='text/javascript' src="{% static 'js/custom/core.utils.min.js' %}"></script>
-	<script type='text/javascript' src="{% static 'js/custom/core.init.min.js' %}"></script>
-	<script type='text/javascript' src="{% static 'js/custom/shortcodes.min.js' %}"></script>
-	<script type='text/javascript' src="{% static 'js/custom/core.messages/core.messages.js' %}"></script>
-	<script type='text/javascript' src="{% static 'js/vendor/swiper/idangerous.swiper-2.7.js' %}"></script>
-	<script type='text/javascript' src="{% static 'js/vendor/swiper/idangerous.swiper.scrollbar-2.4.js' %}"></script>
-
-	<script type='text/javascript' src="{% static 'js/vendor/prettyphoto/jquery.prettyPhoto.js' %}"></script>
 
 	{% endblock content %}

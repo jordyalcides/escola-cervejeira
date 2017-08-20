@@ -7,12 +7,8 @@
 	<meta name="format-detection" content="telephone=no">
 	<link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}"/>
 	<title>Escola Cervejeira</title>
-	<script type="text/javascript" src="{% static 'js/slider.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
-    <link rel='stylesheet' href="{% static 'css/bootstrap.css' %}" type='text/css' media='all'/>
-    <link rel="stylesheet" href="{$ static 'css/stylem.css' %}" type="text/css">
+  <link rel='stylesheet' href="{% static 'css/bootstrap.css' %}" type='text/css' media='all'/>
+  <link rel='stylesheet' href="{% static 'css/stylem.css' %}" type="text/css">
 
 	<link rel='stylesheet' href="{% static 'js/vendor/prettyphoto/css/prettyPhoto.css' %}" type='text/css' media='all'/>
 	<link rel='stylesheet' href="{% static 'js/vendor/essential-grid/public/assets/css/settings.css' %}" type='text/css' media='all'/>
@@ -26,12 +22,15 @@
 	<link rel='stylesheet' href="{% static 'css/skin.css' %}" type='text/css' media='all'/>
 	<link rel='stylesheet' href="{% static 'css/responsive.css' %}" type='text/css' media='all'/>
 	<link rel='stylesheet' href="{% static 'js/custom/core.messages/core.messages.css' %}" type='text/css' media='all'/>
-	<script type="text/javascript" src="{% static 'https://maps.googleapis.com/maps/api/js?sensor=false' %}"></script>
-    <script type="text/javascript" src="{% static 'js/map.js' %}"></script>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/stylem.css' %}">
+
+	<link rel='stylesheet' href="{% static 'css/woo/woocommerce-layout.css' %}" type='text/css' media='all'/>
+	<link rel='stylesheet' href="{% static 'css/woo/woocommerce-smallscreen.css' %}" type='text/css' media='only screen and (max-width: 768px)'/>
+	<link rel='stylesheet' href="{% static 'css/woo/woocommerce.css' %}" type='text/css' media='all'/>
+	<link rel='stylesheet' href="{% static 'css/woo/woo-style.css' %}" type='text/css' media='all'/>
+	<link rel='stylesheet' href="{% static 'js/vendor/prettyphoto/css/prettyPhoto.css' %}" type='text/css' media='all'/>
 
 
-	<!--<link rel='stylesheet' href='custom_tools/css/front.customizer.css' type='text/css' media='all'/>-->
+	<link rel='stylesheet' href="{% static 'custom_tools/css/front.customizer.css' %}" type='text/css' media='all'/>
 
 </head>
 
@@ -172,7 +171,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+
 
 	<a href="#" class="scroll_to_top icon-angle-up-1" title="Scroll to top"> </a>
 
@@ -180,11 +179,20 @@
 	    <div class="preloader_image"></div>
 	</div>
 
-
+	<!-- <script type="text/javascript" src="{% static 'js/jquery-3.1.1.min.js' %}"></script> -->
 	<script type='text/javascript' src="{% static 'js/vendor/jquery-1.11.3.min.js' %}"></script>
+
 	<script type='text/javascript' src="{% static 'js/vendor/jquery-migrate.min.js' %}"></script>
 	<script type='text/javascript' src="{% static 'js/vendor/revslider/js/jquery.themepunch.tools.min.js' %}"></script>
 	<script type='text/javascript' src="{% static 'js/vendor/revslider/js/jquery.themepunch.revolution.min.js' %}"></script>
+
+	<script type='text/javascript' src="{% static 'js/vendor/countdown/jquery.plugin.js' %}"></script>
+	<script type='text/javascript' src="{% static 'js/vendor/countdown/jquery.countdown.js' %}"></script>
+	<script type='text/javascript' src="{% static 'js/vendor/prettyphoto/jquery.prettyPhoto.js' %}"></script> -->
+
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/slider.js' %}"></script>
 
 	<script type='text/javascript' src="{% static 'js/custom/_main.js' %}"></script>
 	<script type='text/javascript' src="{% static 'js/custom/_form_contact.js' %}"></script>
@@ -193,8 +201,6 @@
 	<script type='text/javascript' src="{% static 'js/custom/core.utils.min.js' %}"></script>
 	<script type='text/javascript' src="{% static 'js/custom/core.init.min.js' %}"></script>
 	<script type='text/javascript' src="{% static 'js/custom/shortcodes.min.js' %}"></script>
-	<script type='text/javascript' src="{% static 'js/vendor/countdown/jquery.plugin.js' %}"></script>
-	<script type='text/javascript' src="{% static 'js/vendor/countdown/jquery.countdown.js' %}"></script>
 	<script type='text/javascript' src="{% static 'js/custom/core.messages/core.messages.js' %}"></script>
 	<script type='text/javascript' src="{% static 'js/vendor/swiper/idangerous.swiper-2.7.js' %}"></script>
 	<script type='text/javascript' src="{% static 'js/vendor/swiper/idangerous.swiper.scrollbar-2.4.js' %}"></script>
@@ -204,6 +210,7 @@
 	<script type='text/javascript' src="{% static 'js/vendor/tabs.min.js' %}"></script>
 	<script type='text/javascript' src="{% static 'js/vendor/effect.min.js' %}"></script>
 	<script type='text/javascript' src="{% static 'js/vendor/effect-fade.min.js' %}"></script>
+
 
 	<!--<script type='text/javascript' src='custom_tools/js/skin.customizer.js'></script>
 	<script type='text/javascript' src='custom_tools/js/front.customizer.js'></script>-->

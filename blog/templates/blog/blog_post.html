@@ -1,26 +1,27 @@
 {% extends 'blog/base-post.html' %}
+{% load staticfiles %}
 
 {% block content %}
 
 								<article class="post_item post_item_single post">
 									<section class="post_featured">
-										<div class="post_thumb" data-image="images/Depositphotos_18772761_original.jpg" data-title="Best Food to Compliment Beer">
-											<a class="hover_icon hover_icon_view sc_image_styled" href="images/Depositphotos_18772761_original.jpg" title="Best Food to Compliment Beer">
-												<img class="wp-post-image" width="1150" height="647" alt="Best Food to Compliment Beer" src="images/Depositphotos_18772761_original-1150x647.jpg">
+										<div class="post_thumb" data-image="{{ post.picture_url|default_if_none:'#' }}" data-title="{{ post.title }}">
+											<a class="hover_icon hover_icon_view sc_image_styled" href="{{ post.picture_url|default_if_none:'#' }}" title="{{ post.title }}">
+												<img class="wp-post-image" width="1150" height="647" alt="{{ post.title }}" src="{{ post.picture_url|default_if_none:'#' }}">
 											</a>
 										</div>
 									</section>
 									<div class="post_info">
 										<span class="post_info_item post_info_posted">
 											Postado em
-											<a href="#" class="post_info_date date updated" content="2015-01-14">14 de Janeiro de 2015</a>
+											<a href="#" class="post_info_date date updated" content="">{{ post.published_date }}</a>
 										</span>
 										<span class="post_info_item post_info_tags">
 											em
 											<a class="category_link" href="#">Masonry (3 columns)</a>,
 											<a class="category_link" href="#">Portfolio (3 columns)</a>
 										</span>
-										<span class="post_info_item post_info_counters">
+										<!-- <span class="post_info_item post_info_counters">
 											<span class="post_counters_item post_counters_views icon-eye" title="Views - 225">225</span>
 											<a class="post_counters_item post_counters_comments icon-comment-1" title="Comments - 0" href="#comments">
 												<span class="post_counters_number">0</span>
@@ -28,13 +29,12 @@
 											<a class="post_counters_item post_counters_likes icon-heart enabled" title="Like" href="#" data-postid="144" data-likes="1" data-title-like="Like" data-title-dislike="Dislike">
 												<span class="post_counters_number">1</span>
 											</a>
-										</span>
+										</span> -->
 									</div>
 									<section class="post_content">
 										<div class="sc_reviews alignright">
 										</div>
-										<p>Duis eget dictum eros, in dictum sem. Vivamus sed molestie sapien. Aliquam et facilisis arcu, ut molestie augue. Suspendisse sodales tortor nunc, quis auctor ligula posuere cursus. Morbi sem neque, tristique in porta ullamcorper, lacinia eget lorem. Proin feugiat risus quis magna sagittis, eget semper nisl tristique. Aenean maximus, enim nec dignissim tempus, lectus ante lobortis neque, nec pellentesque nunc lectus vel erat. Cras a augue tortor. Suspendisse fringilla dui ut aliquet ullamcorper. Nunc ultricies enim et suscipit blandit. Phasellus id enim ac elit consequat finibus.</p>
-										<p>Sed ac egestas nisl. Sed vestibulum ac diam sit amet porta. Vivamus est neque, tristique quis tempor at, consequat a velit. Morbi sapien sem, posuere quis tellus a, volutpat efficitur odio. Sed in neque in turpis fermentum fermentum. Mauris non enim vitae tortor eleifend consectetur at id odio. Quisque non neque ac lorem finibus tristique vitae sit amet arcu. Etiam convallis ipsum vestibulum, laoreet sem ac, sagittis odio. Cras libero velit, sodales id ipsum vel, pretium molestie purus. Aliquam quis luctus lacus. Proin risus nunc, viverra vel semper nec, porta eu libero. Nam vitae lectus egestas, rhoncus ex porta, fermentum ex. Phasellus ullamcorper quis urna quis tempor.</p>
+										<p>{{ post.text|linebreaksbr}}</p>
 										<div class="post_info post_info_bottom">
 											<span class="post_info_item post_info_tags">
 												Tags:
@@ -45,11 +45,11 @@
 									<section class="post_author author vcard">
 										<div class="post_author_avatar">
 											<a href="#">
-												<img alt='' src='images/no-ava2.jpeg' srcset='images/no-ava2.jpeg' class='avatar avatar-75 photo'/>
+												<img alt='' src="{% static 'images/no-ava2.jpg' %}" srcset="{% static 'images/no-ava2.jpg' %}" class='avatar avatar-75 photo'/>
 											</a>
 										</div>
 										<h6 class="post_author_title">Sobre <span>
-											<a href="#" class="fn">John Doe</a>
+											<a href="{% url 'member' %}" class="fn">{{ post.author}}</a>
 										</span>
 										</h6>
 										<div class="post_author_info">

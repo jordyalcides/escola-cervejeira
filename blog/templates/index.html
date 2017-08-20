@@ -1,81 +1,8 @@
+{% extends 'blog/base-home.html' %}
 {% load staticfiles %}
- <!DOCTYPE html>
-<html lang="en-US">
-<head>
-	<meta charset="UTF-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="format-detection" content="telephone=no">
-	<link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}"/>
-	<title>Escola Cervejeira</title>
-	<script type="text/javascript" src="{% static 'js/slider.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
-    <link rel='stylesheet' href="{% static 'css/bootstrap.css' %}" type='text/css' media='all'/>
-    <link rel="stylesheet" href="{$ static 'css/stylem.css' %}" type="text/css">
-	<link rel='stylesheet' href="{% static 'js/vendor/swiper/idangerous.swiper.css' %}" type='text/css' media='all'/>
-	<link rel='stylesheet' href="{% static 'js/vendor/revslider/css/settings.css' %}" type='text/css' media='all'/>
-	<link rel='stylesheet' href="{% static 'css/fontello/css/fontello.css' %}" type='text/css' media='all'/>
-	<link rel='stylesheet' href="{% static 'css/style.css' %}" type='text/css' media='all'/>
-	<link rel='stylesheet' href="{% static 'css/shortcodes.css' %}" type='text/css' media='all'/>
-	<link rel='stylesheet' href="{% static 'css/core.animation.css' %}" type='text/css' media='all'/>
-	<link rel='stylesheet' href="{% static 'css/skin.css' %}" type='text/css' media='all'/>
-	<link rel='stylesheet' href="{% static 'css/responsive.css' %}" type='text/css' media='all'/>
-	<link rel='stylesheet' href="{% static 'js/custom/core.messages/core.messages.css' %}" type='text/css' media='all'/>
-	<script type="text/javascript" src="{% static 'https://maps.googleapis.com/maps/api/js?sensor=false' %}"></script>
-    <script type="text/javascript" src="{% static 'js/map.js' %}"></script>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/stylem.css' %}">
 
+{% block content %}
 
-	<!--<link rel='stylesheet' href='custom_tools/css/front.customizer.css' type='text/css' media='all'/>-->
-
-</head>
-
-<body class="home page body_style_wide article_style_stretch top_panel_style_dark top_panel_opacity_solid top_panel_below menu_right sidebar_hide bg_image_7 bg_color_1">
-	<div class="body_wrap">
-		<div class="page_wrap">
-			<div class="top_panel_fixed_wrap"></div>
-			<header class="top_panel_wrap bg_tint_dark bg_header_1">
-				<div class="menu_main_wrap logo_left">
-					<div class="content_wrap clearfix">
-						<div class="logo">
-							<a href="#">
-								<img src="{% static 'images/logec1.png' %}" class="logo_main" alt="">
-								<img src="{% static 'images/logec2.png' %}" class="logo_fixed" alt="">
-								<span class="logo_slogan">Irish Tavern - pub Theme</span>
-							</a>
-						</div>
-						<a href="#" class="menu_main_responsive_button icon-menu-1">
-						</a>
-						<nav class="menu_main_nav_area" >
-							<ul id="menu_main" class="menu_main_nav">
-								<li class="menu-item">
-									<a href="{% url 'index' %}">Home</a>
-								</li>
-                <li class="menu-item">
-									<a class="page-scroll" href="#mainslider_2">Sobre nós</a>
-								</li>
-								<li class="menu-item">
-									<a class="page-scroll" href="#page-busca">Busca Cervejeira</a>
-								</li>
-								<li class="menu-item">
-									<a class="page-scroll" href="#page-contato">Mapa e contato</a>
-								</li>
-								<li class="menu-item">
-									<a href="{% url 'gallery' %}">Galeria</a>
-                </li>
-								<li class="menu-item">
-									<a href="{% url 'blog' %}">Blog</a>
-								</li>
-								<li class="booking menu-item">
-									<a href=""></a>
-								</li>
-							</ul>
-						</nav>
-					</div>
-				</div>
-			</header>
-			</div>
 			<section id="mainslider_1" class="slider_wrap slider_fullwide slider_engine_revo slider_alias_slider-home mainslider_1">
 				<div id="rev_slider_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container">
 					<div id="rev_slider_1" class="rev_slider fullwidthabanner">
@@ -157,7 +84,7 @@
                 <div class="carousel-caption">
                     <h1 class="cordafonte">Quem Somos?</h1>
                     <h3 class="cordafonte">Conheça-nos e se surpreeda!</h3>
-                    <p class="cordafonte"><a class="sc_button sc_button_square sc_button_style_filled sc_button_bg_user sc_button_size_small" href="features-who.html" role="button">Quem Somos</a></p>
+                    <p class="cordafonte"><a class="sc_button sc_button_square sc_button_style_filled sc_button_bg_user sc_button_size_small" href="{% url 'who' %}" role="button">Quem Somos</a></p>
                 </div>
             </div>
         </div>
@@ -167,7 +94,7 @@
                 <div class="carousel-caption cordafonte">
                     <h1 class="cordafonte">Equipe</h1>
                     <h3 class="cordafonte">Conheça a equipe que faz parte da nossa escola!</h3>
-                    <p class="cordafonte"><a class="sc_button sc_button_square sc_button_style_filled sc_button_bg_user sc_button_size_small" href="features-staff.html" role="button">Equipe</a></p>
+                    <p class="cordafonte"><a class="sc_button sc_button_square sc_button_style_filled sc_button_bg_user sc_button_size_small" href="{% url 'staff' %}" role="button">Equipe</a></p>
                 </div>
             </div>
         </div>
@@ -177,7 +104,7 @@
                 <div class="carousel-caption">
                     <h1 class="cordafonte">Nossos Serviços</h1>
                     <h3 class="cordafonte">Fique por dentro das nossas especialidades!</h3>
-                    <p class="cordafonte"><a class="sc_button sc_button_square sc_button_style_filled sc_button_bg_user sc_button_size_small" href="features-services.html" role="button">Serviços</a></p>
+                    <p class="cordafonte"><a class="sc_button sc_button_square sc_button_style_filled sc_button_bg_user sc_button_size_small" href="{% url 'services' %}" role="button">Serviços</a></p>
                 </div>
             </div>
         </div>
@@ -220,8 +147,8 @@
 															</span>
 														</div>
 														<a href="#" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_user sc_button_size_small">
-															<span>MORE</span>
-															<span>MORE</span>
+															<span>LER</span>
+															<span>LER</span>
 														</a>
 														<a href="#" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">
 															<span>308</span>
@@ -253,8 +180,8 @@
 															</span>
 														</div>
 														<a href="#" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_user sc_button_size_small">
-															<span>MORE</span>
-															<span>MORE</span>
+															<span>LER</span>
+															<span>LER</span>
 														</a>
 														<a href="#" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">
 															<span>222</span>
@@ -286,8 +213,8 @@
 															</span>
 														</div>
 														<a href="#" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_user sc_button_size_small">
-															<span>MORE</span>
-															<span>MORE</span>
+															<span>LER</span>
+															<span>LER</span>
 														</a>
 														<a href="#" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">
 															<span>210</span>
@@ -320,8 +247,8 @@
 															</span>
 														</div>
 														<a href="#" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_user sc_button_size_small">
-															<span>MORE</span>
-															<span>MORE</span>
+															<span>LER</span>
+															<span>LER</span>
 														</a>
 														<a href="#" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">
 															<span>223</span>
@@ -333,7 +260,7 @@
 										</div>
 									</div>
 									<div class="sc_section aligncenter">
-										<a href="features-beer-shop.html" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_user sc_button_size_small">
+										<a href="{% url 'blog' %}" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_user sc_button_size_small">
 											<span>VER MAIS</span>
 											<span>VER MAIS</span>
 										</a>
@@ -383,7 +310,7 @@
 											</div>
 										</div>
 									</div>
-									<a href="features-beer-shop.html" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_user sc_button_size_small">
+									<a href="{% url 'beershop' %}" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_user sc_button_size_small">
 										<span>FAÇA UMA BUSCA</span>
 										<span>FAÇA UMA BUSCA</span>
 									</a>
@@ -392,8 +319,6 @@
 						</div>
 					</section>
 
-
-                    <!-- <iframe class="center-block" src="https://www.google.com/maps/d/embed?mid=1WDPPNTtG4dEhUoZigcoaQ1zuTHg" width=75% height="100"></iframe> -->
 					<!--section class="bg_image_10">
 						<div class="container">
 							<div class="row">
@@ -422,7 +347,10 @@
 						</div>
 					</section-->
 
-					<section class="bg_image_10 bg_tint_light">
+					<section id="page-contato" class="bg_image_10 bg_tint_light">
+					<br> <br> <br> <br>
+					<iframe class="center-block" src="https://www.google.com/maps/d/embed?mid=1WDPPNTtG4dEhUoZigcoaQ1zuTHg" width=70% height="100"></iframe>
+
 					<div class="container">
 						<div class="row">
 							<div class="content_wrap">
@@ -466,124 +394,4 @@
 
 			</div>
 
-			<footer class="footer_wrap bg_tint_dark footer_style_dark widget_area">
-				<div class="content_wrap">
-					<div class="columns_wrap">
-						<aside class="column-1_3 widget widget_socials">
-							<div class="widget_inner">
-								<center>
-									<div class="logo">
-										<a href="{% static 'index.html' %}">
-											<img src="{% static 'images/200.png' %}" alt="">
-										</a>
-									</div>
-								</center>
-								<center>
-								<div class="logo_descr"><b><i>Beba menos, beba melhor!</i></b></div>
-								</center>
-								<center>
-								<div class="sc_socials sc_socials_size_small">
-									<div class="sc_socials_item">
-										<a href="https://www.facebook.com/CervejeiraEscola/" target="_blank" class="social_icons social_facebook icons">
-											<span class="icon-facebook"> </span>
-										</a>
-									</div>
-									<div class="sc_socials_item">
-										<a href="#" target="_blank" class="social_icons social_dribbble icons">
-											<span class="icon-dribbble"> </span>
-										</a>
-									</div>
-									<div class="sc_socials_item">
-										<a href="#" target="_blank" class="social_icons social_gplus icons">
-											<span class="icon-gplus"> </span>
-										</a>
-									</div>
-									<div class="sc_socials_item">
-										<a href="#" target="_blank" class="social_icons social_tumblr icons">
-											<span class="icon-tumblr"> </span>
-										</a>
-									</div>
-								</div>
-								</center>
-							</div>
-						</aside>
-						<aside class="column-1_3 widget widget_text">
-							<h5 class="widget_title">Contatos</h5>
-							<div class="textwidget">
-								<div class="widget_contacts">
-									<span class="sc_icon icon-geolocalizator"></span>
-									R. Cuiabá, 160 - Jóquei Clube
-									Fortaleza - CE, 60510-055
-									<br/>
-									<span class="sc_icon icon-tablet"></span>
-									+55 85 98504-8232<br>
-									85 99934-2980</br>
-									<br/>
-									<span class="sc_icon icon-mail-3"></span>
-									contato@escolacervejeira.com.br
-								</div>
-							</div>
-						</aside>
-
-						<aside class="column-1_3 widget widget_text">
-							<h5 class="widget_title">Buscar</h5>
-							<div class="textwidget">Faça sua busca com base nas palavras mais relevantes.
-								<div class="search_wrap search_style_regular search_opened" title="Open/close search form">
-									<a href="#" class="search_icon icon-search">
-									</a>
-									<div class="search_form_wrap">
-										<form method="get" class="search_form" action="#">
-											<button type="submit" class="search_submit icon-search-1" title="Start search"></button>
-											<input type="text" class="search_field" placeholder="" value="" name="s" title=""/>
-										</form>
-									</div>
-									<div class="search_results widget_area bg_tint_light">
-										<a class="search_results_close icon-cancel-1"> </a>
-										<div class="search_results_content"> </div>
-									</div>
-								</div>
-							</div>
-						</aside>
-					</div>
-				</div>
-			</footer>
-
-			<div class="copyright_wrap">
-				<div class="content_wrap">
-					Desenvolvido por ©<a href="http://acens.uece.br/">ACENS</a> 2016 All Rights Reserved.
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<a href="#" class="scroll_to_top icon-angle-up-1" title="Scroll to top"> </a>
-
-	<div class="preloader">
-	    <div class="preloader_image"></div>
-	</div>
-
-
-	<script type='text/javascript' src="{% static 'js/vendor/jquery-1.11.3.min.js' %}"></script>
-	<script type='text/javascript' src="{% static 'js/vendor/jquery-migrate.min.js' %}"></script>
-	<script type='text/javascript' src="{% static 'js/vendor/revslider/js/jquery.themepunch.tools.min.js' %}"></script>
-	<script type='text/javascript' src="{% static 'js/vendor/revslider/js/jquery.themepunch.revolution.min.js' %}"></script>
-
-	<script type='text/javascript' src="{% static 'js/custom/_main.js' %}"></script>
-
-
-	<script type='text/javascript' src="{% static 'js/vendor/superfish.min.js' %}"></script>
-	<script type='text/javascript' src="{% static 'js/custom/core.utils.min.js' %}"></script>
-	<script type='text/javascript' src="{% static 'js/custom/core.init.min.js' %}"></script>
-	<script type='text/javascript' src="{% static 'js/custom/shortcodes.min.js' %}"></script>
-	<script type='text/javascript' src="{% static 'js/vendor/countdown/jquery.plugin.js' %}"></script>
-	<script type='text/javascript' src="{% static 'js/vendor/countdown/jquery.countdown.js' %}"></script>
-	<script type='text/javascript' src="{% static 'js/custom/core.messages/core.messages.js' %}"></script>
-	<script type='text/javascript' src="{% static 'js/vendor/swiper/idangerous.swiper-2.7.js' %}"></script>
-	<script type='text/javascript' src="{% static 'js/vendor/swiper/idangerous.swiper.scrollbar-2.4.js' %}"></script>
-	<script type='text/javascript' src="{% static 'js/vendor/isotope.pkgd.min.js' %}"></script>
-
-	<!--<script type='text/javascript' src='custom_tools/js/skin.customizer.js'></script>
-	<script type='text/javascript' src='custom_tools/js/front.customizer.js'></script>-->
-
-</body>
-</html>
+{% endblock content %}

@@ -1,74 +1,13 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-	<meta charset="UTF-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="format-detection" content="telephone=no">
-	<link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
-	<title>Escola Cervejeira</title>
-	<link rel='stylesheet' href='css/woo/woocommerce-layout.css' type='text/css' media='all'/>
-	<link rel='stylesheet' href='css/woo/woocommerce-smallscreen.css' type='text/css' media='only screen and (max-width: 768px)'/>
-	<link rel='stylesheet' href='css/woo/woocommerce.css' type='text/css' media='all'/>
-	<link rel='stylesheet' href='css/woo/woo-style.css' type='text/css' media='all'/>
-	<link rel='stylesheet' href='js/vendor/swiper/idangerous.swiper.css' type='text/css' media='all'/>
-	<link rel='stylesheet' href='css/fontello/css/fontello.css' type='text/css' media='all'/>
-	<link rel='stylesheet' href='css/style.css' type='text/css' media='all'/>
-	<link rel='stylesheet' href='css/shortcodes.css' type='text/css' media='all'/>
-	<link rel='stylesheet' href='css/core.animation.css' type='text/css' media='all'/>
-	<link rel='stylesheet' href='css/skin.css' type='text/css' media='all'/>
-	<link rel='stylesheet' href='css/responsive.css' type='text/css' media='all'/>
-	<link rel='stylesheet' href='js/custom/core.messages/core.messages.css' type='text/css' media='all'/>
+{% extends 'blog/base-home.html' %}
+{% load staticfiles %}
 
-	<!--<link rel='stylesheet' href='custom_tools/css/front.customizer.css' type='text/css' media='all'/>-->
-
-</head>
-
-<body class="archive body_style_wide article_style_stretch top_panel_style_dark top_panel_opacity_solid top_panel_below menu_right toc_menu sidebar_show sidebar_left woocommerce woocommerce-page bg_image_7 bg_color_1">
-
-	<div class="body_wrap">
-		<div class="page_wrap">
-
-			<div class="top_panel_fixed_wrap"> </div>
-			<header class="top_panel_wrap bg_tint_dark bg_header_1">
-				<div class="menu_main_wrap logo_left">
-					<div class="content_wrap clearfix">
-						<div class="logo">
-							<a href="index.html">
-								<img src="images/logec1.png" class="logo_main" alt="">
-								<span class="logo_slogan">Irish Tavern - pub Theme</span>
-							</a>
-						</div>
-						<a href="#" class="menu_main_responsive_button icon-menu-1">
-						</a>
-						<nav class="menu_main_nav_area">
-							<ul id="menu_main" class="menu_main_nav">
-								<li class="menu-item">
-									<a href="index.html">Home</a>
-								</li>
-								<li class="menu-item">
-									<a href="features-beer-shop.html">Busca Cervejeira</a>
-								</li>
-								<li class="menu-item">
-									<a href="gallery-cobbles.html">Galeria</a>
-								</li>
-								<li class="menu-item">
-									<a href="blog-with-sidebar.html">Blog</a>
-								</li>
-								<li class="booking menu-item">
-									<a></a>
-								</li>
-							</ul>
-						</nav>
-					</div>
-				</div>
-			</header>
-
+{% block content %}
 			<div class="page_top_wrap page_top_title page_top_breadcrumbs">
 				<div class="content_wrap">
 					<div class="breadcrumbs">
-						<a class="breadcrumbs_item home" href="index.html">Home</a>
+						<a class="breadcrumbs_item home" href="{% url 'index' %}">Início</a>
 						<span class="breadcrumbs_delimiter"></span>
-						<span class="breadcrumbs_item current">Busca Cervejeira</span> 
+						<span class="breadcrumbs_item current">Busca Cervejeira</span>
 					</div>
 					<h1 class="page_title">Busca Cervejeira</h1>
 				</div>
@@ -783,7 +722,7 @@
 					</div>
 				</div>
 			</section>
-           
+
 			<div class="page_content_wrap wrap_custom" >
 
 				<section class="content_wrap">
@@ -792,17 +731,17 @@
 							<div class="content">
 								<div class="list_products shop_mode_thumbs">
 									<nav class="woocommerce-breadcrumb">
-										<a href="index.html">Home</a>&nbsp;&#47;&nbsp;Beer Shop
+										<a href="{url 'index'}">Início</a>&nbsp;&#47;&nbsp;Beer Shop
 									</nav>
 									<p class="woocommerce-result-count">Showing all 9 results</p>
-									
+
 									<ul class="products">
 										<li class="product has-post-thumbnail column-1_3">
 											<a href="features-beer-shop-product.html"></a>
 											<div class="post_item_wrap">
 												<div class="post_featured">
 													<div class="post_thumb">
-														<a class="hover_icon hover_icon_link" href="features-beer-shop-product.html">
+														<a class="hover_icon hover_icon_link" href="{% url 'product' %}">
 															<img src="images/amstel-033-300x300.jpg" class="attachment-shop_catalog" alt="amstel 0,33"/>
 														</a>
 													</div>
@@ -1039,150 +978,11 @@
 											</li>
 										</ul>
 								</aside>
-								
-							</div>
-							
-				</section>	
 
-			</div>  
+							</div>
 
-			<footer class="footer_wrap bg_tint_dark footer_style_dark widget_area">
-				<div class="content_wrap">
-					<div class="columns_wrap">
-						<aside class="column-1_4 widget widget_socials">
-							<div class="widget_inner">
-								<center>
-									<div class="logo">
-										<a href="index.html">
-											<img src="images/200.png" alt="">
-										</a>
-									</div>
-								</center>
-								<center>
-								<div class="logo_descr"><b><i>Beba menos, beba melhor!</i></b></div>
-								</center>
-								<center>
-								<div class="sc_socials sc_socials_size_small">
-									<div class="sc_socials_item">
-										<a href="#" target="_blank" class="social_icons social_facebook icons">
-											<span class="icon-facebook"> </span>
-										</a>
-									</div>
-									<div class="sc_socials_item">
-										<a href="#" target="_blank" class="social_icons social_dribbble icons">
-											<span class="icon-dribbble"> </span>
-										</a>
-									</div>
-									<div class="sc_socials_item">
-										<a href="#" target="_blank" class="social_icons social_gplus icons">
-											<span class="icon-gplus"> </span>
-										</a>
-									</div>
-									<div class="sc_socials_item">
-										<a href="#" target="_blank" class="social_icons social_tumblr icons">
-											<span class="icon-tumblr"> </span>
-										</a>
-									</div>
-								</div>
-								</center>
-							</div>
-						</aside>
-						<aside class="column-1_4 widget widget_text">
-							<h5 class="widget_title">Contatos</h5>
-							<div class="textwidget">
-								<div class="widget_contacts">
-									<span class="sc_icon icon-geolocalizator"></span> 
-									R. Cuiabá, 160 - Jóquei Clube
-									Fortaleza - CE, 60510-055
-									<br/>
-									<span class="sc_icon icon-tablet"></span>
-									+55 85 98504-8232<br> 
-									85 99934-2980</br>
-									<br/>
-									<span class="sc_icon icon-mail-3"></span>
-									urllanbrito@escolacervejeira.com.br
-								</div>
-							</div>
-						</aside>
-						<aside class="column-1_4 widget widget_text">
-							<h5 class="widget_title">Horários</h5>
-							<div class="textwidget">
-								<ul class="dotted_bg">
-									<li>
-										<span>Monday</span>
-										<span>Closed</span>
-									</li>
-									<li>
-										<span>Tue-Fri</span>
-										<span>10 am - 12 pm</span>
-									</li>
-									<li>
-										<span>Sat-Sun</span>
-										<span>8 am - 11 pm</span>
-									</li>
-									<li>
-										<span>Holidays</span>
-										<span>8 am - 11 pm</span>
-									</li>
-								</ul>
-							</div>
-						</aside>
-						<aside class="column-1_4 widget widget_text">
-							<h5 class="widget_title">Buscar</h5>
-							<div class="textwidget">Faça sua busca com base nas palavras mais relevantes.
-								<div class="search_wrap search_style_regular search_opened" title="Open/close search form">
-									<a href="#" class="search_icon icon-search">
-									</a>
-									<div class="search_form_wrap">
-										<form method="get" class="search_form" action="#">
-											<button type="submit" class="search_submit icon-search-1" title="Start search"></button>
-											<input type="text" class="search_field" placeholder="" value="" name="s" title=""/>
-										</form>
-									</div>
-									<div class="search_results widget_area bg_tint_light">
-										<a class="search_results_close icon-cancel-1"> </a>
-										<div class="search_results_content"> </div>
-									</div>
-								</div>
-							</div>
-						</aside>
-					</div>
-				</div>
-			</footer>
+				</section>
 
-			<div class="copyright_wrap">
-				<div class="content_wrap">
-					Desenvolvido por ©<a href="http://acens.uece.br/">ACENS</a> 2016 All Rights Reserved.
-				</div>
 			</div>
-		</div>  
-	</div>  
 
-	<a href="#" class="scroll_to_top icon-angle-up-1" title="Scroll to top"> </a>
-
-	<div class="preloader">
-	    <div class="preloader_image"></div>
-	</div>
-
-
-	<script type='text/javascript' src='js/vendor/jquery-1.11.3.min.js'></script>
-	<script type='text/javascript' src='js/vendor/jquery-migrate.min.js'></script>
-
-	<script type='text/javascript' src='js/custom/_main.js'></script>
-
-	<script type='text/javascript' src='js/vendor/superfish.min.js'></script>
-	<script type='text/javascript' src='js/custom/core.utils.min.js'></script>
-	<script type='text/javascript' src='js/custom/core.init.min.js'></script>
-	<script type='text/javascript' src='js/custom/shortcodes.min.js'></script>
-	<script type='text/javascript' src='js/custom/core.messages/core.messages.js'></script>
-	<script type='text/javascript' src='js/vendor/swiper/idangerous.swiper-2.7.js'></script>
-	<script type='text/javascript' src='js/vendor/swiper/idangerous.swiper.scrollbar-2.4.js'></script>
-	<script type='text/javascript' src='js/vendor/jquery-ui.js'></script>
-	<script type='text/javascript' src='js/vendor/swiper/idangerous.swiper-2.7.js'></script>
-	<script type='text/javascript' src='js/vendor/swiper/idangerous.swiper.scrollbar-2.4.js'></script>
-
-	<!--<script type='text/javascript' src='custom_tools/js/skin.customizer.js'></script>
-	<script type='text/javascript' src='custom_tools/js/front.customizer.js'></script>-->
-
-</body>
-</html>
+{% endblock content %}

@@ -16,5 +16,20 @@ def blog_post(request, pk):
 def beershop(request):
     return render(request, 'blog/features-beer-shop.html', {})
 
+def product(request):
+    return render(request, 'blog/features-beer-shop-product.html', {})
+
+def services(request):
+    return render(request, 'blog/features-services.html', {})
+
+def who(request):
+    return render(request, 'blog/features-who.html', {})
+
+def staff(request):
+    return render(request, 'blog/features-staff.html', {})
+
+def member(request):
+    return render(request, 'blog/features-staff-member-profile.html', {})
+
 def gallery(request):
     return render(request, 'blog/gallery-cobbles.html', {})

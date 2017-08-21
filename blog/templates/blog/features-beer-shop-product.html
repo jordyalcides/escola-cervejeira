@@ -29,27 +29,27 @@
 									</nav>
 									<div class="product has-post-thumbnail">
 										<div class="images">
-											<a class="hover_icon hover_icon_view sc_image_styled" href="{% static 'images/amstel-033.jpg' %}" title="amstel 0,33">
-												<img alt="amstel 0,33" src="{% static 'images/amstel-033-600x600.jpg' %}">
+											<a class="hover_icon hover_icon_view sc_image_styled" href="{{ beer.picture_url }}" title="amstel 0,33">
+												<img alt="amstel 0,33" src="{{ beer.picture_url }}">
 											</a>
 											<div class="thumbnails columns-5">
-												<a class="hover_icon hover_icon_view sc_image_styled" href="{% static 'images/beer-keg.jpg' %}" title="amstel 0,33">
-													<img alt="amstel 0,33" src="{% static 'images/beer-keg-180x180.jpg' %}">
+												<a class="hover_icon hover_icon_view sc_image_styled" href="{{ beer.picture_url }}" title="amstel 0,33">
+													<img alt="amstel 0,33" src="{{ beer.picture_url }}">
 												</a>
-												<a class="hover_icon hover_icon_view sc_image_styled" href="{% static 'images/beer-keg.jpg' %}" title="amstel 0,33">
-													<img alt="amstel 0,33" src="{% static 'images/beer-keg-180x180.jpg' %}">
+												<a class="hover_icon hover_icon_view sc_image_styled" href="{{ beer.picture_url }}" title="amstel 0,33">
+													<img alt="amstel 0,33" src="{{ beer.picture_url }}">
 												</a>
 											</div>
 										</div>
 										<div class="summary entry-summary">
-											<h1 class="product_title entry-title">Amstel Beer</h1>
+											<h1 class="product_title entry-title">{{ beer.name }}</h1>
 											<div>
 												<p class="price">
-													<span class="amount">&pound;200.00</span>
+													<span class="amount">R&dollar;{{ beer.price }}</span>
 												</p>
 											</div>
 											<div>
-												<p>Donec ornare nunc quis tellus cursus convallis. Aliquam consectetur leo at justo cursus mollis. Fusce convallis cursus porta. Morbi auctor porttitor justo, ac sagittis eros.</p>
+												<p>{{ beer.description }}</p>
 											</div>
 											<form class="cart" method="post" enctype='multipart/form-data'>
 												<div class="quantity">

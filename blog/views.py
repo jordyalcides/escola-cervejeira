@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
-from .models import Post
+from .models import Post, Beer
 
 def index(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -15,10 +15,12 @@ def blog_post(request, pk):
     return render(request, 'blog/blog_post.html', {'post': post})
 
 def beershop(request):
-    return render(request, 'blog/features-beer-shop.html', {})
+    beers = Beer.objects.filter(published_date__lte=timezone.now()).order_by('name')
+    return render(request, 'blog/features-beer-shop.html', {'beers': beers})
 
-def product(request):
-    return render(request, 'blog/features-beer-shop-product.html', {})
+def product(request, pk):
+    beer = get_object_or_404(Beer, pk=pk)
+    return render(request, 'blog/features-beer-shop-product.html', {'beer': beer})
 
 def services(request):
     return render(request, 'blog/features-services.html', {})

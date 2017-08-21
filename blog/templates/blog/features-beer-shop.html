@@ -724,7 +724,6 @@
 			</section>
 
 			<div class="page_content_wrap wrap_custom" >
-
 				<section class="content_wrap">
 					<div class="container">
 						<div class="row">
@@ -735,25 +734,27 @@
 									</nav>
 									<p class="woocommerce-result-count">Showing all 9 results</p>
 
+									{% for beer in beers %}
 									<ul class="products">
 										<li class="product has-post-thumbnail column-1_3">
-											<a href="{% url 'product' %}"></a>
+											<a href="{% url 'product' pk=beer.pk %}"></a>
 											<div class="post_item_wrap">
 												<div class="post_featured">
 													<div class="post_thumb">
-														<a class="hover_icon hover_icon_link" href="{% url 'product' %}">
+														<a class="hover_icon hover_icon_link" href="{% url 'product' pk=beer.pk %}">
 															<img src="{% static 'images/amstel-033-300x300.jpg' %}" class="attachment-shop_catalog" alt="amstel 0,33"/>
 														</a>
 													</div>
 												</div>
 												<div class="post_content">
 													<h3>
-														<a href="{% url 'product' %}">Amstel Beer</a>
+														<a href="{% url 'product' pk=beer.pk %}">Amstel Beer</a>
 													</h3>
-													<a href="{% url 'product' %}" class="single_add_to_cart_button button alt">Sobre</a>
+													<a href="{% url 'product' pk=beer.pk %}" class="single_add_to_cart_button button alt">Sobre</a>
 												</div>
 											</div>
 										</li>
+										{% endfor %}
 
 										<!-- <li class="product has-post-thumbnail column-1_3">
 											<a href="features-beer-shop-product.html"></a>

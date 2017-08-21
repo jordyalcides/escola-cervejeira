@@ -737,25 +737,25 @@
 
 									<ul class="products">
 										<li class="product has-post-thumbnail column-1_3">
-											<a href="features-beer-shop-product.html"></a>
+											<a href="{% url 'product' %}"></a>
 											<div class="post_item_wrap">
 												<div class="post_featured">
 													<div class="post_thumb">
 														<a class="hover_icon hover_icon_link" href="{% url 'product' %}">
-															<img src="images/amstel-033-300x300.jpg" class="attachment-shop_catalog" alt="amstel 0,33"/>
+															<img src="{% static 'images/amstel-033-300x300.jpg' %}" class="attachment-shop_catalog" alt="amstel 0,33"/>
 														</a>
 													</div>
 												</div>
 												<div class="post_content">
 													<h3>
-														<a href="features-beer-shop-product.html">Amstel Beer</a>
+														<a href="{% url 'product' %}">Amstel Beer</a>
 													</h3>
-													<a href="features-beer-shop-product.html" class="single_add_to_cart_button button alt">Sobre</a>
+													<a href="{% url 'product' %}" class="single_add_to_cart_button button alt">Sobre</a>
 												</div>
 											</div>
 										</li>
 
-										<li class="product has-post-thumbnail column-1_3">
+										<!-- <li class="product has-post-thumbnail column-1_3">
 											<a href="features-beer-shop-product.html"></a>
 											<div class="post_item_wrap">
 												<div class="post_featured">
@@ -905,7 +905,7 @@
 													<a href="features-beer-shop-product.html" class="single_add_to_cart_button button alt">Sobre</a>
 												</div>
 											</div>
-										</li>
+										</li> -->
 									</ul>
 								</div>
 							</div>

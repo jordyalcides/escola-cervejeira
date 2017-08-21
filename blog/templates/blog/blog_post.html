@@ -4,10 +4,10 @@
 {% block content %}
 
 								<article class="post_item post_item_single post">
-									<section class="post_featured">
+									<section class="">
 										<div class="post_thumb" data-image="{{ post.picture_url|default_if_none:'#' }}" data-title="{{ post.title }}">
-											<a class="hover_icon hover_icon_view sc_image_styled" href="{{ post.picture_url|default_if_none:'#' }}" title="{{ post.title }}">
-												<img class="wp-post-image" width="1150" height="647" alt="{{ post.title }}" src="{{ post.picture_url|default_if_none:'#' }}">
+											<a class="hover_icon hover_icon_view" href="{{ post.picture_url|default_if_none:'#' }}" title="{{ post.title }}">
+												<img class="wp-post-image" alt="{{ post.title }}" src="{{ post.full_url|default_if_none:'#' }}" >
 											</a>
 										</div>
 									</section>

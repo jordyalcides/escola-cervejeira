@@ -31,7 +31,7 @@ SECRET_KEY = 'z)@fj-%h-a(wv4*wn2p(^6_^yl9avhzu1p=uj)bxpvl__ty5e-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'jordyalcides.pythonanywhere.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'jordyalcides.pythonanywhere.com']
 
 
 # Application definition

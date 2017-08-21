@@ -6,8 +6,10 @@ from django.conf import settings
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
+    # picture = models.ImageField(
+    #         upload_to = settings.MEDIA_ROOT)
     picture = models.ImageField(
-            upload_to = settings.MEDIA_ROOT)
+            upload_to = "")
     text = models.TextField()
     created_date = models.DateTimeField(
             default=timezone.now)
@@ -25,6 +27,9 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def full_url(self):
+        return settings.MEDIA_ROOT+"/"+ self.picture.url
 
 # class Beer(models.Model):
 #     style = models.CharField(max_length=200)

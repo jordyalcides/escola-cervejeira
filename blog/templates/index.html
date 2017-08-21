@@ -116,7 +116,6 @@
 
 	<link rel='stylesheet' href="{% static 'js/custom/core.messages/core.messages.css' %}" type='text/css' media='all'/>
 
-{% for post in posts %}
 					<section id="page-blog" class="content_wrap isotope_section">
 						<div class="container">
 							<div class="row">
@@ -125,12 +124,13 @@
 									<div class="sc_blogger layout_classic_4 template_masonry sc_blogger_horizontal">
 										<div class="isotope_wrap" data-columns="4">
 
+{% for post in posts %}
 											<div class="isotope_item isotope_item_classic isotope_item_classic_4 isotope_column_4">
 												<div class="post_item post_item_classic post_item_classic_4	post_format_standard">
 													<div class="post_featured">
-														<div class="post_thumb sc_image_styled" data-image="{{ post.picture_url }}" data-title="{{ post.title }}">
+														<div class="" data-image="{{ post.picture_url }}" data-title="{{ post.title }}">
 															<a class="hover_icon hover_icon_link" href="{% url 'post' pk=post.pk %}">
-																<img alt="{{ post.title }}" src="{{ post.picture_url }}">
+																<img alt="{{ post.title }}" src="{{ post.full_url }}" class="img-post-index">
 															</a>
 														</div>
 													</div>
@@ -139,7 +139,7 @@
 														<a href="{% url 'post' pk=post.pk %}">{{ post.title }}</a>
 														</h4>
 														<div class="post_descr">
-															<p>{{ post.text|linebreaksbr }}</p>
+															<p>{{ post.text|slice:":100" }} (...)</p>
 														</div>
 														<div class="post_info">
 															<span class="post_info_item post_info_posted">

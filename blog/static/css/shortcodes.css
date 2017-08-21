@@ -2710,10 +2710,10 @@ ul.sc_list_style_iconed {
 	overflow:hidden;
 }
 .sc_video_frame img {
-	width: 100%;
+	/*width: 100%;*/
 	height:auto;
 }
-/* Media elements */
+/* Media elements 
 .mejs-container {
 	max-width:100%;
 }

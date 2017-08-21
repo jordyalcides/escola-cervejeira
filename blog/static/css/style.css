@@ -4313,3 +4313,16 @@ div#booking_calendar_select_label + .booking_cleardiv {
 	text-align: right;
 }
 
+img.img-post-index {
+	max-width:200px;
+	max-height:107px;
+    width: auto;
+    height: auto;
+	display: block;
+ 	margin: 0 auto;
+}
+
+img.wp-post-image {
+	display: block;
+ 	margin: 0 auto;
+}

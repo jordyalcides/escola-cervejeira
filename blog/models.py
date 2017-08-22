@@ -28,8 +28,8 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-    def full_url(self):
-        return settings.MEDIA_ROOT+"/"+ self.picture.url
+    # def full_url(self):
+    #     return settings.MEDIA_ROOT+"/"+ self.picture.url
 
 class Beer(models.Model):
     name = models.CharField(max_length=200)

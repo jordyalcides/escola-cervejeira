@@ -13,7 +13,7 @@
 				</div>
 			</div>
 
-			<section class="top_panel_wrap bg_tint_dark bg_header_1_2">
+			<!-- <section class="top_panel_wrap bg_tint_dark bg_header_1_2">
 				<div class="menu_main_wrap logo_left">
 					<div class="content_wrap clearfix">
 						<a href="#" class="menu_main_responsive_button icon-menu-1">
@@ -24,13 +24,13 @@
 									<a href="#">Fermentação</a>
 									<ul class="sub-menu">
 										<li class="menu-item">
-											<a href="gallery-cobbles.html">Lager</a>
+											<a href="#">Lager</a>
 										</li>
 										<li class="menu-item">
-											<a href="gallery-grid.html">Ale</a>
+											<a href="#">Ale</a>
 										</li>
 										<li class="menu-item">
-											<a href="gallery-margin-grid.html">Qualquer</a>
+											<a href="#">Qualquer</a>
 										</li>
 									</ul>
 								</li>
@@ -721,7 +721,7 @@
 						</nav>
 					</div>
 				</div>
-			</section>
+			</section> -->
 
 			<div class="page_content_wrap wrap_custom" >
 				<section class="content_wrap">
@@ -732,7 +732,7 @@
 									<nav class="woocommerce-breadcrumb">
 										<a href="{url 'index'}">Início</a>&nbsp;&#47;&nbsp;Beer Shop
 									</nav>
-									<p class="woocommerce-result-count">Showing all 9 results</p>
+									<!-- <p class="woocommerce-result-count">Showing all 9 results</p> -->
 
 									{% for beer in beers %}
 									<ul class="products">
@@ -742,7 +742,7 @@
 												<div class="post_featured">
 													<div class="post_thumb">
 														<a class="hover_icon hover_icon_link" href="{% url 'product' pk=beer.pk %}">
-															<img src="{% static 'images/amstel-033-300x300.jpg' %}" class="attachment-shop_catalog" alt="amstel 0,33"/>
+															<img src="{{ MEDIA_URL }}{{ beer.picture_url }}" class="attachment-shop_catalog" alt="amstel 0,33"/>
 														</a>
 													</div>
 												</div>
@@ -910,7 +910,7 @@
 									</ul>
 								</div>
 							</div>
-							<div class="sidebar widget_area bg_tint_light sidebar_style_light" role="complementary">
+							<!-- <div class="sidebar widget_area bg_tint_light sidebar_style_light" role="complementary">
 								<aside class="widget woocommerce widget_product_search">
 									<h5 class="widget_title">Procurar Cerveja</h5>
 									<form method="get" class="search_form" action="#">
@@ -980,7 +980,7 @@
 										</ul>
 								</aside>
 
-							</div>
+							</div> -->
 
 				</section>
 

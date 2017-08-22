@@ -55,13 +55,13 @@
 									<a href="{% url 'index' %}">Início</a>
 								</li>
                 <li class="menu-item">
-									<a class="page-scroll" href="#mainslider_2">Sobre nós</a>
+									<a class="page-scroll" href="{% url 'index' %}#mainslider_2">Sobre nós</a>
 								</li>
 								<li class="menu-item">
-									<a class="page-scroll" href="#page-busca">Busca Cervejeira</a>
+									<a class="page-scroll" href="{% url 'index' %}#page-busca">Busca Cervejeira</a>
 								</li>
 								<li class="menu-item">
-									<a class="page-scroll" href="#page-contato">Mapa e contato</a>
+									<a class="page-scroll" href="{% url 'index' %}#page-contato">Mapa e contato</a>
 								</li>
 								<li class="menu-item">
 									<a href="{% url 'gallery' %}">Galeria</a>
@@ -196,7 +196,7 @@
 	<script type="text/javascript" src="{% static 'js/slider.js' %}"></script>
 
 	<script type='text/javascript' src="{% static 'js/vendor/essential-grid/public/assets/js/lightbox.js' %}"></script>
-	<script type='text/javascript'" src="{% static 'js/vendor/essential-grid/public/assets/js/jquery.themepunch.tools.min.js' %}"></script>
+	<script type='text/javascript' src="{% static 'js/vendor/essential-grid/public/assets/js/jquery.themepunch.tools.min.js' %}"></script>
 	<script type='text/javascript' src=" {% static 'js/vendor/essential-grid/public/assets/js/jquery.themepunch.essential.min.js' %}"></script>
 
 	<script type='text/javascript' src="{% static 'js/custom/_main.js' %}"></script>

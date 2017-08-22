@@ -25,5 +25,5 @@ urlpatterns = [
     url(r'', include('blog.urls')),
 ]
 urlpatterns += staticfiles_urlpatterns()
-urlpatterns += static(settings.MEDIA_ROOT, document_root=settings.MEDIA_ROOT)
-urlpatterns += static('media/')
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#urlpatterns += static('media/')

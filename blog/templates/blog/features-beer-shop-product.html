@@ -51,23 +51,22 @@
 											<div>
 												<p>{{ beer.description }}</p>
 											</div>
-											<form class="cart" method="post" enctype='multipart/form-data'>
+											<!-- <form class="cart" method="post" enctype='multipart/form-data'>
 												<div class="quantity">
 													<input type="number" step="1" min="1" name="quantity" value="1" title="Qty" class="input-text qty text" size="4"/>
 												</div>
 												<input type="hidden" name="add-to-cart" value="754"/>
 												<button type="submit" class="single_add_to_cart_button button alt">Sobre</button>
-											</form>
+											</form> -->
 											<div class="product_meta">
 												<span class="posted_in">
-													Categories:
-													<a href="#" rel="tag">0,33</a>,
-													<a href="#" rel="tag">50L Keg</a>.</span>
-													<span class="tagged_as">
+													Categoria:
+													<a href="#" rel="tag">{{ beer.category }}</a></span>
+													<!-- <span class="tagged_as">
 														Tag:
 														<a href="#" rel="tag">blonde</a>.
 													</span>
-													<span class="product_id">Product ID: <span>754</span>
+													<span class="product_id">Product ID: <span>754</span> -->
 												</span>
 											</div>
 										</div>
@@ -76,20 +75,19 @@
 		                                <div class="woocommerce-tabs sc_tabs">
 		                                    <ul class="tabs" role="tablist">
 		                                        <li class="description_tab">
-		                                            <a href="#tab1" role="tab" data-toggle="tab">Description</a>
+		                                            <a href="#tab1" role="tab" data-toggle="tab">Descrição</a>
 		                                        </li>
-		                                        <li class="reviews_tab">
+		                                        <!-- <li class="reviews_tab">
 		                                            <a href="#tab2" role="tab" data-toggle="tab">Reviews (0)</a>
-		                                        </li>
+		                                        </li> -->
 
 		                                    </ul>
 
 		                                    <div class="panel" id="tab1">
-												<h2>Product Description</h2>
-												<p>Aenean sit amet convallis nisl. Vestibulum sollicitudin nec sem sit amet aliquam. Integer rutrum vel neque nec porttitor. Integer malesuada at massa at vulputate. Duis in nunc molestie, vulputate erat a, interdum tellus. Vestibulum eget nisl ullamcorper, mattis nisi sed, mollis nibh. Maecenas semper, erat a porttitor rutrum, metus nulla accumsan ligula, nec faucibus lorem risus ac enim.</p>
-												<p>Quisque et enim sit amet tortor sodales semper at at elit. Donec ornare nunc quis tellus cursus convallis. Aliquam consectetur leo at justo cursus mollis. Fusce convallis cursus porta. Morbi auctor porttitor justo, ac sagittis eros. Pellentesque ac risus pellentesque sapien aliquet scelerisque. Maecenas massa est, consequat in ornare at, eleifend et purus. In venenatis in augue ac sollicitudin. Cras eu nisi eget sem cursus venenatis. </p>
+												<!-- <h2>Descrição</h2> -->
+												<p>{{ beer.description }}</p>
 
-												<div class="sc_line sc_line_style_solid"></div>
+												<!-- <div class="sc_line sc_line_style_solid"></div>
 														<h3 class="sc_title sc_title_regular">Brewing Skills</h3>
 														<div class="sc_skills sc_skills_bar sc_skills_horizontal" data-type="bar" data-subtitle="Skills" data-dir="horizontal">
 															<div class="sc_skills_info">
@@ -124,7 +122,7 @@
 																	<div class="sc_skills_total" data-start="0" data-stop="82" data-step="1" data-max="100" data-speed="32" data-duration="2624" data-ed="%">0%</div>
 																</div>
 															</div>
-														</div>
+														</div> -->
 
 		                                    </div>
 
@@ -182,7 +180,7 @@
 									</div>
 								</article>
 							</div>
-							<div class="sidebar widget_area bg_tint_light sidebar_style_light" role="complementary">
+							<!-- <div class="sidebar widget_area bg_tint_light sidebar_style_light" role="complementary">
 								<aside class="widget woocommerce widget_product_search">
 									<h5 class="widget_title">Procurar Cerveja</h5>
 									<form method="get" class="search_form" action="#">
@@ -251,7 +249,7 @@
 											</li>
 										</ul>
 								</aside>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</section>

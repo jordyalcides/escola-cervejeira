@@ -1,7 +1,8 @@
 from django.db import models
 from django.utils import timezone
 from django.conf import settings
-from django.core.validators import MinValueValidator, MaxValueValidator
+from django.core.validators import MinValueValidator, MaxValueValidator, MinLengthValidator
+from datetime import date
 
 
 
@@ -56,13 +57,19 @@ class Beer(models.Model):
 
 
 class Course(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, validators=[MinLengthValidator(2)])
     price = models.DecimalField(max_digits=6, decimal_places=2, default=0)
-    place = models.CharField(max_length=200)
+    place = models.CharField(max_length=100)
+    address = models.CharField(max_length=200)
+    zipcode = models.CharField(max_length=9, validators=[MinLengthValidator(9)])
+    city = models.CharField(max_length=100)
     picture = models.ImageField(
             upload_to = "course/")
     description = models.TextField()
+    organizer = models.CharField(max_length=50)
+    contact = models.CharField(max_length=200, default='contato@escolacervejeira.com.br')
     start_date = models.DateTimeField()
+    end_date = models.DateTimeField()
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -72,6 +79,10 @@ class Course(models.Model):
     def picture_url(self):
         if self.picture and hasattr(self.picture, 'url'):
             return self.picture.url
+
+    @property
+    def is_past(self):
+        return timezone.now() > self.start_date
 
     def publish(self):
         self.published_date = timezone.now()

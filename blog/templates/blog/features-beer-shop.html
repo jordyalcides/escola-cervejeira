@@ -742,7 +742,7 @@
 												<div class="post_featured">
 													<div class="post_thumb">
 														<a class="hover_icon hover_icon_link" href="{% url 'product' pk=beer.pk %}">
-															<img src="{{ MEDIA_URL }}{{ beer.picture_url }}" class="attachment-shop_catalog" alt="amstel 0,33"/>
+															<img src="{{ MEDIA_URL }}{{ beer.picture_url }}" class="attachment-shop_catalog" alt="{{ beer.name }}"/>
 														</a>
 													</div>
 												</div>

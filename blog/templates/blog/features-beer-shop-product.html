@@ -29,15 +29,15 @@
 									</nav>
 									<div class="product has-post-thumbnail">
 										<div class="images">
-											<a class="hover_icon hover_icon_view sc_image_styled" href="{{ beer.picture_url }}" title="amstel 0,33">
-												<img alt="amstel 0,33" src="{{ beer.picture_url }}">
+											<a class="hover_icon hover_icon_view sc_image_styled" href="{{ beer.picture_url }}" title="{{ beer.name }}">
+												<img alt="{{ beer.name }}" src="{{ beer.picture_url }}">
 											</a>
 											<div class="thumbnails columns-5">
-												<a class="hover_icon hover_icon_view sc_image_styled" href="{{ beer.picture_url }}" title="amstel 0,33">
-													<img alt="amstel 0,33" src="{{ beer.picture_url }}">
+												<a class="hover_icon hover_icon_view sc_image_styled" href="{{ beer.picture_url }}" title="{{ beer.name }}">
+													<img alt="{{ beer.name }}" src="{{ beer.picture_url }}">
 												</a>
-												<a class="hover_icon hover_icon_view sc_image_styled" href="{{ beer.picture_url }}" title="amstel 0,33">
-													<img alt="amstel 0,33" src="{{ beer.picture_url }}">
+												<a class="hover_icon hover_icon_view sc_image_styled" href="{{ beer.picture_url }}" title="{{ beer.name }}">
+													<img alt="{{ beer.name }}" src="{{ beer.picture_url }}">
 												</a>
 											</div>
 										</div>
@@ -72,111 +72,110 @@
 										</div>
 
 
-		                                <div class="woocommerce-tabs sc_tabs">
-		                                    <ul class="tabs" role="tablist">
-		                                        <li class="description_tab">
-		                                            <a href="#tab1" role="tab" data-toggle="tab">Descrição</a>
-		                                        </li>
-		                                        <!-- <li class="reviews_tab">
-		                                            <a href="#tab2" role="tab" data-toggle="tab">Reviews (0)</a>
-		                                        </li> -->
+		                <div class="woocommerce-tabs sc_tabs">
+                              <ul class="tabs" role="tablist">
+                                  <li class="description_tab">
+                                      <a href="#tab1" role="tab" data-toggle="tab">Descrição</a>
+                                  </li>
+                                  <li class="reviews_tab">
+                                      <a href="#tab2" role="tab" data-toggle="tab">Avaliação</a>
+                                  </li>
 
-		                                    </ul>
+                              </ul>
 
-		                                    <div class="panel" id="tab1">
-												<!-- <h2>Descrição</h2> -->
-												<p>{{ beer.description }}</p>
+                              <div class="panel" id="tab1">
+															 <h2>{{ beer.name }}</h2>
+															 <p>{{ beer.description }}</p>
 
-												<!-- <div class="sc_line sc_line_style_solid"></div>
-														<h3 class="sc_title sc_title_regular">Brewing Skills</h3>
-														<div class="sc_skills sc_skills_bar sc_skills_horizontal" data-type="bar" data-subtitle="Skills" data-dir="horizontal">
-															<div class="sc_skills_info">
-																<div class="sc_skills_label">Pilsner</div>
-															</div>
-															<div class="sc_skills_item sc_skills_style_1">
-																<div class="sc_skills_count color_1">
-																	<div class="sc_skills_total" data-start="0" data-stop="98" data-step="1" data-max="100" data-speed="20" data-duration="1960" data-ed="%">0%</div>
-																</div>
-															</div>
-															<div class="sc_skills_info">
-																<div class="sc_skills_label">Stouts</div>
-															</div>
-															<div class="sc_skills_item sc_skills_style_1">
-																<div class="sc_skills_count color_2">
-																	<div class="sc_skills_total" data-start="0" data-stop="66" data-step="1" data-max="100" data-speed="27" data-duration="1782" data-ed="%">0%</div>
-																</div>
-															</div>
-															<div class="sc_skills_info">
-																<div class="sc_skills_label">Pale Ale</div>
-															</div>
-															<div class="sc_skills_item sc_skills_style_1">
-																<div class="sc_skills_count color_3">
-																	<div class="sc_skills_total" data-start="0" data-stop="87" data-step="1" data-max="100" data-speed="27" data-duration="2349" data-ed="%">0%</div>
-																</div>
-															</div>
-															<div class="sc_skills_info">
-																<div class="sc_skills_label">Brown Ale</div>
-															</div>
-															<div class="sc_skills_item sc_skills_style_1">
-																<div class="sc_skills_count color_4">
-																	<div class="sc_skills_total" data-start="0" data-stop="82" data-step="1" data-max="100" data-speed="32" data-duration="2624" data-ed="%">0%</div>
-																</div>
-															</div>
-														</div> -->
+                              </div>
 
-		                                    </div>
-
-		                                    <div class="panel" id="tab2">
-		                                        <div id="reviews">
-		                                            <div id="comments">
-		                                                <h2>Reviews</h2>
-		                                                <p class="woocommerce-noreviews">There are no reviews yet.</p>
-		                                            </div>
-		                                            <div id="review_form_wrapper">
-														<div id="review_form">
-															<div id="respond" class="comment-respond">
-																<h3 id="reply-title" class="comment-reply-title">Be the first to review &ldquo;Amstel Beer&rdquo; <small>
-																<a rel="nofollow" id="cancel-comment-reply-link" href="#respond">Cancel reply</a>
-																</small>
-																</h3>
-																<form action="#" method="post" id="commentform" class="comment-form">
-																	<p class="comment-form-author">
-																		<label for="author">Name <span class="required">*</span>
-																		</label> <input id="author" name="author" type="text" value="" size="30" aria-required="true"/>
-																	</p>
-																	<p class="comment-form-email">
-																		<label for="email">Email <span class="required">*</span>
-																		</label> <input id="email" name="email" type="text" value="" size="30" aria-required="true"/>
-																	</p>
-		                                                            <div class="comment-form-rating">
-		                                                                <label>Your Rating</label>
-		                                                                <p class="stars">
-		                                                                    <span>
-		                                                                        <a class="star-1" href="#">1</a>
-		                                                                        <a class="star-2" href="#">2</a>
-		                                                                        <a class="star-3" href="#">3</a>
-		                                                                        <a class="star-4" href="#">4</a>
-		                                                                        <a class="star-5" href="#">5</a>
-		                                                                    </span>
-		                                                                </p>
-		                                                            </div>
-																	<p class="comment-form-comment">
-																		<label for="comment">Your Review</label>
-																		<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
-																	</p>
-																	<p class="form-submit">
-																		<input name="submit" type="submit" id="submit" class="submit" value="Submit"/>
-																		<input type='hidden' name='comment_post_ID' value='754' id='comment_post_ID'/>
-																		<input type='hidden' name='comment_parent' id='comment_parent' value='0'/>
-																	</p>
-																</form>
-															</div>
-														</div>
-		                                            </div>
-		                                        </div>
-		                                    </div>
-
-		                                </div>
+                              <div class="panel" id="tab2">
+																				<div id="reviews">
+																					<!-- <div class="sc_line sc_line_style_solid"></div> -->
+																							<h3 class="sc_title sc_title_regular">Nota</h3>
+																							<div class="sc_skills sc_skills_bar sc_skills_horizontal" data-type="bar" data-subtitle="Skills" data-dir="horizontal">
+																								<!-- <div class="sc_skills_info">
+																									<div class="sc_skills_label">Pilsner</div>
+																								</div> -->
+																								<div class="sc_skills_item sc_skills_style_1">
+																									<div class="sc_skills_count color_2">
+																										<div class="sc_skills_total" data-start="0" data-stop="{{ beer.rating }}" data-step="1" data-max="10" data-speed="20" data-duration="1960" data-ed="/10"></div>
+																									</div>
+																								</div>
+																								<!-- <div class="sc_skills_info">
+																									<div class="sc_skills_label">Stouts</div>
+																								</div>
+																								<div class="sc_skills_item sc_skills_style_1">
+																									<div class="sc_skills_count color_2">
+																										<div class="sc_skills_total" data-start="0" data-stop="66" data-step="1" data-max="100" data-speed="27" data-duration="1782" data-ed="%">0%</div>
+																									</div>
+																								</div>
+																								<div class="sc_skills_info">
+																									<div class="sc_skills_label">Pale Ale</div>
+																								</div>
+																								<div class="sc_skills_item sc_skills_style_1">
+																									<div class="sc_skills_count color_3">
+																										<div class="sc_skills_total" data-start="0" data-stop="87" data-step="1" data-max="100" data-speed="27" data-duration="2349" data-ed="%">0%</div>
+																									</div>
+																								</div>
+																								<div class="sc_skills_info">
+																									<div class="sc_skills_label">Brown Ale</div>
+																								</div>
+																								<div class="sc_skills_item sc_skills_style_1">
+																									<div class="sc_skills_count color_4">
+																										<div class="sc_skills_total" data-start="0" data-stop="82" data-step="1" data-max="100" data-speed="32" data-duration="2624" data-ed="%">0%</div>
+																									</div>
+																								</div> -->
+																							</div>
+																						<!-- <div id="comments">
+																								<h2>Reviews</h2>
+																								<p class="woocommerce-noreviews">There are no reviews yet.</p>
+																						</div>
+																						<div id="review_form_wrapper">
+																								<div id="review_form">
+																										<div id="respond" class="comment-respond">
+																												<h3 id="reply-title" class="comment-reply-title">Be the first to review &ldquo;Amstel Beer&rdquo;
+																														<small>
+																														<a rel="nofollow" id="cancel-comment-reply-link" href="#respond">Cancel reply</a>
+																														</small>
+																												</h3>
+																												<form action="#" method="post" id="commentform" class="comment-form">
+																														<p class="comment-form-author">
+																																<label for="author">Name <span class="required">*</span></label>
+																																<input id="author" name="author" type="text" value="" size="30" aria-required="true"/>
+																														</p>
+																														<p class="comment-form-email">
+																																<label for="email">Email <span class="required">*</span></label>
+																																<input id="email" name="email" type="text" value="" size="30" aria-required="true"/>
+																														</p>
+																														<div class="comment-form-rating">
+																																<label>Your Rating</label>
+																																<p class="stars">
+																																		<span>
+																																				<a class="star-1" href="#">1</a>
+																																				<a class="star-2" href="#">2</a>
+																																				<a class="star-3" href="#">3</a>
+																																				<a class="star-4" href="#">4</a>
+																																				<a class="star-5" href="#">5</a>
+																																		</span>
+																																</p>
+																														</div>
+																														<p class="comment-form-comment">
+																																<label for="comment">Your Review</label>
+																																<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
+																														</p>
+																														<p class="form-submit">
+																																<input name="submit" type="submit" id="submit" class="submit" value="Submit"/>
+																																<input type='hidden' name='comment_post_ID' value='754' id='comment_post_ID'/>
+																																<input type='hidden' name='comment_parent' id='comment_parent' value='0'/>
+																														</p>
+																												</form>
+																										</div>
+																								</div>
+																						</div> -->
+																				</div>
+                              </div>
+		                </div>
 									</div>
 								</article>
 							</div>

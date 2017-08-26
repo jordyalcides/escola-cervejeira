@@ -7,86 +7,86 @@ from datetime import date
 
 
 class Post(models.Model):
-    author = models.ForeignKey('auth.User')
-    title = models.CharField(max_length=200)
-    picture = models.ImageField(
+    autor = models.ForeignKey('auth.User')
+    título = models.CharField(max_length=200)
+    imagem = models.ImageField(
             upload_to = "post/")
-    text = models.TextField()
-    created_date = models.DateTimeField(
+    texto = models.TextField()
+    date_de_criação = models.DateTimeField(
             default=timezone.now)
-    published_date = models.DateTimeField(
+    data_de_publicação = models.DateTimeField(
             blank=True, null=True)
 
     @property
-    def picture_url(self):
-        if self.picture and hasattr(self.picture, 'url'):
-            return self.picture.url
+    def imagem_url(self):
+        if self.imagem and hasattr(self.imagem, 'url'):
+            return self.imagem.url
 
     def publish(self):
-        self.published_date = timezone.now()
+        self.data_de_publicação = timezone.now()
         self.save()
 
     def __str__(self):
-        return self.title
+        return self.título
 
 
-class Beer(models.Model):
-    name = models.CharField(max_length=200)
-    price = models.DecimalField(default=0, max_digits=5, decimal_places=2)
-    category = models.CharField(max_length=200)
-    rating = models.DecimalField(default=0, max_digits=2, decimal_places=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
-    picture = models.ImageField(
-            upload_to = "beer/")
-    description = models.TextField(max_length=1000)
-    created_date = models.DateTimeField(
+class Cerveja(models.Model):
+    nome = models.CharField(max_length=200)
+    preço = models.DecimalField(default=0, max_digits=5, decimal_places=2)
+    categoria = models.CharField(max_length=200)
+    avaliação = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
+    imagem = models.ImageField(
+            upload_to = "cervejas/")
+    descrição = models.TextField(max_length=1000)
+    data_de_criação = models.DateTimeField(
             default=timezone.now)
-    published_date = models.DateTimeField(
+    data_de_publicação = models.DateTimeField(
             blank=True, null=True)
 
     @property
-    def picture_url(self):
-        if self.picture and hasattr(self.picture, 'url'):
-            return self.picture.url
+    def imagem_url(self):
+        if self.imagem and hasattr(self.imagem, 'url'):
+            return self.imagem.url
 
     def publish(self):
-        self.published_date = timezone.now()
+        self.data_de_publicação = timezone.now()
         self.save()
 
     def __str__(self):
-        return self.name
+        return self.nome
 
 
-class Course(models.Model):
-    name = models.CharField(max_length=200, validators=[MinLengthValidator(2)])
-    price = models.DecimalField(max_digits=6, decimal_places=2, default=0)
-    place = models.CharField(max_length=100)
-    address = models.CharField(max_length=200)
-    zipcode = models.CharField(max_length=9, validators=[MinLengthValidator(9)])
-    city = models.CharField(max_length=100)
-    picture = models.ImageField(
-            upload_to = "course/")
-    description = models.TextField()
-    organizer = models.CharField(max_length=50)
-    contact = models.CharField(max_length=200, default='contato@escolacervejeira.com.br')
-    start_date = models.DateTimeField()
-    end_date = models.DateTimeField()
-    created_date = models.DateTimeField(
+class Curso(models.Model):
+    nome = models.CharField(max_length=200, validators=[MinLengthValidator(2)])
+    preço = models.DecimalField(max_digits=6, decimal_places=2, default=0)
+    local = models.CharField(max_length=100)
+    endereço = models.CharField(max_length=200)
+    cep = models.CharField(max_length=9, validators=[MinLengthValidator(9)])
+    cidade = models.CharField(max_length=100)
+    imagem = models.ImageField(
+            upload_to = "cursos/")
+    descrição = models.TextField()
+    organizador = models.CharField(max_length=50)
+    email = models.CharField(max_length=200, default='contato@escolacervejeira.com.br')
+    data_de_início = models.DateTimeField()
+    duração = models.IntegerField(default=0)
+    data_de_criação = models.DateTimeField(
             default=timezone.now)
-    published_date = models.DateTimeField(
+    data_de_publicação = models.DateTimeField(
             blank=True, null=True)
 
     @property
-    def picture_url(self):
-        if self.picture and hasattr(self.picture, 'url'):
-            return self.picture.url
+    def imagem_url(self):
+        if self.imagem and hasattr(self.imagem, 'url'):
+            return self.imagem.url
 
     @property
-    def is_past(self):
-        return timezone.now() > self.start_date
+    def iniciou(self):
+        return timezone.now() > self.data_de_início
 
     def publish(self):
-        self.published_date = timezone.now()
+        self.data_de_publicação = timezone.now()
         self.save()
 
     def __str__(self):
-        return self.name
+        return self.nome

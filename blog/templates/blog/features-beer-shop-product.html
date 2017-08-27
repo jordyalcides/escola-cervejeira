@@ -29,8 +29,8 @@
 									</nav> -->
 									<div class="product has-post-thumbnail">
 										<div class="images">
-											<a class="hover_icon hover_icon_view sc_image_styled" href="{{ beer.picture_url }}" title="{{ beer.name }}">
-												<img alt="{{ beer.name }}" src="{{ beer.picture_url }}">
+											<a class="hover_icon hover_icon_view sc_image_styled" href="{{ cerveja.imagem_url }}" title="{{ cerveja.nome }}">
+												<img alt="{{ cerveja.nome }}" src="{{ cerveja.imagem_url }}">
 											</a>
 											<!-- <div class="thumbnails columns-5">
 												<a class="hover_icon hover_icon_view sc_image_styled" href="{{ beer.picture_url }}" title="{{ beer.name }}">
@@ -42,14 +42,14 @@
 											</div> -->
 										</div>
 										<div class="summary entry-summary">
-											<h1 class="product_title entry-title">{{ beer.name }}</h1>
+											<h1 class="product_title entry-title">{{ cerveja.nome }}</h1>
 											<div>
 												<p class="price">
-													<span class="amount">R&dollar;{{ beer.price }}</span>
+													<span class="amount">R&dollar;{{ cerveja.preço }}</span>
 												</p>
 											</div>
 											<div>
-												<p>{{ beer.description }}</p>
+												<p>{{ cerveja.descrição }}</p>
 											</div>
 											<!-- <form class="cart" method="post" enctype='multipart/form-data'>
 												<div class="quantity">
@@ -61,7 +61,7 @@
 											<div class="product_meta">
 												<span class="posted_in">
 													Categoria:
-													<a href="#" rel="tag">{{ beer.category }}</a></span>
+													<a href="#" rel="tag">{{ cerveja.categoria }}</a></span>
 													<!-- <span class="tagged_as">
 														Tag:
 														<a href="#" rel="tag">blonde</a>.
@@ -82,7 +82,7 @@
                                   </li>
 
                               </ul>
-<!-- 
+<!--
                               <div class="panel" id="tab1">
 															 <h2>{{ beer.name }}</h2>
 															 <p>{{ beer.description }}</p>
@@ -99,7 +99,7 @@
 																								</div> -->
 																								<div class="sc_skills_item sc_skills_style_1">
 																									<div class="sc_skills_count color_2">
-																										<div class="sc_skills_total" data-start="0" data-stop="{{ beer.rating }}" data-step="1" data-max="10" data-speed="20" data-duration="1960" data-ed="/10"></div>
+																										<div class="sc_skills_total" data-start="0" data-stop="{{ cerveja.avaliação }}" data-step="1" data-max="10" data-speed="20" data-duration="1960" data-ed="/10"></div>
 																									</div>
 																								</div>
 																								<!-- <div class="sc_skills_info">

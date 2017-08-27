@@ -23,30 +23,31 @@
 										<a href="{url 'index'}">Início</a>&nbsp;&#47;&nbsp;Beer Shop
 									</nav> -->
 
-									{% for course in courses %}
+									{% for curso in cursos %}
 									<ul class="products">
 										<li class="product has-post-thumbnail column-1_3">
-											<a href="{% url 'course' pk=course.pk %}"></a>
+											<a href="{% url 'curso' pk=curso.pk %}"></a>
 											<div class="post_item_wrap">
 												<div class="post_featured">
 													<div class="post_thumb">
-														<a class="hover_icon hover_icon_link" href="{% url 'course' pk=course.pk %}">
-															<img src="{{ MEDIA_URL }}{{ course.picture_url }}" class="attachment-shop_catalog" alt="{{ course.name }}"/>
+														<a class="hover_icon hover_icon_link" href="{% url 'curso' pk=curso.pk %}">
+															<img src="{{ curso.imagem_url }}" class="attachment-shop_catalog" alt="{{ curso.nome }}"/>
 														</a>
 													</div>
 												</div>
 												<div class="post_content">
-													<h3>
-														<a href="{% url 'course' pk=course.pk %}">{{ course.name }}</a>
-													</h3>
+													<h2>
+														<a href="{% url 'curso' pk=curso.pk %}">{{ curso.nome }}</a>
+													</h2>
 												</div>
 											</div>
 										</li>
-										{% endfor %}
-
 									</ul>
+								{% endfor %}
 								</div>
 							</div>
+						</div>
+					</div>
 
 				</section>
 

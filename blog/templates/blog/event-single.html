@@ -44,7 +44,7 @@
 												<img class="tribe-events-spinner-medium" src="{% static 'js/vendor/the-events-calendar/css/images/tribe-loading.gif' %}" alt="Loading Events"/>
 											</span>
 											<div id="tribe-events-content" class="tribe-events-single vevent hentry">
-												{% if course.is_past %}
+												{% if curso.iniciou %}
 												<!-- <p class="tribe-events-back">
 													<a href="#"> &laquo; All Events</a>
 												</p> -->
@@ -54,12 +54,12 @@
 													</ul>
 												</div>
 												{% endif %}
-												<h2 class="tribe-events-single-event-title summary entry-title">{{ course.name }}</h2>
+												<h2 class="tribe-events-single-event-title summary entry-title">{{ curso.nome }}</h2>
 												<div class="tribe-events-schedule updated published tribe-clearfix">
 													<h3>
 														<span class="date-start dtstart">
-															{{ course.start_date }}
-															<span class="value-title" title="{{ course.start_date }}">
+															{{ curso.data_de_início }}
+															<span class="value-title" title="{{ curso.data_de_início }}">
 															</span>
 														</span>
 														<!-- -
@@ -86,10 +86,10 @@
 												</div>
 												<div class="tribe_events type-tribe_events status-publish has-post-thumbnail tribe_events_cat-party cat_party">
 													<div class="tribe-events-event-image">
-														<img src="{{ course.picture_url }}" alt="" title="{{ course.name }}"/>
+														<img src="{{ curso.imagem_url }}" alt="" title="{{ curso.nome }}"/>
 													</div>
 													<div class="tribe-events-single-event-description tribe-events-content entry-content description">
-														<p>{{ course.description }}</p>
+														<p>{{ curso.descrição }}</p>
 													</div>
 													<!-- <div class="tribe-events-cal-links">
 														<a class="tribe-events-gcal tribe-events-button" href="#" title="Add to Google Calendar">+ Google Calendar</a>
@@ -101,15 +101,15 @@
 															<dl>
 																<dt> Começa:</dt>
 																<dd>
-																	<abbr class="tribe-events-abbr updated published dtstart" title="{{ course.start_date }}"> {{ course.start_date }} </abbr>
+																	<abbr class="tribe-events-abbr updated published dtstart" title="{{ curso.data_de_início }}"> {{ curso.data_de_início }} </abbr>
 																</dd>
-																<dt> Termina: </dt>
+																<dt> Duração: </dt>
 																<dd>
-																	<abbr class="tribe-events-abbr dtend" title="{{ course.end_date }}"> {{ course.end_date }} </abbr>
+																	<abbr class="tribe-events-abbr dtend" title="{{ curso.duração }}"> {{ curso.duração }} Mêses</abbr>
 																</dd>
 																<dt>Preço:</dt>
 																<dd class="tribe-events-event-categories">
-																	<p>R&dollar; {{ course.price }}</a>
+																	<p>R&dollar; {{ curso.preço }}</a>
 																</dd>
 															</dl>
 														</div>
@@ -118,10 +118,10 @@
 															</h3>
 															<dl>
 																<dt>Nome:</dt>
-																<dd class="fn org"> {{ course.organizer }} </dd>
+																<dd class="fn org">{{ curso.organizador }}</dd>
 																<dt> Email: </dt>
 																<dd class="email">
-																	<a href="mailto:{{ course.contact }}">{{ course.contact }}</a>
+																	<a href="mailto:{{ curso.email }}">{{ curso.email }}</a>
 																</dd>
 																<!-- <dt> Website: </dt>
 																<dd class="url">
@@ -133,16 +133,16 @@
 															<h3 class="tribe-events-single-section-title"> Onde </h3>
 															<dl>
 																<dt>Local:</dt>
-																<dd class="author fn org"> {{ course.place }} </dd>
+																<dd class="fn org"> {{ curso.local }} </dd>
 																<dt>Endereço:</dt>
 																<dd class="location">
 																	<address class="tribe-events-address">
 																		<span class="adr">
-																			<span class="street-address">{{ course.address }}</span>
+																			<span class="street-address">{{ curso.endereço }}</span>
 																			<span class="delimiter"><br></span>
-																			<span class="locality">{{ course.city }}</span>
+																			<span class="locality">{{ curso.cidade }}</span>
 																			<span class="delimiter"><br></span>
-																			<abbr class="region tribe-events-abbr" title="CEP">{{ course.zipcode }}</abbr>
+																			<abbr class="region tribe-events-abbr" title="CEP">{{ curso.cep }}</abbr>
 																			<!-- <span class="country-name">United States</span> -->
 
 																		</span>

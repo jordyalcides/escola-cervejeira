@@ -734,27 +734,28 @@
 									</nav>
 									<!-- <p class="woocommerce-result-count">Showing all 9 results</p> -->
 
-									{% for beer in beers %}
+									{% for cerveja in cervejas %}
 									<ul class="products">
 										<li class="product has-post-thumbnail column-1_3">
-											<a href="{% url 'product' pk=beer.pk %}"></a>
+											<a href="{% url 'cerveja' pk=cerveja.pk %}"></a>
 											<div class="post_item_wrap">
 												<div class="post_featured">
 													<div class="post_thumb">
-														<a class="hover_icon hover_icon_link" href="{% url 'product' pk=beer.pk %}">
-															<img src="{{ MEDIA_URL }}{{ beer.picture_url }}" class="attachment-shop_catalog" alt="{{ beer.name }}"/>
+														<a class="hover_icon hover_icon_link" href="{% url 'cerveja' pk=cerveja.pk %}">
+															<img src="{{ cerveja.imagem_url }}" class="attachment-shop_catalog" alt="{{ cerveja.nome }}"/>
 														</a>
 													</div>
 												</div>
 												<div class="post_content">
 													<h3>
-														<a href="{% url 'product' pk=beer.pk %}">{{ beer.name }}</a>
+														<a href="{% url 'cerveja' pk=cerveja.pk %}">{{ cerveja.nome }}</a>
 													</h3>
-													<!-- <a href="{% url 'product' pk=beer.pk %}" class="single_add_to_cart_button button alt">Sobre</a> -->
+													<!-- <a href="{% url 'cerveja' pk=cerveja.pk %}" class="single_add_to_cart_button button alt">Sobre</a> -->
 												</div>
 											</div>
 										</li>
-										{% endfor %}
+									</ul>
+									{% endfor %}
 
 										<!-- <li class="product has-post-thumbnail column-1_3">
 											<a href="features-beer-shop-product.html"></a>
@@ -907,7 +908,6 @@
 												</div>
 											</div>
 										</li> -->
-									</ul>
 								</div>
 							</div>
 							<!-- <div class="sidebar widget_area bg_tint_light sidebar_style_light" role="complementary">
@@ -981,7 +981,8 @@
 								</aside>
 
 							</div> -->
-
+						</div>
+					</div>
 				</section>
 
 			</div>

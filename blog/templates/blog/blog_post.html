@@ -1,21 +1,37 @@
-{% extends 'blog/base-post.html' %}
+{% extends 'blog/base-home.html' %}
 {% load staticfiles %}
 
 {% block content %}
+<div class="page_top_wrap page_top_title page_top_breadcrumbs">
+	<div class="content_wrap">
+		<div class="breadcrumbs">
+			<a class="breadcrumbs_item home" href="{% url 'index' %}">Início</a>
+			<span class="breadcrumbs_delimiter"></span>
+			<span class="breadcrumbs_item current">Blog Post</span>
+		</div>
+		<h1 class="page_title">Blog Post</h1>
+	</div>
+</div>
 
-								<article class="post_item post_item_single post">
+<div class="page_content_wrap wrap_custom">
+
+		<section class="content_wrap">
+			<div class="container">
+				<div class="row">
+
+						<article class="post_item post_item_single post">
 									<section class="">
-										<div class="post_thumb" data-image="{{ post.picture_url|default_if_none:'#' }}" data-title="{{ post.title }}">
-											<h2>{{ post.title }}</h2>
-											<a class="hover_icon hover_icon_view" href="{{ post.picture_url|default_if_none:'#' }}" title="{{ post.title }}">
-												<img class="wp-post-image" alt="{{ post.title }}" src="{{ post.picture_url|default_if_none:'#' }}" >
+										<div class="post_thumb" data-image="{{ post.imagem_url|default_if_none:'#' }}" data-title="{{ post.título }}">
+											<h2>{{ post.título }}</h2>
+											<a class="hover_icon hover_icon_view" href="{{ post.imagem_url|default_if_none:'#' }}" title="{{ post.título }}">
+												<img class="wp-post-image" alt="{{ post.título }}" src="{{ post.imagem_url|default_if_none:'#' }}" >
 											</a>
 										</div>
 									</section>
 									<div class="post_info">
 										<span class="post_info_item post_info_posted">
 											Postado em
-											<a href="#" class="post_info_date date updated" content="">{{ post.published_date }}</a>
+											<a href="#" class="post_info_date date updated" content="">{{ post.data_de_publicação }}</a>
 										</span>
 										<!-- <span class="post_info_item post_info_tags">
 											em
@@ -35,7 +51,7 @@
 									<section class="post_content">
 										<div class="sc_reviews alignright">
 										</div>
-										<p>{{ post.text|linebreaksbr}}</p>
+										<p>{{ post.texto|linebreaksbr}}</p>
 										<div class="post_info post_info_bottom">
 											<!-- <span class="post_info_item post_info_tags">
 												Tags:
@@ -50,7 +66,7 @@
 											</a>
 										</div> -->
 										<h6 class="post_author_title">Autor<span>
-											<a href="{% url 'member' %}" class="fn">{{ post.author }}</a>
+											<a href="{% url 'membro' %}" class="fn">{{ post.autor }}</a>
 										</span>
 										</h6>
 										<div class="post_author_info">
@@ -58,4 +74,9 @@
 									</section>
 								</article>
 
+				</div>
+			</div>
+		</section>
+
+</div>
 {% endblock %}

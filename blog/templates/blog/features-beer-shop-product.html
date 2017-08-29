@@ -8,7 +8,9 @@
 					<div class="breadcrumbs">
 						<a class="breadcrumbs_item home" href="{% url 'index' %}">Início</a>
 						<span class="breadcrumbs_delimiter"></span>
-						<span class="breadcrumbs_item current">Busca Cervejeira</span>
+						<a class="breadcrumbs_item home" href="{% url 'cervejas' %}">Busca Cervejeira</a>
+						<span class="breadcrumbs_delimiter"></span>
+						<span class="breadcrumbs_item current">{{ cerveja.nome }}</span>
 					</div>
 					<h1 class="page_title">Busca Cervejeira</h1>
 				</div>
@@ -45,11 +47,11 @@
 											<h1 class="product_title entry-title">{{ cerveja.nome }}</h1>
 											<div>
 												<p class="price">
-													<span class="amount">R&dollar;{{ cerveja.preço }}</span>
+													<span class="amount">R&dollar;{{ cerveja.preco }}</span>
 												</p>
 											</div>
 											<div>
-												<p>{{ cerveja.descrição }}</p>
+												<p>{{ cerveja.descricao }}</p>
 											</div>
 											<!-- <form class="cart" method="post" enctype='multipart/form-data'>
 												<div class="quantity">
@@ -74,20 +76,20 @@
 
 		                <div class="woocommerce-tabs sc_tabs">
                               <ul class="tabs" role="tablist">
-                                  <!-- <li class="description_tab">
-                                      <a href="#tab1" role="tab" data-toggle="tab">Descrição</a>
-                                  </li> -->
+                                  <li class="description_tab">
+                                      <a href="#tab1" role="tab" data-toggle="tab">Avaliação</a>
+                                  </li>
                                   <li class="reviews_tab">
-                                      <a href="#tab2" role="tab" data-toggle="tab">Avaliação</a>
+                                      <a href="#tab2" role="tab" data-toggle="tab">Notas</a>
                                   </li>
 
                               </ul>
-<!--
-                              <div class="panel" id="tab1">
-															 <h2>{{ beer.name }}</h2>
-															 <p>{{ beer.description }}</p>
 
-                              </div> -->
+                              <div class="panel" id="tab1">
+															 <h2>{{ cerveja.nome }}</h2>
+															 <p>{{ cerveja.descricao }}</p>
+
+                              </div>
 
                               <div class="panel" id="tab2">
 																				<div id="reviews">
@@ -99,7 +101,7 @@
 																								</div> -->
 																								<div class="sc_skills_item sc_skills_style_1">
 																									<div class="sc_skills_count color_2">
-																										<div class="sc_skills_total" data-start="0" data-stop="{{ cerveja.avaliação }}" data-step="1" data-max="10" data-speed="20" data-duration="1960" data-ed="/10"></div>
+																										<div class="sc_skills_total" data-start="0" data-stop="{{ cerveja.avaliacao }}" data-step="1" data-max="10" data-speed="20" data-duration="1960" data-ed="/10"></div>
 																									</div>
 																								</div>
 																								<!-- <div class="sc_skills_info">

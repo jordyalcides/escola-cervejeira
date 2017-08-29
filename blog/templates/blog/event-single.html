@@ -23,7 +23,9 @@
 					<div class="breadcrumbs">
 						<a class="breadcrumbs_item home" href="{% url 'index' %}">Início</a>
 						<span class="breadcrumbs_delimiter"></span>
-						<span class="breadcrumbs_item current">Cursos</span>
+						<a class="breadcrumbs_item home" href="{% url 'cursos' %}">Cursos</a>
+						<span class="breadcrumbs_delimiter"></span>
+						<span class="breadcrumbs_item current">{{ curso.nome }}</span>
 					</div>
 					<h1 class="page_title">Cursos Cervejeiros</h1>
 				</div>
@@ -58,8 +60,8 @@
 												<div class="tribe-events-schedule updated published tribe-clearfix">
 													<h3>
 														<span class="date-start dtstart">
-															{{ curso.data_de_início }}
-															<span class="value-title" title="{{ curso.data_de_início }}">
+															{{ curso.data_de_inicio }}
+															<span class="value-title" title="{{ curso.data_de_inicio }}">
 															</span>
 														</span>
 														<!-- -
@@ -89,7 +91,7 @@
 														<img src="{{ curso.imagem_url }}" alt="" title="{{ curso.nome }}"/>
 													</div>
 													<div class="tribe-events-single-event-description tribe-events-content entry-content description">
-														<p>{{ curso.descrição }}</p>
+														<p>{{ curso.descricao }}</p>
 													</div>
 													<!-- <div class="tribe-events-cal-links">
 														<a class="tribe-events-gcal tribe-events-button" href="#" title="Add to Google Calendar">+ Google Calendar</a>
@@ -101,15 +103,15 @@
 															<dl>
 																<dt> Começa:</dt>
 																<dd>
-																	<abbr class="tribe-events-abbr updated published dtstart" title="{{ curso.data_de_início }}"> {{ curso.data_de_início }} </abbr>
+																	<abbr class="tribe-events-abbr updated published dtstart" title="{{ curso.data_de_inicio }}"> {{ curso.data_de_inicio }} </abbr>
 																</dd>
 																<dt> Duração: </dt>
 																<dd>
-																	<abbr class="tribe-events-abbr dtend" title="{{ curso.duração }}"> {{ curso.duração }} Mêses</abbr>
+																	<abbr class="tribe-events-abbr dtend" title="{{ curso.duracao }}"> {{ curso.duracao }} Mêses</abbr>
 																</dd>
 																<dt>Preço:</dt>
 																<dd class="tribe-events-event-categories">
-																	<p>R&dollar; {{ curso.preço }}</a>
+																	<p>R&dollar; {{ curso.preco }}</a>
 																</dd>
 															</dl>
 														</div>
@@ -138,7 +140,7 @@
 																<dd class="location">
 																	<address class="tribe-events-address">
 																		<span class="adr">
-																			<span class="street-address">{{ curso.endereço }}</span>
+																			<span class="street-address">{{ curso.endereco }}</span>
 																			<span class="delimiter"><br></span>
 																			<span class="locality">{{ curso.cidade }}</span>
 																			<span class="delimiter"><br></span>

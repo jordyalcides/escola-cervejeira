@@ -7,7 +7,9 @@
 		<div class="breadcrumbs">
 			<a class="breadcrumbs_item home" href="{% url 'index' %}">Início</a>
 			<span class="breadcrumbs_delimiter"></span>
-			<span class="breadcrumbs_item current">Blog Post</span>
+			<a class="breadcrumbs_item home" href="{% url 'blog' %}">Blog</a>
+			<span class="breadcrumbs_delimiter"></span>
+			<span class="breadcrumbs_item current">{{ post.titulo }}</span>
 		</div>
 		<h1 class="page_title">Blog Post</h1>
 	</div>
@@ -21,17 +23,17 @@
 
 						<article class="post_item post_item_single post">
 									<section class="">
-										<div class="post_thumb" data-image="{{ post.imagem_url|default_if_none:'#' }}" data-title="{{ post.título }}">
-											<h2>{{ post.título }}</h2>
-											<a class="hover_icon hover_icon_view" href="{{ post.imagem_url|default_if_none:'#' }}" title="{{ post.título }}">
-												<img class="wp-post-image" alt="{{ post.título }}" src="{{ post.imagem_url|default_if_none:'#' }}" >
+										<div class="post_thumb" data-image="{{ post.imagem_url|default_if_none:'#' }}" data-title="{{ post.titulo }}">
+											<h2>{{ post.titulo }}</h2>
+											<a class="hover_icon hover_icon_view" href="{{ post.imagem_url|default_if_none:'#' }}" title="{{ post.titulo }}">
+												<img class="wp-post-image" alt="{{ post.titulo }}" src="{{ post.imagem_url|default_if_none:'#' }}" >
 											</a>
 										</div>
 									</section>
 									<div class="post_info">
 										<span class="post_info_item post_info_posted">
 											Postado em
-											<a href="#" class="post_info_date date updated" content="">{{ post.data_de_publicação }}</a>
+											<a href="#" class="post_info_date date updated" content="">{{ post.data_de_publicacao }}</a>
 										</span>
 										<!-- <span class="post_info_item post_info_tags">
 											em

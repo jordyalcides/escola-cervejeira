@@ -140,7 +140,7 @@
 														<a href="{% url 'curso' pk=curso.pk %}">{{ curso.nome }}</a>
 														</h4>
 														<div class="post_descr">
-															<p>{{ curso.descrição|slice:"100" }} (...)</p>
+															<p>{{ curso.descricao|slice:"100" }} (...)</p>
 														</div>
 														<div class="post_info">
 															<span class="post_info_item post_info_posted">
@@ -160,15 +160,15 @@
 											<div class="isotope_item isotope_item_classic isotope_item_classic_4 isotope_column_4">
 												<div class="post_item post_item_classic post_item_classic_4	post_format_standard">
 													<div class="post_featured">
-														<div class="" data-image="{{ post.imagem_url }}" data-title="{{ post.título }}">
+														<div class="" data-image="{{ post.imagem_url }}" data-title="{{ post.titulo }}">
 															<a class="hover_icon hover_icon_link" href="{% url 'post' pk=post.pk %}">
-																<img alt="{{ post.título }}" src="{{ post.imagem_url }}" class="img-post-index">
+																<img alt="{{ post.titulo }}" src="{{ post.imagem_url }}" class="img-post-index">
 															</a>
 														</div>
 													</div>
 													<div class="post_content isotope_item_content">
 														<h4 class="post_title">
-														<a href="{% url 'post' pk=post.pk %}">{{ post.título }}</a>
+														<a href="{% url 'post' pk=post.pk %}">{{ post.titulo }}</a>
 														</h4>
 														<div class="post_descr">
 															<p>{{ post.texto|slice:":100" }} (...)</p>

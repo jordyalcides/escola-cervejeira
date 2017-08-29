@@ -30,18 +30,3 @@ def cursos(request):
 def curso(request, pk):
     curso = get_object_or_404(Curso, pk=pk)
     return render(request, 'blog/event-single.html', {'curso': curso})
-
-def servicos(request):
-    return render(request, 'blog/features-services.html', {})
-
-def quem(request):
-    return render(request, 'blog/features-who.html', {})
-
-def equipe(request):
-    return render(request, 'blog/features-staff.html', {})
-
-def membro(request):
-    return render(request, 'blog/features-staff-member-profile.html', {})
-
-def galeria(request):
-    return render(request, 'blog/gallery-cobbles.html', {})

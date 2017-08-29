@@ -1,15 +1,14 @@
 from django.db import models
 from django.utils import timezone
 from django.conf import settings
-from django.core.validators import MinValueValidator, MaxValueValidator, MinLengthValidator
+from django.core.validators import MinValueValidator, MaxValueValidator, MinLengthValidator, RegexValidator
 from datetime import date
-
 
 
 class Post(models.Model):
     autor = models.ForeignKey('auth.User')
     titulo = models.CharField(max_length=200, verbose_name='título')
-    imagem = models.ImageField(upload_to = "post/")
+    imagem = models.ImageField(upload_to = "posts/")
     texto = models.TextField()
     date_de_criacao = models.DateTimeField(default=timezone.now, verbose_name='data de criação')
     data_de_publicacao = models.DateTimeField(blank=True, null=True, verbose_name='data de publicação')
@@ -51,16 +50,16 @@ class Cerveja(models.Model):
 
 
 class Curso(models.Model):
-    nome = models.CharField(max_length=200, validators=[MinLengthValidator(2)])
+    nome = models.CharField(max_length=200, validators=[RegexValidator(regex='^([A-Z][a-zA-Z]+\s*)+$', message='Digite um nome válido. Ex: Seu Nome De Exemplo ')])
     preco = models.DecimalField(max_digits=6, decimal_places=2, default=0, verbose_name='preço')
     local = models.CharField(max_length=100)
     endereco = models.CharField(max_length=200, verbose_name='endereço')
-    cep = models.CharField(max_length=9, validators=[MinLengthValidator(9)])
+    cep = models.CharField(max_length=9, validators=[ RegexValidator(regex='^\d{5}-\d{3}$', message='Digite um CEP válido. Ex: 99999-999') ], verbose_name='CEP')
     cidade = models.CharField(max_length=100)
     imagem = models.ImageField(upload_to = "cursos/")
     descricao = models.TextField(verbose_name='descrição')
     organizador = models.CharField(max_length=50)
-    email = models.CharField(max_length=200, default='contato@escolacervejeira.com.br')
+    email = models.EmailField(max_length=200)
     data_de_inicio = models.DateTimeField(default=timezone.now, verbose_name='data de início')
     duracao = models.IntegerField(default=0, verbose_name='duração')
     data_de_criacao = models.DateTimeField(default=timezone.now, verbose_name='data de criação')

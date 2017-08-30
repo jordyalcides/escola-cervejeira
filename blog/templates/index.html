@@ -403,21 +403,22 @@
 										<div class="sc_contact_form sc_contact_form_standard alignleft contact_form_1">
 											<h2 class="sc_contact_form_title">Entre em contato!</h2>
 											<p class="sc_contact_form_description">Preencha o formulário para entrar em contato conosco. Seu email não será divulgado.</p>
-										    <form class="contact_1" method="post" action="include/contact-form.php">
+										    <form  method="post" action="">{% csrf_token %}
 										        <div class="sc_contact_form_info">
 													<div class="sc_contact_form_item sc_contact_form_field label_over">
-										                <input type="text" name="name" id="contact_form_username" placeholder="Nome *">
+										                <input type="text" name="nome" id="contact_form_username" placeholder="Nome *">
 										            </div>
 										            <div class="sc_contact_form_item sc_contact_form_field label_over">
 										                <input type="text" name="email" id="contact_form_email" placeholder="Email *">
 										            </div>
 										        </div>
 										        <div class="message sc_contact_form_item sc_contact_form_message label_over">
-									                <textarea  id="contact_form_message" class="textAreaSize" name="message" placeholder="Mensagem *"></textarea>
+									                <textarea  id="contact_form_message" class="textAreaSize" name="mensagem" placeholder="Mensagem *"></textarea>
 										        </div>
 												<div class="sc_contact_form_item sc_contact_form_button">
 													<div class="squareButton sc_button_size sc_button_style_global global">
-														<button type="submit" name="contact_submit" class="contact_form_submit">ENVIAR</button>
+
+														<button type="submit" >ENVIAR</button>
 													</div>
 												</div>
 

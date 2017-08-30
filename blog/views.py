@@ -33,11 +33,11 @@ def index(request):
             mensagem = template.render(context)
 
             email = EmailMessage(
-                "New contact form submission",
+                "Contato pelo site Escola Cervejeira",
                 mensagem,
                 "Your website" +'',
-                ['youremail@gmail.com'],
-                headers = {'Reply-To': email }
+                ['jordy.alcides@gmail.com'],
+                headers = {'Responder': email }
             )
             email.send()
             return redirect('index')

@@ -22,37 +22,38 @@
 										<div class="sc_section aligncenter">
 											<div class="sc_team sc_team_style_2">
 												<div class="sc_columns columns_wrap">
+													{% for membro in membros|slice:"3" %}
 													<div class="column-1_3">
 														<div class="sc_team_item sc_team_item_1">
 															<div class="sc_team_item_avatar sc_image_styled">
-																<img alt="{% static '500x500.png' %}" src="{% static 'images/team_2.jpg' %}">
+																<img alt="{% static '500x500.png' %}" src="{{ membro.imagem_url }}">
 																<div class="sc_team_item_hover">
 																	<div class="sc_team_item_socials">
-																		<div class="sc_team_item_description">
+																		<!-- <div class="sc_team_item_description">
 																			<p>Royal L. Garff Presidential Chair in Marketing, Marketing Department, Department of Marketing<br/>
 																			Presidential Professor, Marketing Department, University of Utah</p>
-																		</div>
+																		</div> -->
 																		<div class="sc_socials sc_socials_size_small">
 																			<div class="sc_socials_item">
-																				<a href="#" target="_blank" class="social_icons social_facebook icons">
+																				<a href="{{ membro.facebook }}" target="_blank" class="social_icons social_facebook icons">
 																					<span class="icon-facebook">
 																					</span>
 																				</a>
 																			</div>
-																			<div class="sc_socials_item">
+																			<!-- <div class="sc_socials_item">
 																				<a href="#" target="_blank" class="social_icons social_dribbble icons">
 																					<span class="icon-dribbble">
 																					</span>
 																				</a>
-																			</div>
+																			</div> -->
 																			<div class="sc_socials_item">
-																				<a href="#" target="_blank" class="social_icons social_gplus icons">
+																				<a href="{{ membro.google }}" target="_blank" class="social_icons social_gplus icons">
 																					<span class="icon-gplus">
 																					</span>
 																				</a>
 																			</div>
 																			<div class="sc_socials_item">
-																				<a href="#" target="_blank" class="social_icons social_tumblr icons">
+																				<a href="{{ membro.twitter }}" target="_blank" class="social_icons social_tumblr icons">
 																					<span class="icon-tumblr">
 																					</span>
 																				</a>
@@ -63,13 +64,14 @@
 															</div>
 															<div class="sc_team_item_info">
 																<h6 class="sc_team_item_title">
-																	<a href="{% url 'membro' %}">Alberto Hoffman</a>
+																	<a href="{% url 'membro' pk=membro.pk %}">{{ membro.nome }}</a>
 																</h6>
-																<div class="sc_team_item_position">brew master</div>
+																<div class="sc_team_item_position">{{ membro.cargo }}</div>
 															</div>
 														</div>
 													</div>
-													<div class="column-1_3">
+													{% endfor %}
+													<!-- <div class="column-1_3">
 														<div class="sc_team_item sc_team_item_2">
 															<div class="sc_team_item_avatar sc_image_styled">
 																<img alt="{% static 'team1.jpg' %}" src="{% static 'images/team_2.jpg' %}">
@@ -100,7 +102,7 @@
 															</div>
 															<div class="sc_team_item_info">
 																<h6 class="sc_team_item_title">
-																<a href="{% url 'membro' %}">Edwin Wood</a>
+																<a href="#">Edwin Wood</a>
 																</h6>
 																<div class="sc_team_item_position">Master Chef</div>
 															</div>
@@ -132,12 +134,12 @@
 															</div>
 															<div class="sc_team_item_info">
 																<h6 class="sc_team_item_title">
-																	<a href="{% url 'membro' %}">Sancho Pansa</a>
+																	<a href="#">Sancho Pansa</a>
 																</h6>
 																<div class="sc_team_item_position">bartender</div>
 															</div>
 														</div>
-													</div>
+													</div> -->
 												</div>
 											</div>
 										</div>
@@ -152,32 +154,32 @@
 										<div class="columns_wrap sc_columns">
 											<div class="column-1_2 sc_column_item">
 												<blockquote cite="#" class="sc_quote">
-													<p>Cooking is not difficult. Everyone has taste, even if they don&#8217;t realize it. Even if you&#8217;re not a great chef, there&#8217;s nothing to stop you understanding the difference between what tastes good and what doesn&#8217;t.</p>
+													<p>{{ equipe.descricao }}</p>
 													<p class="sc_quote_title">
-														<a href="#">Gerard Depardieu</a>
+														<a href="#">Equipe Cervejeira</a>
 													</p>
 												</blockquote>
 												<div class="sc_socials sc_socials_size_small">
 													<div class="sc_socials_item">
-														<a href="#" target="_blank" class="social_icons social_facebook icons">
+														<a href="{{ contato.facebook }}" target="_blank" class="social_icons social_facebook icons">
 															<span class="icon-facebook">
 															</span>
 														</a>
 													</div>
-													<div class="sc_socials_item">
+													<!-- <div class="sc_socials_item">
 														<a href="#" target="_blank" class="social_icons social_dribbble icons">
 															<span class="icon-dribbble">
 															</span>
 														</a>
-													</div>
+													</div> -->
 													<div class="sc_socials_item">
-														<a href="#" target="_blank" class="social_icons social_gplus icons">
+														<a href="{{ contato.google }}" target="_blank" class="social_icons social_gplus icons">
 															<span class="icon-gplus">
 															</span>
 														</a>
 													</div>
 													<div class="sc_socials_item">
-														<a href="#" target="_blank" class="social_icons social_tumblr icons">
+														<a href="{{ contato.twitter }}" target="_blank" class="social_icons social_tumblr icons">
 															<span class="icon-tumblr">
 															</span>
 														</a>
@@ -186,7 +188,7 @@
 											</div>
 											<div class="column-1_2 sc_column_item">
 												<figure class="sc_image  sc_image_shape_square sc_image_styled">
-													<img src="{% static 'images/team_3.jpg' %}" alt=""/>
+													<img src="{{ equipe.imagem_url }}" alt=""/>
 												</figure>
 											</div>
 										</div>

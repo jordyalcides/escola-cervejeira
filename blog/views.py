@@ -1,11 +1,16 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 from .models import Post, Cerveja, Curso
+from paginas.models import Contato
+
+def base_home(request):
+    contato = Contato.objects.last()
+    return render(request, 'blog/base_home.html', {'contato': contato})
 
 def index(request):
     posts = Post.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
     curso = Curso.objects.last()
-    return render(request, 'index.html', {'posts': posts , 'curso': curso})
+    return render(request, 'index.html', {'posts': posts, 'curso': curso})
 
 def blog(request):
     posts = Post.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')

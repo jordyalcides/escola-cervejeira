@@ -25,8 +25,13 @@ class Contato(models.Model):
 
 class Equipe(models.Model):
     nome = models.CharField(max_length=10, unique=True, editable=False, default='Equipe')
-    descricao = models.TextField(verbose_name='descrição')
+    descricao = models.TextField(max_length=400, verbose_name='descrição')
     imagem = models.ImageField(upload_to = "equipe/")
+
+    @property
+    def imagem_url(self):
+        if self.imagem and hasattr(self.imagem, 'url'):
+            return self.imagem.url
 
     def publish(self):
         self.save()
@@ -41,6 +46,14 @@ class Membro(models.Model):
     cargo = models.CharField(max_length=100)
     imagem = models.ImageField(upload_to="membros/")
     descricao = models.TextField(verbose_name='descrição')
+    facebook = models.URLField(max_length=200, blank=True)
+    google = models.URLField(max_length=200, blank=True, verbose_name='Google Plus')
+    twitter = models.URLField(max_length=200, blank=True)
+
+    @property
+    def imagem_url(self):
+        if self.imagem and hasattr(self.imagem, 'url'):
+            return self.imagem.url
 
     def publish(self):
         self.save()

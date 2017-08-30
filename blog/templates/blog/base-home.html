@@ -107,7 +107,9 @@
 								<center>
 								<div class="sc_socials sc_socials_size_small">
 									<div class="sc_socials_item">
-										<a href="https://www.facebook.com/CervejeiraEscola/" target="_blank" class="social_icons social_facebook icons">
+										<!-- <a href="https://www.facebook.com/CervejeiraEscola/" target="_blank" class="social_icons social_facebook icons"> -->
+										<a href="{{ contato.facebook }}" target="_blank" class="social_icons social_facebook icons">
+
 											<span class="icon-facebook"> </span>
 										</a>
 									</div>
@@ -135,8 +137,11 @@
 							<div class="textwidget">
 								<div class="widget_contacts">
 									<span class="sc_icon icon-geolocalizator"></span>
-									R. Cuiabá, 160 - Jóquei Clube
-									Fortaleza - CE, 60510-055
+									<!-- R. Cuiabá, 160 - Jóquei Clube
+									Fortaleza - CE, 60510-055 -->
+									{{ contato.endereco }} - {{ contato.bairro }}
+									Fortaleza - CE, {{ contato.cep }}
+
 									<br/>
 									<span class="sc_icon icon-tablet"></span>
 									+55 85 98504-8232<br>

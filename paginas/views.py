@@ -7,10 +7,14 @@ def quem(request):
     return render(request, 'features-who.html', {'quem': quem})
 
 def equipe(request):
-    return render(request, 'features-staff.html', {})
+    contato = Contato.objects.last()
+    equipe = Equipe.objects.last()
+    membros = Membro.objects.all()
+    return render(request, 'features-staff.html', {'contato': contato, 'equipe': equipe, 'membros': membros})
 
-def membro(request):
-    return render(request, 'features-staff-member-profile.html', {})
+def membro(request, pk):
+    membro = get_object_or_404(Membro, pk=pk)
+    return render(request, 'features-staff-member-profile.html', {'membro': membro})
 
 def galeria(request):
     return render(request, 'blog/gallery-cobbles.html', {})

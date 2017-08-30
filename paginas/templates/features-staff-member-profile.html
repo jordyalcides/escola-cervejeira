@@ -20,26 +20,19 @@
 							<div class="row">
 								<article class="post_item post_featured_right team">
 									<section class="post_featured">
-										<div class="post_thumb" data-image="{% static 'images/500x500.png' %}" data-title="Alberto Hoffman">
-											<a class="hover_icon hover_icon_view" href="{% static 'images/team_2.jpg' %}" title="Alberto Hoffman">
-												<img alt="Alberto Hoffman" src="{% static 'images/team_2.jpg' %}">
+										<div class="post_thumb" data-image="{% static 'images/500x500.png' %}" data-title="{{ membro.nome }}">
+											<a class="hover_icon hover_icon_view" href="{{ membro.imagem_url }}" title="{{ membro.nome }}">
+												<img alt="{{ membro.nome }}" src="{{ membro.imagem_url }}">
 											</a>
 										</div>
 									</section>
 									<section class="post_content">
 										<div class="column-1_2">
 											<h3 class="sc_title">Biografia</h3>
-											<h4 class="sc_title link_color margin_bottom_mini">Alberto Hoffman</h4>
-											<p>Brewer of the Lucky Pint Brewery. Widely known for his exquisite personal style, his lectures on the history of beer and the art of brewing.<br/>
-											Author of the numerous articles on brewing and a many time winner of the biggest brewing contests. </p>
-											<p>Email John: <a href="mailto:info@example.com">info@example.com</a>
-											<br/>
-											Phone: +1(800)123-4566</p>
-											<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+											<h4 class="sc_title link_color margin_bottom_mini">{{ membro.nome }}</h4>
 										</div>
 										<div class="">
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-											<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+											<p>{{ membro.descricao }}</p>
 										</div>
 									</section>
 								</article>
@@ -47,14 +40,14 @@
 						</div>
 					</section>
 
-					<section class="content_wrap no_padding custom_columns">
+					<!-- <section class="content_wrap no_padding custom_columns">
 						<div class="container">
 							<div class="row">
 								<div class="columns_wrap sc_columns margin_top_mini">
 									<div class="column-1_2 sc_column_item">
 										<div class="sc_video_player">
 											<div class="sc_video_frame sc_video_play_button hover_icon hover_icon_play" data-width="780" data-height="422" data-video="&lt;iframe class=&quot;video_frame&quot; src=&quot;https://player.vimeo.com/video/78577161?autoplay=1&quot; width=&quot;780&quot; height=&quot;422&quot; frameborder=&quot;0&quot; webkitAllowFullScreen=&quot;webkitAllowFullScreen&quot; mozallowfullscreen=&quot;mozallowfullscreen&quot; allowFullScreen=&quot;allowFullScreen&quot;&gt;&lt;/iframe&gt;">
-												<img alt="" src="{% static 'images/Depositphotos_5022744_original.jpg' %}">
+												<img alt="" src="#">
 											</div>
 										</div>
 									</div>
@@ -96,9 +89,9 @@
 								</div>
 							</div>
 						</div>
-					</section>
+					</section> -->
 
-					<section class="content_wrap custom_columns no_padding">
+					<!-- <section class="content_wrap custom_columns no_padding">
 						<div class="container">
 							<div class="row">
 								<div class="columns_wrap sc_columns">
@@ -193,7 +186,7 @@
 								</div>
 							</div>
 						</div>
-					</section>
+					</section> -->
 			</div>
 
 {% endblock content %}

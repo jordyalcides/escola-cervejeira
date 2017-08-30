@@ -3,9 +3,6 @@ from django.utils import timezone
 from .models import Post, Cerveja, Curso
 from paginas.models import Contato
 
-def base_home(request):
-    contato = Contato.objects.last()
-    return render(request, 'blog/base_home.html', {'contato': contato})
 
 def index(request):
     posts = Post.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')

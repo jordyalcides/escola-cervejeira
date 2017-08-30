@@ -139,16 +139,18 @@
 									<span class="sc_icon icon-geolocalizator"></span>
 									<!-- R. Cuiabá, 160 - Jóquei Clube
 									Fortaleza - CE, 60510-055 -->
-									{{ contato.endereco }} - {{ contato.bairro }}
+									{{ contato.endereco }} - {{ contato.bairro }}<br>
 									Fortaleza - CE, {{ contato.cep }}
-
-									<br/>
+									<br>
 									<span class="sc_icon icon-tablet"></span>
-									+55 85 98504-8232<br>
-									85 99934-2980</br>
-									<br/>
+									<!-- +55 85 98504-8232<br>
+									85 99934-2980</br> -->
+									{{ contato.telefone }}<br>
+									{{ contato.telefone2 }}<br>
 									<span class="sc_icon icon-mail-3"></span>
-									contato@escolacervejeira.com.br
+									<!-- contato@escolacervejeira.com.br -->
+									{{ contato.email }}
+
 								</div>
 							</div>
 						</aside>

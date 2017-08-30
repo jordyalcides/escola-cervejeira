@@ -27,9 +27,9 @@ class Post(models.Model):
 
 
 class Cerveja(models.Model):
-    nome = models.CharField(max_length=200)
+    nome = models.CharField(max_length=100)
     preco = models.DecimalField(default=0, max_digits=5, decimal_places=2, verbose_name='preço')
-    categoria = models.CharField(max_length=200)
+    categoria = models.CharField(max_length=100)
     avaliacao = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)], verbose_name='avaliação')
     imagem = models.ImageField(upload_to = "cervejas/")
     descricao = models.TextField(max_length=1000, verbose_name='descrição')
@@ -50,7 +50,7 @@ class Cerveja(models.Model):
 
 
 class Curso(models.Model):
-    nome = models.CharField(max_length=200, validators=[RegexValidator(regex='^([A-Z][a-zA-Z]+\s*)+$', message='Digite um nome válido. Ex: Seu Nome De Exemplo ')])
+    nome = models.CharField(max_length=100, validators=[RegexValidator(regex='^([A-Z][a-zA-Z]+\s*)+$', message='Digite um nome válido. Ex: Seu Nome De Exemplo ')])
     preco = models.DecimalField(max_digits=6, decimal_places=2, default=0, verbose_name='preço')
     local = models.CharField(max_length=100)
     endereco = models.CharField(max_length=200, verbose_name='endereço')

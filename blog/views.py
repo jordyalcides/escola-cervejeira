@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 from .models import Post, Cerveja, Curso
 from paginas.models import Contato
+from paginas.models import Contato
 from .forms import FormContato
 from django.core.mail import EmailMessage
 from django.shortcuts import redirect
@@ -35,9 +36,9 @@ def index(request):
             email = EmailMessage(
                 "Contato pelo site Escola Cervejeira",
                 mensagem,
-                "Your website" +'',
-                ['jordy.alcides@gmail.com'],
-                headers = {'Responder': email }
+                "Escola Cervejeira"+'',
+                [Contato.objects.last().email],
+                headers = {'Responder': email}
             )
             email.send()
             return redirect('index')

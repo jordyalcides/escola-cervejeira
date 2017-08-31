@@ -1,9 +1,9 @@
 
-Contact Name:
+Nome:
 {{ nome }}
 
 Email:
 {{ email }}
 
-Content:
+Mensagem:
 {{ mensagem|safe|striptags }}

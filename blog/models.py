@@ -37,7 +37,7 @@ class Cerveja(models.Model):
     nota3 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
     nota4 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
     imagem = models.ImageField(upload_to = "cervejas/")
-    descricao = models.TextField(max_length=1000, verbose_name='descrição')
+    descricao = models.TextField(max_length=1000, verbose_name='descrição da cerveja')
     data_de_criacao = models.DateTimeField(default=timezone.now, verbose_name='data de criação')
     data_de_publicacao = models.DateTimeField(blank=True, null=True, verbose_name='data de publicação')
 

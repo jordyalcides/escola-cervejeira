@@ -4326,3 +4326,15 @@ img.wp-post-image {
 	display: block;
  	margin: 0 auto;
 }
+
+.map-responsive {
+    overflow: hidden;
+    position: relative;
+    height: 400px;
+    width: 100%;
+  }
+
+.col-sm-12 .col-md-6 {
+		margin-right: 15px !important;
+		margin-left: 15px !important;
+}

@@ -1,8 +1,9 @@
 from django.db import models
 from django.utils import timezone
 from django.conf import settings
-from django.core.validators import MinValueValidator, MaxValueValidator, MinLengthValidator, RegexValidator
+from django.core.validators import MinValueValidator, MaxValueValidator, RegexValidator
 from datetime import date
+from multiupload.fields import MultiFileField
 
 
 class Post(models.Model):

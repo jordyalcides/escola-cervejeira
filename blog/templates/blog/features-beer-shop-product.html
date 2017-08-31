@@ -82,34 +82,33 @@
                                   <li class="reviews_tab">
                                       <a href="#tab2" role="tab" data-toggle="tab">Notas</a>
                                   </li>
-
                               </ul>
 
                               <div class="panel" id="tab1">
-															 <h2>{{ cerveja.nome }}</h2>
-															 <p>{{ cerveja.descricao }}</p>
-
+																<div class="sc_line sc_line_style_solid"></div>
+																<h3 class="sc_title sc_title_regular">{{ cerveja.nome }}</h3>
+																<p>{{ cerveja.avaliacao }}</p>
                               </div>
 
                               <div class="panel" id="tab2">
 																				<div id="reviews">
-																					<!-- <div class="sc_line sc_line_style_solid"></div> -->
-																							<h3 class="sc_title sc_title_regular">Nota</h3>
+																					<div class="sc_line sc_line_style_solid"></div>
+																							<h3 class="sc_title sc_title_regular">Características</h3>
 																							<div class="sc_skills sc_skills_bar sc_skills_horizontal" data-type="bar" data-subtitle="Skills" data-dir="horizontal">
-																								<!-- <div class="sc_skills_info">
+																								<div class="sc_skills_info">
 																									<div class="sc_skills_label">Pilsner</div>
-																								</div> -->
+																								</div>
 																								<div class="sc_skills_item sc_skills_style_1">
-																									<div class="sc_skills_count color_2">
-																										<div class="sc_skills_total" data-start="0" data-stop="{{ cerveja.avaliacao }}" data-step="1" data-max="10" data-speed="20" data-duration="1960" data-ed="/10"></div>
+																									<div class="sc_skills_count color_1">
+																										<div class="sc_skills_total" data-start="0" data-stop="{{ cerveja.nota1 }}" data-step="1" data-max="10" data-speed="20" data-duration="1960" data-ed="/10">0%</div>
 																									</div>
 																								</div>
-																								<!-- <div class="sc_skills_info">
+																								<div class="sc_skills_info">
 																									<div class="sc_skills_label">Stouts</div>
 																								</div>
 																								<div class="sc_skills_item sc_skills_style_1">
 																									<div class="sc_skills_count color_2">
-																										<div class="sc_skills_total" data-start="0" data-stop="66" data-step="1" data-max="100" data-speed="27" data-duration="1782" data-ed="%">0%</div>
+																										<div class="sc_skills_total" data-start="0" data-stop="{{ cerveja.nota2 }}" data-step="1" data-max="10" data-speed="27" data-duration="1782" data-ed="/10">0%</div>
 																									</div>
 																								</div>
 																								<div class="sc_skills_info">
@@ -117,7 +116,7 @@
 																								</div>
 																								<div class="sc_skills_item sc_skills_style_1">
 																									<div class="sc_skills_count color_3">
-																										<div class="sc_skills_total" data-start="0" data-stop="87" data-step="1" data-max="100" data-speed="27" data-duration="2349" data-ed="%">0%</div>
+																										<div class="sc_skills_total" data-start="0" data-stop="{{ cerveja.nota3 }}" data-step="1" data-max="10" data-speed="27" data-duration="2349" data-ed="/10">0%</div>
 																									</div>
 																								</div>
 																								<div class="sc_skills_info">
@@ -125,9 +124,17 @@
 																								</div>
 																								<div class="sc_skills_item sc_skills_style_1">
 																									<div class="sc_skills_count color_4">
-																										<div class="sc_skills_total" data-start="0" data-stop="82" data-step="1" data-max="100" data-speed="32" data-duration="2624" data-ed="%">0%</div>
+																										<div class="sc_skills_total" data-start="0" data-stop="{{ cerveja.nota4 }}" data-step="1" data-max="10" data-speed="32" data-duration="2624" data-ed="/10">0%</div>
 																									</div>
-																								</div> -->
+																								</div>
+																								<div class="sc_skills_info">
+																									<div class="sc_skills_label">Média</div>
+																								</div>
+																								<div class="sc_skills_item sc_skills_style_1">
+																									<div class="sc_skills_count color_1">
+																										<div class="sc_skills_total" data-start="0" data-stop="{{ cerveja.media }}" data-step="1" data-max="100" data-speed="32" data-duration="2624" data-ed="%">0%</div>
+																									</div>
+																								</div>
 																							</div>
 																						<!-- <div id="comments">
 																								<h2>Reviews</h2>

@@ -31,11 +31,19 @@ class Cerveja(models.Model):
     nome = models.CharField(max_length=100)
     preco = models.DecimalField(default=0, max_digits=5, decimal_places=2, verbose_name='preço')
     categoria = models.CharField(max_length=100)
-    avaliacao = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)], verbose_name='avaliação')
+    avaliacao = models.TextField(verbose_name='avaliação')
+    nota1 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
+    nota2 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
+    nota3 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
+    nota4 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
     imagem = models.ImageField(upload_to = "cervejas/")
     descricao = models.TextField(max_length=1000, verbose_name='descrição')
     data_de_criacao = models.DateTimeField(default=timezone.now, verbose_name='data de criação')
     data_de_publicacao = models.DateTimeField(blank=True, null=True, verbose_name='data de publicação')
+
+    @property
+    def media(self):
+        return ((self.nota1 + self.nota2 + self.nota3 + self.nota4)/4)*10
 
     @property
     def imagem_url(self):

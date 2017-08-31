@@ -3,7 +3,6 @@ from django.utils import timezone
 from django.conf import settings
 from django.core.validators import MinValueValidator, MaxValueValidator, RegexValidator
 from datetime import date
-from multiupload.fields import MultiFileField
 
 
 class Post(models.Model):
@@ -27,6 +26,7 @@ class Post(models.Model):
         return self.titulo
 
 
+
 class Cerveja(models.Model):
     nome = models.CharField(max_length=100)
     preco = models.DecimalField(default=0, max_digits=5, decimal_places=2, verbose_name='preço')
@@ -48,6 +48,7 @@ class Cerveja(models.Model):
 
     def __str__(self):
         return self.nome
+
 
 
 class Curso(models.Model):

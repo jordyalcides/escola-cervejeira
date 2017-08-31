@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
-from .models import Contato, Equipe, Membro, Quem
+from .models import Contato, Equipe, Membro, Quem, Foto
 
 def quem(request):
     quem = Quem.objects.last()
@@ -17,4 +17,5 @@ def membro(request, pk):
     return render(request, 'features-staff-member-profile.html', {'membro': membro})
 
 def galeria(request):
-    return render(request, 'blog/gallery-cobbles.html', {})
+    fotos = Foto.objects.all()
+    return render(request, 'gallery-cobbles.html', {'fotos': fotos})

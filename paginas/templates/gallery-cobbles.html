@@ -16,7 +16,25 @@
 										<article class="myportfolio-container flat-light" id="unstyled">
 											<div id="esg-grid-2-1" class="esg-grid">
 												<ul>
+													{% for foto in fotos %}
 													<li class="filterall eg-tavern-skin-wrapper" data-cobblesw="1" data-cobblesh="1">
+														<div class="esg-media-cover-wrapper">
+															<div class="esg-entry-media">
+																<img src="{{ foto.imagem_url }}" alt="">
+															</div>
+															<div class="esg-entry-cover">
+																<div class="esg-overlay esg-zoomback eg-tavern-skin-container" data-delay="0">
+																</div>
+																<div class="esg-center eg-tavern-skin-element-1-a esg-zoomfront" data-delay="0.1">
+																	<a class="eg-tavern-skin-element-1 esgbox" href="{{ foto.imagem_url }}" title="{{ foto.nome }} - {{ foto.data }}">
+																		<i class="eg-icon-search"></i>
+																	</a>
+																</div>
+															</div>
+														</div>
+													</li>
+													{% endfor %}
+													<!-- <li class="filterall eg-tavern-skin-wrapper" data-cobblesw="1" data-cobblesh="1">
 														<div class="esg-media-cover-wrapper">
 															<div class="esg-entry-media">
 																<img src="{% static 'images/Depositphotos_49811149_original.jpg' %}" alt="">
@@ -31,8 +49,8 @@
 																</div>
 															</div>
 														</div>
-													</li>
-													<li class="filterall eg-tavern-skin-wrapper" data-cobblesw="1" data-cobblesh="1">
+													</li> -->
+													<!-- <li class="filterall eg-tavern-skin-wrapper" data-cobblesw="1" data-cobblesh="1">
 														<div class="esg-media-cover-wrapper">
 															<div class="esg-entry-media">
 																<img src="{% static 'images/Depositphotos_57986203_original.jpg' %}" alt="">
@@ -735,7 +753,7 @@
 																</div>
 															</div>
 														</div>
-													</li>
+													</li> -->
 												</ul>
 												<article class="esg-filters esg-multiplefilters margin_top_middle">
 													<div class="esg-pagination  esg-fgc-2"> </div>

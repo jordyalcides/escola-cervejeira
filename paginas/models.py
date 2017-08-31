@@ -44,7 +44,7 @@ class Equipe(models.Model):
 
 
 class Membro(models.Model):
-    nome = models.CharField(max_length=100)
+    nome = models.CharField(max_length=100, validators=[RegexValidator(regex='^(\w+\s?)+$', message='Utilize somente letras, espaços e números')])
     cargo = models.CharField(max_length=100)
     imagem = models.ImageField(upload_to="membros/")
     descricao = models.TextField(verbose_name='descrição')

@@ -107,7 +107,7 @@
 																</dd>
 																<dt> Duração: </dt>
 																<dd>
-																	<abbr class="tribe-events-abbr dtend" title="{{ curso.duracao }}"> {{ curso.duracao }} Mêses</abbr>
+																	<abbr class="tribe-events-abbr dtend" title="{{ curso.duracao }}"> {{ curso.duracao }} </abbr>
 																</dd>
 																<dt>Preço:</dt>
 																<dd class="tribe-events-event-categories">
@@ -121,10 +121,16 @@
 															<dl>
 																<dt>Nome:</dt>
 																<dd class="fn org">{{ curso.organizador }}</dd>
+																{% if curso.email %}
 																<dt> Email: </dt>
 																<dd class="email">
 																	<a href="mailto:{{ curso.email }}">{{ curso.email }}</a>
 																</dd>
+																{% endif %}
+																{% if curso.telefone %}
+																<dt> Telefone: </dt>
+																<dd class="telefone">{{ curso.telefone }}</dd>
+																{% endif %}
 																<!-- <dt> Website: </dt>
 																<dd class="url">
 																	<a href="http://www.example.com" target="self">http://www.example.com</a>

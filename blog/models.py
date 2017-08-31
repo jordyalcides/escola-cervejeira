@@ -60,7 +60,7 @@ class Cerveja(models.Model):
 
 
 class Curso(models.Model):
-    nome = models.CharField(max_length=100, validators=[RegexValidator(regex='^([A-Z][a-zA-Z]+\s*)+$', message='Digite um nome válido. Ex: Seu Nome De Exemplo ')])
+    nome = models.CharField(max_length=100, validators=[RegexValidator(regex='^(\w+\s?)+$', message='Utilize somente letras, espaços e números')])
     preco = models.DecimalField(max_digits=6, decimal_places=2, default=0, verbose_name='preço')
     local = models.CharField(max_length=100)
     endereco = models.CharField(max_length=200, verbose_name='endereço')
@@ -69,7 +69,7 @@ class Curso(models.Model):
     cidade = models.CharField(max_length=100)
     imagem = models.ImageField(upload_to = "cursos/")
     descricao = models.TextField(verbose_name='descrição')
-    organizador = models.CharField(max_length=50)
+    organizador = models.CharField(max_length=100, validators=[RegexValidator(regex='^(\w+\s?)+$', message='Utilize somente letras, espaços e números')])
     email = models.EmailField(blank=True, max_length=200)
     telefone = models.CharField(blank=True, max_length=13, validators=[ RegexValidator(regex='^\d{2}\s\d{5}-\d{4}$', message='Informe um telefone válido. Ex: 99 99999-9999') ])
     data_de_inicio = models.DateTimeField(default=timezone.now, verbose_name='data de início')

@@ -85,7 +85,7 @@ class Quem(models.Model):
 
 class Foto(models.Model):
     nome = models.CharField(max_length=50)
-    imagem = models.ImageField(upload_to = 'galeria/')
+    imagem = models.ImageField(upload_to = 'galeria/%Y/%m/%d/')
     data = models.DateField(default=timezone.now)
 
     @property

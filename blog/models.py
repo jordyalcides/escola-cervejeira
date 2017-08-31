@@ -10,7 +10,7 @@ class Post(models.Model):
     titulo = models.CharField(max_length=200, verbose_name='título')
     imagem = models.ImageField(upload_to = "posts/")
     texto = models.TextField()
-    date_de_criacao = models.DateTimeField(default=timezone.now, verbose_name='data de criação')
+    date_de_criacao = models.DateTimeField(editable=False, default=timezone.now, verbose_name='data de criação')
     data_de_publicacao = models.DateTimeField(blank=True, null=True, verbose_name='data de publicação')
 
     @property
@@ -38,7 +38,7 @@ class Cerveja(models.Model):
     nota4 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
     imagem = models.ImageField(upload_to = "cervejas/")
     descricao = models.TextField(max_length=1000, verbose_name='descrição da cerveja')
-    data_de_criacao = models.DateTimeField(default=timezone.now, verbose_name='data de criação')
+    data_de_criacao = models.DateTimeField(editable=False, default=timezone.now, verbose_name='data de criação')
     data_de_publicacao = models.DateTimeField(blank=True, null=True, verbose_name='data de publicação')
 
     @property
@@ -64,15 +64,17 @@ class Curso(models.Model):
     preco = models.DecimalField(max_digits=6, decimal_places=2, default=0, verbose_name='preço')
     local = models.CharField(max_length=100)
     endereco = models.CharField(max_length=200, verbose_name='endereço')
+    bairro = models.CharField(max_length=100)
     cep = models.CharField(max_length=9, validators=[ RegexValidator(regex='^\d{5}-\d{3}$', message='Digite um CEP válido. Ex: 99999-999') ], verbose_name='CEP')
     cidade = models.CharField(max_length=100)
     imagem = models.ImageField(upload_to = "cursos/")
     descricao = models.TextField(verbose_name='descrição')
     organizador = models.CharField(max_length=50)
-    email = models.EmailField(max_length=200)
+    email = models.EmailField(blank=True, max_length=200)
+    telefone = models.CharField(blank=True, max_length=13, validators=[ RegexValidator(regex='^\d{2}\s\d{5}-\d{4}$', message='Informe um telefone válido. Ex: 99 99999-9999') ])
     data_de_inicio = models.DateTimeField(default=timezone.now, verbose_name='data de início')
-    duracao = models.IntegerField(default=0, verbose_name='duração')
-    data_de_criacao = models.DateTimeField(default=timezone.now, verbose_name='data de criação')
+    duracao = models.CharField(max_length=100, verbose_name='duração')
+    data_de_criacao = models.DateTimeField(editable=False, default=timezone.now, verbose_name='data de criação')
     data_de_publicacao = models.DateTimeField(blank=True, null=True, verbose_name='data de publicação')
 
     @property

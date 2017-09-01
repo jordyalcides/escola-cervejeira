@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'paginas',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -138,3 +140,69 @@ EMAIL_HOST_USER = 'escolacervejeira.noreply@gmail.com'
 EMAIL_HOST_PASSWORD = 'noreplycerveja00'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
+
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+
+CKEDITOR_CONFIGS = {
+    'awesome_ckeditor': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline', '-', 'Subscript', 'Superscript'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source'],
+            '/',
+            {'name': 'insert',
+             'items': ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar']},
+            '/',
+            {'name': 'styles', 'items': ['Styles', 'Format', 'Font', 'FontSize']},
+
+        ],
+        # 'toolbar_YourCustomToolbarConfig': [
+        #     {'name': 'document', 'items': ['Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates']},
+        #     {'name': 'clipboard', 'items': ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']},
+        #     {'name': 'editing', 'items': ['Find', 'Replace', '-', 'SelectAll']},
+        #     '/',
+        #     {'name': 'basicstyles',
+        #      'items': ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat']},
+        #     {'name': 'paragraph',
+        #      'items': ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-',
+        #                'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl',
+        #                'Language']},
+        #     {'name': 'links', 'items': ['Link', 'Unlink', 'Anchor']},
+        #     {'name': 'insert',
+        #      'items': ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe']},
+        #     '/',
+        #     {'name': 'styles', 'items': ['Styles', 'Format', 'Font', 'FontSize']},
+        #     {'name': 'colors', 'items': ['TextColor', 'BGColor']},
+        #     {'name': 'tools', 'items': ['Maximize', 'ShowBlocks']},
+        #     {'name': 'about', 'items': ['About']},
+        #     '/',  # put this to force next toolbar on new line
+        #     {'name': 'yourcustomtools', 'items': [
+        #         # put the name of your editor.ui.addButton here
+        #         'Preview',
+        #         'Maximize',
+
+        #     ]},
+        # ],
+         'extraPlugins': ','.join([
+            'uploadimage', # the upload image feature
+            # your extra plugins here
+            'div',
+            'autolink',
+            'autoembed',
+            'embedsemantic',
+            'autogrow',
+            # 'devtools',
+            'widget',
+            'lineutils',
+            'clipboard',
+            'dialog',
+            'dialogui',
+            'elementspath'
+        ]),
+    },
+}

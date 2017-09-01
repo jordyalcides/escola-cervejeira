@@ -66,7 +66,6 @@
 				</div>
 			</section>
 			<section id="mainslider_2">
-			<br><br><br>
 			<div class="sc_section">
 				<h1 class="sc_title aligncenter styling1 margin_bottom_small"></h1>
 			</div>
@@ -116,7 +115,6 @@
 </section>
 
 	<link rel='stylesheet' href="{% static 'js/custom/core.messages/core.messages.css' %}" type='text/css' media='all'/>
-					<br><br><br>
 					<section id="page-blog" class="content_wrap isotope_section">
 						<div class="container">
 							<div class="row">
@@ -171,7 +169,7 @@
 														<a href="{% url 'post' pk=post.pk %}">{{ post.titulo }}</a>
 														</h4>
 														<div class="post_descr">
-															<p>{{ post.texto|slice:":100" }} (...)</p>
+															<p>{{ post.texto|striptags|safe|slice:":100" }} (...)</p>
 														</div>
 														<div class="post_info">
 															<span class="post_info_item post_info_posted">
@@ -304,7 +302,6 @@
 						</div>
 					</section>
 					<section id="page-busca" class="block_bg">
-						<br><br><br>
 						<div class="container">
 							<div class="row">
 								<div class="sc_section aligncenter">
@@ -382,7 +379,6 @@
 					</section-->
 
 					<section id="page-contato" class="bg_image_10 bg_tint_light">
-						<br><br><br><br><br>
 						<div class="sc_content content_wrap">
 							<div class="sc_section aligncenter styling1">
 								<h1 class="sc_contact_form_title styling1">Nosso local</h1>
@@ -397,19 +393,18 @@
 					        </div>
 					      </div>
 					</div>
-					<br><br><br>
 					<div class="container">
 						<div class="row">
 							<div class="content_wrap">
 								<div class="columns_wrap">
-									<div class="column-1_2 sc_column_item">
-										<figure class="sc_image  sc_image_shape_square sc_image_styled">
+									<div class="column-1_2 sc_column_item hidden-sm hidden-xs">
+										<figure class="hidden-sm hidden-xs sc_image  sc_image_shape_square sc_image_styled">
 											<img src="{% static 'images/contact.jpg' %}" alt=""/>
 										</figure>
 									</div>
 									<div class="column-1_2 sc_column_item">
 										<div class="sc_contact_form sc_contact_form_standard alignleft contact_form_1">
-											<h2 class="sc_contact_form_title">Entre em contato!</h2>
+											<h2 class="">Entre em contato!</h2>
 											<p class="sc_contact_form_description">Preencha o formulário para entrar em contato conosco. Seu email não será divulgado.</p>
 										    <form  method="post" action="">{% csrf_token %}
 										        <div class="sc_contact_form_info">

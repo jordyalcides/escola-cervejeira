@@ -1,4 +1,4 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 from . import views
 
 urlpatterns = [
@@ -9,5 +9,6 @@ urlpatterns = [
     url(r'^cerveja/(?P<pk>\d+)/$', views.cerveja, name='cerveja'),
     url(r'^cursos$', views.cursos, name='cursos'),
     url(r'^curso/(?P<pk>\d+)/$', views.curso, name='curso'),
+	url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 
 ]

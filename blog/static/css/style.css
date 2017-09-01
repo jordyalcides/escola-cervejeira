@@ -745,7 +745,8 @@ section.contact_form_section  > .container, section.contact_form_section > .cont
 	padding-top: 0;
 }
 
-.row {}
+.row {
+}
 
 .columns_wrap {
   margin-left: 0px;		/* -25px; */
@@ -4326,15 +4327,20 @@ img.wp-post-image {
 	display: block;
  	margin: 0 auto;
 }
-
+/* ========== CUSTOM ========== */
 .map-responsive {
     overflow: hidden;
     position: relative;
-    height: 400px;
+    height: 600px;
     width: 100%;
   }
 
 .col-sm-12 .col-md-6 {
-		margin-right: 15px !important;
-		margin-left: 15px !important;
+	margin-right: 15px !important;
+	margin-left: 15px !important;
+}
+
+#page-contato .row {
+	margin-right: 0 !important;
+	margin-left: 0 !important;
 }

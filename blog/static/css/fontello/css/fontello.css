@@ -18,42 +18,42 @@
   }
 }
 */
- 
+
  [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
   speak: none;
- 
+
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
   margin-right: .2em;
   text-align: center;
   /* opacity: .8; */
- 
+
   /* For safety - reset parent styles, that can break glyph codes*/
   font-variant: normal;
   text-transform: none;
- 
+
   /* fix buttons height, for twitter bootstrap */
   line-height: 1em;
- 
+
   /* Animation center compensation - margins should be symmetric */
   /* remove if not needed */
   margin-left: .2em;
- 
+
   /* you can be more comfortable with increased icons size */
   /* font-size: 120%; */
- 
+
   /* Font smoothing. That was taken from TWBS */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- 
+
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
- 
+
 .icon-users-2:before { content: '\e800'; } /* '' */
 .icon-agenda-2:before { content: '\e801'; } /* '' */
 .icon-chat-2:before { content: '\e802'; } /* '' */
@@ -176,11 +176,12 @@
 .icon-github:before { content: '\e877'; } /* '' */
 .icon-gittip:before { content: '\e878'; } /* '' */
 .icon-google:before { content: '\e879'; } /* '' */
-.icon-gplus:before { content: '\e87a'; } /* '' */
+/* ALTERADO O GOOGLE PLUS POR INSTAGRAM */
+.icon-instagramm:before { content: '\e87a'; } /* '' */
 .icon-gwallet:before { content: '\e87b'; } /* '' */
 .icon-hacker-news:before { content: '\e87c'; } /* '' */
 .icon-html5:before { content: '\e87d'; } /* '' */
-.icon-instagramm:before { content: '\e87e'; } /* '' */
+.icon-gplus:before { content: '\e87e'; } /* '' */
 .icon-ioxhost:before { content: '\e87f'; } /* '' */
 .icon-joomla:before { content: '\e880'; } /* '' */
 .icon-jsfiddle:before { content: '\e881'; } /* '' */

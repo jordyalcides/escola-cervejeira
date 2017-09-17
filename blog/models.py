@@ -1,3 +1,4 @@
+#coding:utf-8
 from django.db import models
 from django.utils import timezone
 from django.conf import settings
@@ -31,9 +32,10 @@ class Post(models.Model):
 
 class Cerveja(models.Model):
     nome = models.CharField(max_length=100)
+    familia = models.CharField(max_length=100, verbose_name="família")
     preco = models.DecimalField(default=0, max_digits=5, decimal_places=2, verbose_name='preço')
     categoria = models.CharField(max_length=100)
-    avaliacao = models.TextField(verbose_name='avaliação')
+    avaliacao = models.TextField(verbose_name='avaliação', blank=True, null=True)
     nota1 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
     nota2 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
     nota3 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])

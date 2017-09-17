@@ -4344,3 +4344,7 @@ img.wp-post-image {
 	margin-right: 0 !important;
 	margin-left: 0 !important;
 }
+
+p {
+	font-size: 16px;
+}

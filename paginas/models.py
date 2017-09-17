@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 from django.utils import timezone
 from django.conf import settings
@@ -14,7 +15,7 @@ class Contato(models.Model):
     telefone = models.CharField(max_length=13, validators=[ RegexValidator(regex='^\d{2}\s\d{5}-\d{4}$', message='Informe um telefone válido. Ex: 99 99999-9999') ])
     telefone2 = models.CharField(max_length=13, validators=[ RegexValidator(regex='^\d{2}\s\d{5}-\d{4}$', message='Informe um telefone válido. Ex: 99 99999-9999') ], blank=True, verbose_name='telefone 2')
     facebook = models.URLField(max_length=200, blank=True)
-    google = models.URLField(max_length=200, blank=True, verbose_name='Google Plus')
+    instagram = models.URLField(max_length=200, blank=True, verbose_name='Instagram')
     twitter = models.URLField(max_length=200, blank=True)
 
     def publish(self):
@@ -49,7 +50,7 @@ class Membro(models.Model):
     imagem = models.ImageField(upload_to="membros/")
     descricao = models.TextField(verbose_name='descrição')
     facebook = models.URLField(max_length=200, blank=True)
-    google = models.URLField(max_length=200, blank=True, verbose_name='Google Plus')
+    instagram = models.URLField(max_length=200, blank=True, verbose_name='Instagram')
     twitter = models.URLField(max_length=200, blank=True)
 
     @property

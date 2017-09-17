@@ -47,11 +47,11 @@
 											<h1 class="product_title entry-title">{{ cerveja.nome }}</h1>
 											<div>
 												<p class="price">
-													<span class="amount">R&dollar;{{ cerveja.preco }}</span>
+													<span class="amount">Família: {{ cerveja.familia }}</span>
 												</p>
 											</div>
 											<div>
-												<p>{{ cerveja.descricao }}</p>
+												<p class="text-justify">{{ cerveja.descricao }}</p>
 											</div>
 											<!-- <form class="cart" method="post" enctype='multipart/form-data'>
 												<div class="quantity">
@@ -76,19 +76,10 @@
 
 		                <div class="woocommerce-tabs sc_tabs">
                               <ul class="tabs" role="tablist">
-                                  <li class="description_tab">
-                                      <a href="#tab1" role="tab" data-toggle="tab">Avaliação</a>
-                                  </li>
                                   <li class="reviews_tab">
                                       <a href="#tab2" role="tab" data-toggle="tab">Notas</a>
                                   </li>
                               </ul>
-
-                              <div class="panel" id="tab1">
-																<div class="sc_line sc_line_style_solid"></div>
-																<h3 class="sc_title sc_title_regular">{{ cerveja.nome }}</h3>
-																<p>{{ cerveja.avaliacao }}</p>
-                              </div>
 
                               <div class="panel" id="tab2">
 																				<div id="reviews">

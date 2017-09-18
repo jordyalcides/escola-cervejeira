@@ -4383,3 +4383,8 @@ p {
 	text-shadow: black 0.1em 0.1em 0.2em;
 	color: #ded9cd;
 }
+
+
+.subtitle {
+	/*font-family: 'Ubuntu', sans-serif;	*/
+}

@@ -7,9 +7,9 @@
 					<div class="breadcrumbs">
 						<a class="breadcrumbs_item home" href="{% url 'index' %}">Início</a>
 						<span class="breadcrumbs_delimiter"></span>
-						<span class="breadcrumbs_item current">Eventos</span>
+						<span class="breadcrumbs_item current">Cursos</span>
 					</div>
-					<h1 class="page_title">Eventos</h1>
+					<h1 class="page_title">Cursos</h1>
 				</div>
 			</div>
 
@@ -23,21 +23,21 @@
 										<a href="{url 'index'}">Início</a>&nbsp;&#47;&nbsp;Beer Shop
 									</nav> -->
 
-									{% for evento in eventos %}
+									{% for curso in cursos %}
 									<ul class="products">
 										<li class="product has-post-thumbnail column-1_3">
-											<a href="{% url 'evento' pk=evento.pk %}"></a>
+											<a href="{% url 'curso' pk=curso.pk %}"></a>
 											<div class="post_item_wrap">
 												<div class="post_featured">
 													<div class="post_thumb">
-														<a class="hover_icon hover_icon_link" href="{% url 'evento' pk=evento.pk %}">
-															<img src="{{ evento.imagem_url }}" class="attachment-shop_catalog" alt="{{ evento.nome }}"/>
+														<a class="hover_icon hover_icon_link" href="{% url 'curso' pk=curso.pk %}">
+															<img src="{{ curso.imagem_url }}" class="attachment-shop_catalog" alt="{{ curso.nome }}"/>
 														</a>
 													</div>
 												</div>
 												<div class="post_content">
 													<h2>
-														<a href="{% url 'evento' pk=evento.pk %}">{{ evento.nome }}</a>
+														<a href="{% url 'curso' pk=curso.pk %}">{{ curso.nome }}</a>
 													</h2>
 												</div>
 											</div>

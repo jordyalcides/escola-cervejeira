@@ -4,6 +4,9 @@ install:
 migrate:
 	python manage.py migrate
 
+migrations:
+	python manage.py makemigrations
+
 wipe_db:
 	rm -rf db.sqlite3
 
@@ -12,4 +15,3 @@ serve:
 
 clean:
 	find . -type f -name '*.pyc' -delete
-

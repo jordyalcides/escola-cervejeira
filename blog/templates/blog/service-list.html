@@ -1,0 +1,92 @@
+{% extends 'blog/base-home.html' %}
+{% load staticfiles %}
+
+{% block content %}
+			<div class="page_top_wrap page_top_title page_top_breadcrumbs">
+				<div class="content_wrap">
+					<div class="breadcrumbs">
+						<a class="breadcrumbs_item home" href="{% url 'index' %}">Início</a>
+						<span class="breadcrumbs_delimiter"></span>
+						<span class="breadcrumbs_item current">Serviços</span>
+					</div>
+					<h1 class="page_title">Serviços</h1>
+				</div>
+			</div>
+
+			<div class="page_content_wrap wrap_custom" >
+				<section class="content_wrap">
+					<div class="container">
+						<div class="row">
+							<div class="content">
+								<div class="list_products shop_mode_thumbs">
+									<!-- <nav class="woocommerce-breadcrumb">
+										<a href="{url 'index'}">Início</a>&nbsp;&#47;&nbsp;Beer Shop
+									</nav> -->
+
+									<ul class="products">
+										<div class="row">
+											<div class="col-xs-6 col-sm-6 col-md-4">
+												<a href="{% url 'cursos' %}"></a>
+												<div class="post_item_wrap">
+													<div class="post_featured">
+														<div class="post_thumb">
+														<a class="hover_icon hover_icon_link" href="{% url 'cursos' %}">
+															<img src="{% static 'images/Depositphotos_56349665_original.jpg' %}" class="attachment-shop_catalog" alt="" />
+														</a>
+														</div>
+													</div>
+													<div class="post_content">
+														<h2>
+															<a href="{% url 'cursos' %}">Cursos</a>
+														</h2>
+													</div>
+												</div>
+											</div>
+
+											<div class="col-xs-6 col-sm-6 col-md-4">
+												<a href="{% url 'eventos' %}"></a>
+												<div class="post_item_wrap">
+													<div class="post_featured">
+														<div class="post_thumb">
+														<a class="hover_icon hover_icon_link" href="{% url 'eventos' %}">
+															<img src="{% static 'images/Depositphotos_5022744_original.jpg' %}" class="attachment-shop_catalog" alt="" />
+														</a>
+														</div>
+													</div>
+													<div class="post_content">
+														<h2>
+															<a href="{% url 'eventos' %}">Eventos</a>
+														</h2>
+													</div>
+												</div>
+											</div>
+
+											<div class="col-xs-6 col-sm-6 col-md-4">
+												<a href="{% url 'consultoria' %}"></a>
+												<div class="post_item_wrap">
+													<div class="post_featured">
+														<div class="post_thumb">
+														<a class="hover_icon hover_icon_link" href="{% url 'consultoria' %}">
+															<img src="{% static 'images/kaboompics.com_Water-with-lemon-in-glass.jpg' %}" class="attachment-shop_catalog" alt="" />
+														</a>
+														</div>
+													</div>
+													<div class="post_content">
+														<h2>
+															<a href="{% url 'consultoria' %}">Consultoria</a>
+														</h2>
+													</div>
+												</div>
+											</div>
+										</div>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</section>
+
+			</div>
+
+{% endblock content %}

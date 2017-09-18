@@ -1,7 +1,7 @@
 #coding:utf-8
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
-from .models import Post, Cerveja, Curso
+from .models import Post, Cerveja, Curso, Evento, Consultoria
 from paginas.models import Contato
 from .forms import FormContato
 from django.core.mail import EmailMessage
@@ -13,6 +13,7 @@ from django.template.loader import get_template
 def index(request):
     posts = Post.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
     curso = Curso.objects.last()
+    evento = Evento.objects.last()
 
     # Formulário de Contato
     form_class = FormContato
@@ -43,7 +44,7 @@ def index(request):
             email.send()
             return redirect('index')
 
-    return render(request, 'index.html', {'posts': posts, 'curso': curso, 'form': form_class})
+    return render(request, 'index.html', {'posts': posts, 'curso': curso, 'evento': evento, 'form': form_class})
 
 def blog(request):
     posts = Post.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
@@ -61,10 +62,24 @@ def cerveja(request, pk):
     cerveja = get_object_or_404(Cerveja, pk=pk)
     return render(request, 'blog/features-beer-shop-product.html', {'cerveja': cerveja})
 
+def servicos(request):
+    return render(request, 'blog/service-list.html')
+
 def cursos(request):
-    cursos = Curso.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('nome')
-    return render(request, 'blog/event-list.html', {'cursos': cursos})
+    cursos = Curso.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
+    return render(request, 'blog/course-list.html', {'cursos': cursos})
 
 def curso(request, pk):
     curso = get_object_or_404(Curso, pk=pk)
-    return render(request, 'blog/event-single.html', {'curso': curso})
+    return render(request, 'blog/course-single.html', {'curso': curso})
+
+def eventos(request):
+    eventos = Evento.objects.all()
+    return render(request, 'blog/event-list.html', {'eventos': eventos})
+
+def evento(request, pk):
+    evento = get_object_or_404(Evento, pk=pk)
+    return render(request, 'blog/event-single.html', {'evento': evento})
+
+def consultoria(request):
+    return render(request, 'blog/consult.html')

@@ -125,6 +125,7 @@
 				<div class="sc_blogger layout_classic_4 template_masonry sc_blogger_horizontal">
 					<div class="isotope_wrap" data-columns="4">
 
+						{% if curso != None %}
 						<div class="isotope_item isotope_item_classic isotope_item_classic_4 isotope_column_4">
 							<div class="post_item post_item_classic post_item_classic_4 post_format_standard even last">
 								<div class="post_featured">
@@ -155,7 +156,9 @@
 								</div>
 							</div>
 						</div>
+						{% endif %}
 
+						{% if evento != None %}
 						<div class="isotope_item isotope_item_classic isotope_item_classic_4 isotope_column_4">
 							<div class="post_item post_item_classic post_item_classic_4 post_format_standard even last">
 								<div class="post_featured">
@@ -186,6 +189,7 @@
 								</div>
 							</div>
 						</div>
+						{% endif %}
 
 						{% for post in posts|slice:"2" %}
 						<div class="isotope_item isotope_item_classic isotope_item_classic_4 isotope_column_4">
@@ -393,6 +397,7 @@
 											<div class="sc_section aligncenter">
 												<p>Inscreva-se e mantenha-se atualizado com as nossas novidades e promoções especiais!</p>
 											</div>
+											
 											<div class="sc_emailer aligncenter sc_emailer_opened">
 												<form class="sc_emailer_form">
 													<div>

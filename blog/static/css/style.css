@@ -4348,3 +4348,38 @@ img.wp-post-image {
 p {
 	font-size: 16px;
 }
+
+.newsletter {
+	background-color: #664804;
+	padding: 5px;
+}
+.newsletter button {
+	background-color: #bf8501;
+	color: white;
+}
+.newsletter button,
+.newsletter input[type="text"] {
+	height: 30px;
+	line-height: 30px;
+	margin-right: 10px;
+}
+
+.newsletter .sc_contact_form_item {
+	float: left;
+}
+
+.newsletter input[type="text"]{
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.newsletter form {
+	margin-top: 4px;
+}
+.title-newsletter {
+	float:left;
+	margin:1px;
+	font-size: 20px;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	color: #ded9cd;
+}

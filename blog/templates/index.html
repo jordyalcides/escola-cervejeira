@@ -141,7 +141,7 @@
 										<a href="{% url 'curso' pk=curso.pk %}">{{ curso.nome }}</a>
 									</h4>
 									<div class="post_descr">
-										<p>{{ curso.descricao|slice:"100" }} (...)</p>
+										<p class="text-justify">{{ curso.descricao|slice:"100" }} (...)</p>
 									</div>
 									<div class="post_info">
 										<span class="post_info_item post_info_posted">
@@ -174,7 +174,7 @@
 										<a href="{% url 'evento' pk=evento.pk %}">{{ evento.nome }}</a>
 									</h4>
 									<div class="post_descr">
-										<p>{{ evento.descricao|slice:"100" }} (...)</p>
+										<p class="text-justify">{{ evento.descricao|slice:"100" }} (...)</p>
 									</div>
 									<div class="post_info">
 										<span class="post_info_item post_info_posted">
@@ -206,7 +206,7 @@
 										<a href="{% url 'post' pk=post.pk %}">{{ post.titulo }}</a>
 									</h4>
 									<div class="post_descr">
-										<p>{{ post.texto|striptags|safe|slice:":100" }} (...)</p>
+										<p class="text-justify">{{ post.texto|striptags|safe|slice:":100" }} (...)</p>
 									</div>
 									<div class="post_info">
 										<span class="post_info_item post_info_posted">

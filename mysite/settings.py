@@ -154,11 +154,12 @@ GEOPOSITION_MAP_OPTIONS = {
     'lng': -38.5920226,
     'stylers': [
       { 'visibility': "off" }
-    ], 
+    ],
 }
 
 GEOPOSITION_MARKER_OPTIONS = {
-    'cursor': 'move'
+    'cursor': 'move',
+    'draggable': True,
 }
 
 GEOPOSITION_MAP_WIDGET_HEIGHT = 720

@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'paginas',
     'ckeditor',
     'ckeditor_uploader',
+    'geoposition',
 ]
 
 MIDDLEWARE = [
@@ -142,6 +143,26 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
+GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyBlFrI6Y_WjMt52XCbBodMBJeKmPvwK36Q'
+GEOPOSITION_MAP_OPTIONS = {
+    'minZoom': 3,
+    'maxZoom': 25,
+    'scrollwheel': True,
+    'lat': -3.8024973,
+    'lng': -38.5920226,
+    'stylers': [
+      { 'visibility': "off" }
+    ],
+}
+
+GEOPOSITION_MARKER_OPTIONS = {
+    'cursor': 'move',
+    'draggable': True,
+}
+
+GEOPOSITION_MAP_WIDGET_HEIGHT = 720
 
 # Email server settings
 

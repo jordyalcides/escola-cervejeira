@@ -6,7 +6,8 @@ from django.core.validators import MinValueValidator, MaxValueValidator, RegexVa
 from datetime import date
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
-
+from geoposition import Geoposition
+from geoposition.fields import GeopositionField
 
 class Post(models.Model):
     autor = models.ForeignKey('auth.User')
@@ -130,7 +131,6 @@ class Evento(models.Model):
         return self.nome
 
 
-
 class Consultoria(models.Model):
     nome = models.CharField(max_length=100, validators=[RegexValidator(regex='^(\w+\s?)+$', message='Utilize somente letras, espaços e números')])
     preco = models.DecimalField(max_digits=6, decimal_places=2, default=0, verbose_name='preço')
@@ -164,3 +164,9 @@ class Consultoria(models.Model):
 
     def __str__(self):
         return self.nome
+
+
+class Parceiro(models.Model):
+    nome = models.CharField(max_length=70, null=False)
+    endereco = models.CharField(max_length=100, null=False)
+    position = GeopositionField()

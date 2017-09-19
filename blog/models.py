@@ -32,12 +32,12 @@ class Post(models.Model):
 
 class Cerveja(models.Model):
     nome = models.CharField(max_length=100)
-    familia = models.CharField(max_length=100, verbose_name="família")
+    estilo = models.CharField(max_length=100, verbose_name="estilo")
     categoria = models.CharField(max_length=100)
-    nota1 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
-    nota2 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
-    nota3 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
-    nota4 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
+    nota1 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)], verbose_name='aparência')
+    nota2 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)], verbose_name='aroma')
+    nota3 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)], verbose_name='sabor e corpo')
+    nota4 = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)], verbose_name='paladar')
     imagem = models.ImageField(upload_to = "cervejas/")
     descricao = models.TextField(max_length=1000, verbose_name='avaliação da cerveja')
     data_de_criacao = models.DateTimeField(editable=False, default=timezone.now, verbose_name='data de criação')

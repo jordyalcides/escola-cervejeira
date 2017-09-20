@@ -74,12 +74,12 @@ def curso(request, pk):
     return render(request, 'blog/course-single.html', {'curso': curso})
 
 def eventos(request):
-    eventos = Evento.objects.all()
-    return render(request, 'blog/event-list.html', {'eventos': eventos})
+    eventos = Evento.objects.last()
+    return render(request, 'blog/events.html', {'eventos': eventos})
 
-def evento(request, pk):
-    evento = get_object_or_404(Evento, pk=pk)
-    return render(request, 'blog/event-single.html', {'evento': evento})
+# def evento(request, pk):
+#     evento = get_object_or_404(Evento, pk=pk)
+#     return render(request, 'blog/event-single.html', {'evento': evento})
 
 def consultoria(request):
     return render(request, 'blog/consult.html')

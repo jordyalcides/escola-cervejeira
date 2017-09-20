@@ -99,20 +99,12 @@ class Curso(models.Model):
 
 
 class Evento(models.Model):
-    nome = models.CharField(max_length=100, validators=[RegexValidator(regex='^(\w+\s?)+$', message='Utilize somente letras, espaços e números')])
-    local = models.CharField(max_length=100)
-    endereco = models.CharField(max_length=200, verbose_name='endereço')
-    bairro = models.CharField(max_length=100)
-    cep = models.CharField(max_length=9, validators=[ RegexValidator(regex='^\d{5}-\d{3}$', message='Digite um CEP válido. Ex: 99999-999') ], verbose_name='CEP')
-    cidade = models.CharField(max_length=100)
+    nome = models.CharField(max_length=10, unique=True, editable=False, default='Eventos')
     imagem = models.ImageField(upload_to = "eventos/")
     descricao = models.TextField(verbose_name='descrição')
     organizador = models.CharField(max_length=100, validators=[RegexValidator(regex='^(\w+\s?)+$', message='Utilize somente letras, espaços e números')])
     email = models.EmailField(blank=True, max_length=200)
     telefone = models.CharField(blank=True, max_length=13, validators=[ RegexValidator(regex='^\d{2}\s\d{5}-\d{4}$', message='Informe um telefone válido. Ex: 99 99999-9999') ])
-    data_de_inicio = models.DateTimeField(default=timezone.now, verbose_name='data de início')
-    data_de_criacao = models.DateTimeField(editable=False, default=timezone.now, verbose_name='data de criação')
-    data_de_publicacao = models.DateTimeField(blank=True, null=True, verbose_name='data de publicação')
 
     @property
     def imagem_url(self):

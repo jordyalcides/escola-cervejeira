@@ -23,7 +23,9 @@
 					<div class="breadcrumbs">
 						<a class="breadcrumbs_item home" href="{% url 'index' %}">Início</a>
 						<span class="breadcrumbs_delimiter"></span>
-						<a class="breadcrumbs_item home" href="{% url 'cursos' %}">Cursos</a>
+						<a class="breadcrumbs_item servicos" href="{% url 'servicos' %}">Serviços</a>
+						<span class="breadcrumbs_delimiter"></span>
+						<a class="breadcrumbs_item servicos" href="{% url 'cursos' %}">Ensino</a>
 						<span class="breadcrumbs_delimiter"></span>
 						<span class="breadcrumbs_item current">{{ curso.nome }}</span>
 					</div>
@@ -91,7 +93,7 @@
 														<img src="{{ curso.imagem_url }}" alt="" title="{{ curso.nome }}"/>
 													</div>
 													<div class="tribe-events-single-event-description tribe-events-content entry-content description">
-														<p>{{ curso.descricao }}</p>
+														<p class="text-justify">{{ curso.descricao }}</p>
 													</div>
 													<!-- <div class="tribe-events-cal-links">
 														<a class="tribe-events-gcal tribe-events-button" href="#" title="Add to Google Calendar">+ Google Calendar</a>

@@ -2391,7 +2391,8 @@ ul.sc_list_style_iconed {
 
 .subtitle,
 .sc_title + div > p {
-	font-size: 22px;
+	font-family: 'Tangerine';
+	font-size: 38px;
 	color: #77655b;
 	/* OLD */
 	/*font-size: 16px;color: #9b8c85;*/

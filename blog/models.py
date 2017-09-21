@@ -12,6 +12,7 @@ from geoposition.fields import GeopositionField
 class Post(models.Model):
     autor = models.ForeignKey('auth.User')
     titulo = models.CharField(max_length=200, verbose_name='título')
+    tag = models.BooleanField(default=False, verbose_name='é um evento?')
     imagem = models.ImageField(upload_to = "posts/")
     texto = RichTextUploadingField(config_name='awesome_ckeditor') #RichTextField(config_name='awesome_ckeditor',null=True,blank=True)
     date_de_criacao = models.DateTimeField(editable=False, default=timezone.now, verbose_name='data de criação')

@@ -1,0 +1,94 @@
+{% extends 'blog/base-home.html' %}
+{% load staticfiles %}
+
+{% block content %}
+			<div class="page_top_wrap page_top_title page_top_breadcrumbs">
+				<div class="content_wrap">
+					<div class="breadcrumbs">
+						<a class="breadcrumbs_item home" href="{% url 'index' %}">Início</a>
+						<span class="breadcrumbs_delimiter"></span>
+						<a class="breadcrumbs_item home" href="{% url 'servicos' %}">Serviços</a>
+						<span class="breadcrumbs_delimiter"></span>
+						<span class="breadcrumbs_item current">Eventos</span>
+					</div>
+					<h1 class="page_title">Eventos</h1>
+				</div>
+			</div>
+
+			<div class="page_content_wrap wrap_custom" >
+				<section class="content_wrap">
+					<div class="container">
+						<p class="text-justify"> {{ evento.descricao }} </p>
+						<div class="row">
+							<div class="content">
+								<div class="list_products shop_mode_thumbs">
+									<!-- <nav class="woocommerce-breadcrumb">
+										<a href="{url 'index'}">Início</a>&nbsp;&#47;&nbsp;Beer Shop
+									</nav> -->
+
+									<div class="tribe-events-meta-group tribe-events-meta-group-organizer">
+										<h3 class="tribe-events-single-section-title"> Organizador
+										</h3>
+										<dl>
+											<div class="row">
+
+												<div class="col-md-2">
+													<dt>Nome: </dt>
+													<dd class="fn org">{{ evento.organizador }}</dd>
+												</div>
+												<div class="col-md-2">
+													{% if evento.email %}
+													<dt> Email: </dt>
+													<dd class="email">
+														<a href="mailto:{{ evento.email }}">{{ evento.email }}</a>
+													</dd>
+													{% endif %}
+												</div>
+												<div class="col-md-2">
+													{% if evento.telefone %}
+													<dt> Telefone: </dt>
+													<dd class="telefone">{{ evento.telefone }}</dd>
+													{% endif %}
+												</div>
+											</div>
+
+											<!-- <dt> Website: </dt>
+											<dd class="url">
+												<a href="http://www.example.com" target="self">http://www.example.com</a>
+											</dd> -->
+										</dl>
+									</div>
+									<br><br><br><br>
+									<div class="post_content">
+										<h3 class="aligncenter"> Últimos eventos </h3>
+									</div>
+
+									<div class="products">
+										<div class="row">
+										{% for post in posts|slice:"3" %}
+											<div class="product has-post-thumbnail column-1_3">
+												<h3><a href="{% url 'post' pk=post.pk %}">{{ post.titulo }}</a></h3>
+												<div class="post_item_wrap">
+													<div class="post_featured">
+														<div class="post_thumb">
+															<a class="hover_icon hover_icon_link" href="{% url 'post' pk=post.pk %}">
+																<img src="{{ post.imagem_url }}" class="attachment-shop_catalog" alt="{{ post.nome }}"/>
+															</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										{% endfor %}
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</section>
+
+			</div>
+
+{% endblock content %}

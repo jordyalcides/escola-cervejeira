@@ -23,11 +23,11 @@
 					<div class="breadcrumbs">
 						<a class="breadcrumbs_item home" href="{% url 'index' %}">Início</a>
 						<span class="breadcrumbs_delimiter"></span>
-						<a class="breadcrumbs_item home" href="{% url 'cursos' %}">Cursos</a>
+						<a class="breadcrumbs_item home" href="{% url 'cursos' %}">Serviços</a>
 						<span class="breadcrumbs_delimiter"></span>
-						<span class="breadcrumbs_item current">{{ curso.nome }}</span>
+						<span class="breadcrumbs_item current">Consultoria</span>
 					</div>
-					<h1 class="page_title">Cursos Cervejeiros</h1>
+					<h1 class="page_title">Consultoria</h1>
 				</div>
 			</div>
 
@@ -35,162 +35,20 @@
 
 				<section class="content_wrap">
 					<div class="container">
+						<p class="text-justify"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec ornare odio, mattis elementum ipsum. Integer sed arcu lacus. Aliquam vulputate nisi euismod, pulvinar turpis et, feugiat urna. Pellentesque in risus commodo, venenatis purus a, dapibus lorem. Quisque eget elit in lacus fermentum lacinia in at est. Donec tristique dictum euismod. Cras at turpis efficitur sem ullamcorper vestibulum. Donec ipsum tellus, viverra id ligula a, porttitor vestibulum tellus. Aenean tincidunt blandit tellus, consequat elementum elit hendrerit at. Donec vestibulum, tortor quis congue feugiat, nunc odio tempus ex, sed auctor massa lacus vitae lorem. Aenean non sagittis arcu. Integer tristique enim sed velit rutrum, ac rutrum turpis molestie. Donec in aliquet diam. Ut eu augue vel felis fermentum blandit nec et diam. Duis scelerisque sem risus, a volutpat enim blandit eu. Nulla ut laoreet est.
+
+Ut vehicula eleifend quam, non lacinia erat hendrerit vitae. Etiam id aliquet odio. Pellentesque tristique erat tellus, sit amet iaculis dui varius in. Mauris laoreet arcu vel purus maximus semper. Duis elit est, maximus id magna quis, tincidunt sollicitudin erat. Suspendisse potenti. Pellentesque luctus lacus eu tristique iaculis. Fusce mollis, libero sed imperdiet bibendum, augue diam iaculis augue, at feugiat lectus erat eu tortor. Nunc viverra ex ut erat aliquet, in dignissim dui tristique. Aenean ultricies varius feugiat. Cras rhoncus sem et sollicitudin dictum.
+
+In eu lectus fringilla, porttitor mauris nec, porttitor dui. Mauris egestas a elit vitae mattis. Phasellus et rutrum mauris. Integer suscipit mollis lorem vitae eleifend. Nullam imperdiet facilisis dui, ac posuere purus eleifend sed. Fusce in nibh vitae purus suscipit porttitor eu efficitur ligula. Cras congue nec turpis dictum viverra. Morbi mattis, mi rhoncus molestie bibendum, est enim sagittis magna, a fringilla lorem ipsum quis metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam sit amet sem semper, convallis neque et, hendrerit sapien. Sed at tortor a urna posuere tristique. Nullam ut posuere nulla. Phasellus ornare pellentesque porta. In ipsum lacus, elementum sed nisi placerat, efficitur vehicula dui. Sed vulputate fringilla pharetra.
+
+Maecenas euismod nisl ex, a varius nulla mollis vitae. Vivamus mollis sapien ut ipsum dapibus dignissim. Aliquam dictum, lorem eu rhoncus feugiat, mi sem pellentesque est, a finibus leo nunc ac dolor. Duis malesuada eget dolor eu laoreet. Nullam ut venenatis massa. Sed id lacus orci. Vestibulum pretium vel massa id condimentum. Nullam quam lectus, pulvinar vel facilisis tincidunt, consectetur non libero. Mauris porttitor ornare sem, vitae elementum tellus interdum vel. Donec ac lobortis libero, eu dictum lorem. </p>
+					</div>
+					<div class="container">
+						<h3 class="aligncenter">Nossos clientes</h3>
 						<div class="row">
-							<section class="post tribe_events_wrapper">
-								<article class="post_content">
-									<div id="tribe-events-pg-template">
-										<div id="tribe-events" class="tribe-no-js">
-											<div class="tribe-events-before-html">
-											</div>
-											<span class="tribe-events-ajax-loading">
-												<img class="tribe-events-spinner-medium" src="{% static 'js/vendor/the-events-calendar/css/images/tribe-loading.gif' %}" alt="Loading Events"/>
-											</span>
-											<div id="tribe-events-content" class="tribe-events-single vevent hentry">
-												{% if curso.iniciou %}
-												<!-- <p class="tribe-events-back">
-													<a href="#"> &laquo; All Events</a>
-												</p> -->
-												<div class="tribe-events-notices">
-													<ul>
-														<li>Esse Curso já começou!</li>
-													</ul>
-												</div>
-												{% endif %}
-												<h2 class="tribe-events-single-event-title summary entry-title">{{ curso.nome }}</h2>
-												<div class="tribe-events-schedule updated published tribe-clearfix">
-													<h3>
-														<span class="date-start dtstart">
-															{{ curso.data_de_inicio }}
-															<span class="value-title" title="{{ curso.data_de_inicio }}">
-															</span>
-														</span>
-														<!-- -
-														<span class="date-end dtend">
-															May 30 @ 5:00 pm
-															<span class="value-title" title="2015-05-30UTC05:00">
-															</span>
-														</span> -->
-													</h3>
-												</div>
-												<div id="tribe-events-header" data-title="Upcoming Events | Irish Pub Weekend | The Lucky Pint &#8211; Irish tavern">
-													<h3 class="tribe-events-visuallyhidden">Event Navigation</h3>
-													<ul class="tribe-events-sub-nav">
-														<li class="tribe-events-nav-previous">
-															<a href="#">
-															<span>&laquo;</span> Saint Patrick’s Day</a>
-														</li>
-														<li class="tribe-events-nav-next">
-															<a href="#">Beer Tasting Party
-																<span>&raquo;</span>
-															</a>
-														</li>
-													</ul>
-												</div>
-												<div class="tribe_events type-tribe_events status-publish has-post-thumbnail tribe_events_cat-party cat_party">
-													<div class="tribe-events-event-image">
-														<img src="{{ curso.imagem_url }}" alt="" title="{{ curso.nome }}"/>
-													</div>
-													<div class="tribe-events-single-event-description tribe-events-content entry-content description">
-														<p>{{ curso.descricao }}</p>
-													</div>
-													<!-- <div class="tribe-events-cal-links">
-														<a class="tribe-events-gcal tribe-events-button" href="#" title="Add to Google Calendar">+ Google Calendar</a>
-														<a class="tribe-events-ical tribe-events-button" href="#" title="Download .ics file">+ iCal Export</a>
-													</div> -->
-													<div class="tribe-events-single-section tribe-events-event-meta primary tribe-clearfix">
-														<div class="tribe-events-meta-group tribe-events-meta-group-details">
-															<h3 class="tribe-events-single-section-title"> Detalhes </h3>
-															<dl>
-																<dt> Começa:</dt>
-																<dd>
-																	<abbr class="tribe-events-abbr updated published dtstart" title="{{ curso.data_de_inicio }}"> {{ curso.data_de_inicio }} </abbr>
-																</dd>
-																<dt> Duração: </dt>
-																<dd>
-																	<abbr class="tribe-events-abbr dtend" title="{{ curso.duracao }}"> {{ curso.duracao }} </abbr>
-																</dd>
-																<dt>Preço:</dt>
-																<dd class="tribe-events-event-categories">
-																	<p>R&dollar; {{ curso.preco }}</a>
-																</dd>
-															</dl>
-														</div>
-														<div class="tribe-events-meta-group tribe-events-meta-group-organizer">
-															<h3 class="tribe-events-single-section-title"> Organizador
-															</h3>
-															<dl>
-																<dt>Nome:</dt>
-																<dd class="fn org">{{ curso.organizador }}</dd>
-																{% if curso.email %}
-																<dt> Email: </dt>
-																<dd class="email">
-																	<a href="mailto:{{ curso.email }}">{{ curso.email }}</a>
-																</dd>
-																{% endif %}
-																{% if curso.telefone %}
-																<dt> Telefone: </dt>
-																<dd class="telefone">{{ curso.telefone }}</dd>
-																{% endif %}
-																<!-- <dt> Website: </dt>
-																<dd class="url">
-																	<a href="http://www.example.com" target="self">http://www.example.com</a>
-																</dd> -->
-															</dl>
-														</div>
-														<div class="tribe-events-meta-group tribe-events-meta-group-venue">
-															<h3 class="tribe-events-single-section-title"> Onde </h3>
-															<dl>
-																<dt>Local:</dt>
-																<dd class="fn org"> {{ curso.local }} </dd>
-																<dt>Endereço:</dt>
-																<dd class="location">
-																	<address class="tribe-events-address">
-																		<span class="adr">
-																			<span class="street-address">{{ curso.endereco }} - {{ curso.bairro }}</span>
-																			<span class="delimiter"><br></span>
-																			<span class="locality">{{ curso.cidade }}</span>
-																			<span class="delimiter"><br></span>
-																			<abbr class="region tribe-events-abbr" title="CEP">{{ curso.cep }}</abbr>
-																			<!-- <span class="country-name">United States</span> -->
+							<div class="col-md-3">
 
-																		</span>
-																	</address>
-																</dd>
-															</dl>
-													</div>
-													<!-- <div class="tribe-events-single-section tribe-events-event-meta secondary tribe-clearfix"> -->
-
-																	<!-- <a class="tribe-events-gmap" href="http://maps.google.com/maps?f=q&#038;source=s_q&#038;hl=en&#038;geocode=&#038;q=315+Seneca+Street+Seattle+WA+United+States" title="Click to view a Google Map" target="_blank">+ Google Map</a>
-
-														</div>
-														<div class="tribe-events-venue-map">
-															<div id="sc_googlemap_1173814099" class="sc_googlemap sc_googlemap_style_2" data-address="" data-description="New York" data-latlng=" 40.712784,-74.005941" data-zoom="14" data-style="style2" data-point=""></div>
-														</div> -->
-													<!-- </div> -->
-												<!-- </div> -->
-											</div>
-											<!-- <div id="tribe-events-footer">
-												<h3 class="tribe-events-visuallyhidden">Event Navigation</h3>
-												<ul class="tribe-events-sub-nav">
-													<li class="tribe-events-nav-previous">
-														<a href="#">
-															<span>&laquo;</span>
-															Saint Patrick’s Day
-														</a>
-													</li>
-													<li class="tribe-events-nav-next">
-														<a href="#">Beer Tasting Party
-															<span>&raquo;</span>
-														</a>
-													</li>
-												</ul>
-											</div> -->
-										</div>
-										<div class="tribe-events-after-html">
-										</div>
-									</div>
-								</article>
-							</section>
+							</div>
 						</div>
 					</div>
 				</section>

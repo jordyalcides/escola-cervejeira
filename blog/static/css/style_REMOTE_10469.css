@@ -8,7 +8,7 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:100,100italic,300,300italic,400,400italic,700,700italic&subset=latin,latin-ext,cyrillic,cyrillic-ext);
 @import url(http://fonts.googleapis.com/css?family=Signika:100,100italic,300,300italic,400,400italic,700,700italic&subset=latin,latin-ext,cyrillic,cyrillic-ext);
 @import url(http://fonts.googleapis.com/css?family=Vollkorn:100,100italic,300,300italic,400,400italic,700,700italic&subset=latin,latin-ext,cyrillic,cyrillic-ext);
-
+@import url(https://fonts.googleapis.com/css?family=Pacifico|Satisfy|Tangerine:400,700);
 /*
 Theme Name: Tavern HTML
 Theme URI: http://tavern-html.axiomthemes.com/
@@ -4382,18 +4382,4 @@ p {
 	font-size: 20px;
 	text-shadow: black 0.1em 0.1em 0.2em;
 	color: #ded9cd;
-}
-
-
-.subtitle {
-	/*font-family: 'Ubuntu', sans-serif;	*/
-}
-
-.post_featured img {
-	width: auto;
-}
-
-
-.invisivel {
-	display: none;
 }

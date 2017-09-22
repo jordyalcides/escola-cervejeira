@@ -4383,3 +4383,16 @@ p {
 	text-shadow: black 0.1em 0.1em 0.2em;
 	color: #ded9cd;
 }
+
+.invisivel {
+	display: none;
+}
+
+.post_featured img {
+	width: auto;
+}
+
+input#busca-cerveja {
+	background-color: rgba(0, 0, 0, 0.2);
+	border-radius: 15px;
+}

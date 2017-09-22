@@ -4368,8 +4368,9 @@ p {
 	float: left;
 }
 
-.newsletter input[type="text"]{
+.newsletter input[type="email"]{
 	border-radius: 10px;
+	height: 30px;
 	background-color: rgba(256, 256, 256, 1.0) !important;
 }
 

@@ -139,4 +139,12 @@ class Cliente(models.Model):
 class Parceiro(models.Model):
     nome = models.CharField(max_length=70, null=False)
     endereco = models.CharField(max_length=100, null=False)
-    position = GeopositionField(default='3.7906405,-38.6585446')
+    position = GeopositionField(default='-3.75572,-38.517394')
+
+
+class Newsletter(models.Model):
+    email = models.EmailField(max_length=100)
+
+    @property
+    def salvar(self):
+        self.save()

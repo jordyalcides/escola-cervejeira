@@ -11,7 +11,6 @@ urlpatterns = [
     url(r'^servicos/ensino$', views.cursos, name='cursos'),
     url(r'^servicos/ensino/curso/(?P<pk>\d+)/$', views.curso, name='curso'),
     url(r'^servicos/eventos$', views.eventos, name='eventos'),
-    # url(r'^evento/(?P<pk>\d+)/$', views.evento, name='evento'),
     url(r'^servicos/consultoria$', views.consultoria, name='consultoria'),
 	url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^parceiros$', views.poi_list, name='parceiro'),

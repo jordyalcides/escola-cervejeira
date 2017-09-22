@@ -733,9 +733,10 @@
 										<a href="{url 'index'}">Início</a>&nbsp;&#47;&nbsp;Beer Shop
 									</nav>
 									<!-- <p class="woocommerce-result-count">Showing all 9 results</p> -->
-
-									{% for cerveja in cervejas %}
+									<label for="busca-cerveja">Busca</label>
+									<input id="busca-cerveja" type="text" name="busca-cerveja" placeholder="Digite o nome da cerveja">
 									<ul class="products">
+									{% for cerveja in cervejas %}
 										<li class="product has-post-thumbnail column-1_3">
 											<a href="{% url 'cerveja' pk=cerveja.pk %}"></a>
 											<div class="post_item_wrap">
@@ -747,15 +748,14 @@
 													</div>
 												</div>
 												<div class="post_content">
-													<h3>
-														<a href="{% url 'cerveja' pk=cerveja.pk %}">{{ cerveja.nome }}</a>
+													<h3 class="product-title"><a href="{% url 'cerveja' pk=cerveja.pk %}">{{ cerveja.nome }}</a>
 													</h3>
 													<!-- <a href="{% url 'cerveja' pk=cerveja.pk %}" class="single_add_to_cart_button button alt">Sobre</a> -->
 												</div>
 											</div>
 										</li>
-									</ul>
 									{% endfor %}
+								</ul>
 
 										<!-- <li class="product has-post-thumbnail column-1_3">
 											<a href="features-beer-shop-product.html"></a>

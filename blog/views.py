@@ -1,15 +1,13 @@
 #coding:utf-8
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
-from .models import Post, Cerveja, Curso, Evento, Consultoria
+from .models import Post, Cerveja, Curso, Evento, Cliente, Parceiro, Newsletter
 from paginas.models import Contato
 from .forms import FormContato, NewsletterForm
 from django.core.mail import EmailMessage
 from django.shortcuts import redirect
 from django.template import Context
 from django.template.loader import get_template
-from .models import Parceiro, Newsletter
-
 
 def index(request):
     posts = Post.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('-data_de_publicacao')
@@ -87,12 +85,9 @@ def eventos(request):
     posts = Post.objects.filter(tag=True).order_by('-data_de_publicacao')
     return render(request, 'blog/events.html', {'posts': posts, 'evento': evento})
 
-# def evento(request, pk):
-#     evento = get_object_or_404(Evento, pk=pk)
-#     return render(request, 'blog/event-single.html', {'evento': evento})
-
 def consultoria(request):
-    return render(request, 'blog/consult.html')
+    clientes = Cliente.objects.all().order_by('nome')
+    return render(request, 'blog/consult.html', {'clientes': clientes})
 
 def poi_list(request):
     pois = Parceiro.objects.all()

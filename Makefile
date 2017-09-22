@@ -1,4 +1,5 @@
 install:
+	pip install https://github.com/philippbosch/django-geoposition/archive/django-1.11.zip
 	pip install -r requirements.txt
 
 migrations:

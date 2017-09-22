@@ -149,12 +149,13 @@ GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyBlFrI6Y_WjMt52XCbBodMBJeKmPvwK36Q'
 GEOPOSITION_MAP_OPTIONS = {
     'minZoom': 6,
     'maxZoom': 25,
+    'zoom': 14,
     'clickable': True,
     'scrollwheel': False,
-    'lat': 52.5,
-    'lng': 13.4,
+    'lat': -3.75572,
+    'lng': -38.517394,
     'stylers': [
-      { 'visibility': "off" }
+      { 'visibility': "on" }
     ],
 }
 

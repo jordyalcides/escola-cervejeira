@@ -8,6 +8,11 @@ from django.core.mail import EmailMessage
 from django.shortcuts import redirect
 from django.template import Context
 from django.template.loader import get_template
+<<<<<<< HEAD
+from .models import Parceiro, Newsletter
+
+=======
+>>>>>>> 07be2c247575f181a9f7a6840fe8779a8c9c2e26
 
 def index(request):
     posts = Post.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('-data_de_publicacao')

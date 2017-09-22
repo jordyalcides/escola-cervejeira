@@ -735,27 +735,29 @@
 									<!-- <p class="woocommerce-result-count">Showing all 9 results</p> -->
 									<label for="busca-cerveja">Busca</label>
 									<input id="busca-cerveja" type="text" name="busca-cerveja" placeholder="Digite o nome da cerveja">
-									<ul class="products">
-									{% for cerveja in cervejas %}
-										<li class="product has-post-thumbnail column-1_3">
-											<a href="{% url 'cerveja' pk=cerveja.pk %}"></a>
-											<div class="post_item_wrap">
-												<div class="post_featured">
-													<div class="post_thumb">
-														<a class="hover_icon hover_icon_link" href="{% url 'cerveja' pk=cerveja.pk %}">
-															<img src="{{ cerveja.imagem_url }}" class="attachment-shop_catalog" alt="{{ cerveja.nome }}"/>
-														</a>
+									<div class="products">
+									<div class="row">
+										{% for cerveja in cervejas %}
+											<div class="product has-post-thumbnail column-1_3">
+												<a href="{% url 'cerveja' pk=cerveja.pk %}"></a>
+												<div class="post_item_wrap">
+													<div class="post_featured">
+														<div class="post_thumb">
+															<a class="hover_icon hover_icon_link" href="{% url 'cerveja' pk=cerveja.pk %}">
+																<img src="{{ cerveja.imagem_url }}" class="attachment-shop_catalog" alt="{{ cerveja.nome }}"/>
+															</a>
+														</div>
+													</div>
+													<div class="post_content">
+														<h3 class="product-title"><a href="{% url 'cerveja' pk=cerveja.pk %}">{{ cerveja.nome }}</a>
+														</h3>
+														<!-- <a href="{% url 'cerveja' pk=cerveja.pk %}" class="single_add_to_cart_button button alt">Sobre</a> -->
 													</div>
 												</div>
-												<div class="post_content">
-													<h3 class="product-title"><a href="{% url 'cerveja' pk=cerveja.pk %}">{{ cerveja.nome }}</a>
-													</h3>
-													<!-- <a href="{% url 'cerveja' pk=cerveja.pk %}" class="single_add_to_cart_button button alt">Sobre</a> -->
-												</div>
 											</div>
-										</li>
-									{% endfor %}
-								</ul>
+										{% endfor %}
+									</div>
+								</div>
 
 										<!-- <li class="product has-post-thumbnail column-1_3">
 											<a href="features-beer-shop-product.html"></a>

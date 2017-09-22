@@ -1,7 +1,7 @@
 #coding:utf-8
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
-from .models import Post, Cerveja, Curso, Evento, Consultoria
+from .models import Post, Cerveja, Curso, Evento, Cliente, Parceiro
 from paginas.models import Contato
 from .forms import FormContato, NewsletterForm
 from django.core.mail import EmailMessage
@@ -87,12 +87,9 @@ def eventos(request):
     posts = Post.objects.filter(tag=True).order_by('-data_de_publicacao')
     return render(request, 'blog/events.html', {'posts': posts, 'evento': evento})
 
-# def evento(request, pk):
-#     evento = get_object_or_404(Evento, pk=pk)
-#     return render(request, 'blog/event-single.html', {'evento': evento})
-
 def consultoria(request):
-    return render(request, 'blog/consult.html')
+    clientes = Cliente.objects.all().order_by('nome')
+    return render(request, 'blog/consult.html', {'clientes': clientes})
 
 def poi_list(request):
     pois = Parceiro.objects.all()

@@ -3,12 +3,12 @@ from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 from .models import Post, Cerveja, Curso, Evento, Consultoria
 from paginas.models import Contato
-from .forms import FormContato
+from .forms import FormContato, NewsletterForm
 from django.core.mail import EmailMessage
 from django.shortcuts import redirect
 from django.template import Context
 from django.template.loader import get_template
-from .models import Parceiro
+from .models import Parceiro, Newsletter
 
 
 def index(request):
@@ -17,34 +17,43 @@ def index(request):
 
     # Formulário de Contato
     form_class = FormContato
+    form_email = NewsletterForm
     if request.method == 'POST':
         form = form_class(data=request.POST)
 
-        if form.is_valid():
-            nome = request.POST.get('nome', '')
-            email = request.POST.get('email', '')
-            mensagem = request.POST.get('mensagem', '')
+        if 'button-email' in request.POST:
+            form_mail = form_email(data=request.POST)
+            if form_mail.is_valid():
+                mail = request.POST.get('email',)
+                new = Newsletter.objects.create()
+                new.email = mail
+                new.salvar
+        else:
+            if form.is_valid():
+                nome = request.POST.get('nome', '')
+                email = request.POST.get('email', '')
+                mensagem = request.POST.get('mensagem', '')
 
-            # Envia o email com as informações de contato
-            template = get_template('contact_template.txt')
-            context = Context({
-                'nome': nome,
-                'email': email,
-                'mensagem': mensagem,
-            })
-            mensagem = template.render(context)
+                # Envia o email com as informações de contato
+                template = get_template('contact_template.txt')
+                context = Context({
+                    'nome': nome,
+                    'email': email,
+                    'mensagem': mensagem,
+                })
+                mensagem = template.render(context)
 
-            email = EmailMessage(
-                "Contato pelo site Escola Cervejeira",
-                mensagem,
-                "Escola Cervejeira"+'',
-                [Contato.objects.last().email],
-                headers = {'Responder': email}
-            )
-            email.send()
-            return redirect('index')
+                email = EmailMessage(
+                    "Contato pelo site Escola Cervejeira",
+                    mensagem,
+                    "Escola Cervejeira"+'',
+                    [Contato.objects.last().email],
+                    headers = {'Responder': email}
+                )
+                email.send()
+                return redirect('index')
 
-    return render(request, 'index.html', {'posts': posts, 'curso': curso, 'form': form_class})
+    return render(request, 'index.html', {'posts': posts, 'curso': curso, 'form': form_class, 'form_email': form_email})
 
 def blog(request):
     posts = Post.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('-data_de_publicacao')
@@ -88,3 +97,7 @@ def consultoria(request):
 def poi_list(request):
     pois = Parceiro.objects.all()
     return render(request, 'blog/poi_list.html', {'pois': pois})
+
+def newsletter(request):
+    formEmail = NewsletterForm()
+    return render(request, 'blog/newsletter.html', {'formEmail': formEmail})

@@ -1,15 +1,18 @@
 #coding:utf-8
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
-from .models import Post, Cerveja, Curso, Evento, Cliente, Parceiro
+from .models import Post, Cerveja, Curso, Evento, Cliente, Parceiro, Newsletter
 from paginas.models import Contato
 from .forms import FormContato, NewsletterForm
 from django.core.mail import EmailMessage
 from django.shortcuts import redirect
 from django.template import Context
 from django.template.loader import get_template
+<<<<<<< HEAD
 from .models import Parceiro, Newsletter
 
+=======
+>>>>>>> 07be2c247575f181a9f7a6840fe8779a8c9c2e26
 
 def index(request):
     posts = Post.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('-data_de_publicacao')

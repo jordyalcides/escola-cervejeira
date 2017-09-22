@@ -147,11 +147,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyBlFrI6Y_WjMt52XCbBodMBJeKmPvwK36Q'
 GEOPOSITION_MAP_OPTIONS = {
-    'minZoom': 3,
+    'minZoom': 6,
     'maxZoom': 25,
-    'scrollwheel': True,
-    'lat': -3.8024973,
-    'lng': -38.5920226,
+    'clickable': True,
+    'scrollwheel': False,
+    'lat': 52.5,
+    'lng': 13.4,
     'stylers': [
       { 'visibility': "off" }
     ],
@@ -159,7 +160,7 @@ GEOPOSITION_MAP_OPTIONS = {
 
 GEOPOSITION_MARKER_OPTIONS = {
     'cursor': 'move',
-    'draggable': True,
+    'clickable': True,
 }
 
 GEOPOSITION_MAP_WIDGET_HEIGHT = 720

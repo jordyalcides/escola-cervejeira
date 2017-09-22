@@ -8,6 +8,7 @@ from django.core.mail import EmailMessage
 from django.shortcuts import redirect
 from django.template import Context
 from django.template.loader import get_template
+from .models import Parceiro
 
 
 def index(request):
@@ -83,3 +84,7 @@ def eventos(request):
 
 def consultoria(request):
     return render(request, 'blog/consult.html')
+
+def poi_list(request):
+    pois = Parceiro.objects.all()
+    return render(request, 'blog/poi_list.html', {'pois': pois})

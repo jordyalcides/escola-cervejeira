@@ -13,6 +13,7 @@ from django.template.loader import get_template
 def index(request):
     posts = Post.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('-data_de_publicacao')
     curso = Curso.objects.last()
+    pois = Parceiro.objects.all()
     # Formulário de Contato
     form_class = FormContato
     form_email = NewsletterForm
@@ -54,7 +55,7 @@ def index(request):
                 messages.success(request, "Mensagem enviada!!")
                 return redirect('index')
 
-    return render(request, 'index.html', {'posts': posts, 'curso': curso, 'form': form_class, 'form_email': form_email})
+    return render(request, 'index.html', {'posts': posts, 'curso': curso, 'pois': pois, 'form': form_class, 'form_email': form_email})
 
 def blog(request):
     posts = Post.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('-data_de_publicacao')
@@ -91,10 +92,10 @@ def eventos(request):
 def consultoria(request):
     clientes = Cliente.objects.all().order_by('nome')
     return render(request, 'blog/consult.html', {'clientes': clientes})
-
-def poi_list(request):
-    pois = Parceiro.objects.all()
-    return render(request, 'blog/poi_list.html', {'pois': pois})
+#
+# def poi_list(request):
+#     pois = Parceiro.objects.all()
+#     return render(request, 'blog/poi_list.html', {'pois': pois})
 
 def newsletter(request):
     formEmail = NewsletterForm()

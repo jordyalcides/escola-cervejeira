@@ -13,6 +13,6 @@ urlpatterns = [
     url(r'^servicos/eventos$', views.eventos, name='eventos'),
     url(r'^servicos/consultoria$', views.consultoria, name='consultoria'),
 	url(r'^ckeditor/', include('ckeditor_uploader.urls')),
-    url(r'^parceiros$', views.poi_list, name='parceiro'),
+    # url(r'^parceiros$', views.poi_list, name='parceiro'),
     url(r'^newsletter/$', views.newsletter, name='newsletter'),
 ]

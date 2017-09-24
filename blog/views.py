@@ -74,7 +74,7 @@ def blog_post(request, pk):
     global form_email
     create_newsletter(request)
     post = get_object_or_404(Post, pk=pk)
-    return render(request, 'blog/blog_post.html', {'post': post,'form_email': form_email})
+    return render(request, 'blog/blog-post.html', {'post': post,'form_email': form_email})
 
 def cervejas(request):
     global form_email
@@ -118,10 +118,6 @@ def consultoria(request):
     create_newsletter(request)
     clientes = Cliente.objects.all().order_by('nome')
     return render(request, 'blog/consult.html', {'clientes': clientes,'form_email': form_email})
-#
-# def poi_list(request):
-#     pois = Parceiro.objects.all()
-#     return render(request, 'blog/poi_list.html', {'pois': pois})
 
 def newsletter(request):
     formEmail = NewsletterForm()

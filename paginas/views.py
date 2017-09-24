@@ -19,4 +19,4 @@ def membro(request, pk):
 
 def galeria(request):
     fotos = Foto.objects.all()
-    return render(request, 'gallery-cobbles.html', {'fotos': fotos})
+    return render(request, 'gallery.html', {'fotos': fotos})

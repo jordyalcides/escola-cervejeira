@@ -1,20 +1,5 @@
 {% extends 'blog/base-home.html' %}
 {% load staticfiles %}
-<!-- <!DOCTYPE html>
-<html lang="en-US">
-<head>
-	<meta charset="UTF-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="format-detection" content="telephone=no">
-	<link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
-	<title>The Lucky Pint &#8211; Irish tavern | Irish Tavern &#8211; pub HTML Theme</title>
-	<link rel='stylesheet' href='js/vendor/the-events-calendar/css/datepicker.css' type='text/css' media='all'/>
-	<link rel='stylesheet' href='js/vendor/the-events-calendar/css/tribe-events-full.min.css' type='text/css' media='all'/>
-	<link rel='stylesheet' href='js/vendor/the-events-calendar/css/tribe-events-theme.min.css' type='text/css' media='all'/>
-	<link rel='stylesheet' href='js/vendor/the-events-calendar/css/tribe-events-full-mobile.min.css' type='text/css' media='only screen and (max-width: 768px)'/>
-	<link rel='stylesheet' href='js/vendor/the-events-calendar/css/tribe-events-theme-mobile.min.css' type='text/css' media='only screen and (max-width: 768px)'/>
-
-</head> -->
 
 {% block content %}
 
@@ -49,9 +34,6 @@
 											</span>
 											<div id="tribe-events-content" class="tribe-events-single vevent hentry">
 												{% if curso.iniciou %}
-												<!-- <p class="tribe-events-back">
-													<a href="#"> &laquo; All Events</a>
-												</p> -->
 												<div class="tribe-events-notices">
 													<ul>
 														<li>Esse curso já começou!</li>
@@ -66,12 +48,6 @@
 															<span class="value-title" title="{{ curso.data_de_inicio }}">
 															</span>
 														</span>
-														<!-- -
-														<span class="date-end dtend">
-															May 30 @ 5:00 pm
-															<span class="value-title" title="2015-05-30UTC05:00">
-															</span>
-														</span> -->
 													</h3>
 												</div>
 												<div id="tribe-events-header" data-title="Upcoming Events | Irish Pub Weekend | The Lucky Pint &#8211; Irish tavern">
@@ -95,10 +71,6 @@
 													<div class="tribe-events-single-event-description tribe-events-content entry-content description">
 														<p class="text-justify">{{ curso.descricao }}</p>
 													</div>
-													<!-- <div class="tribe-events-cal-links">
-														<a class="tribe-events-gcal tribe-events-button" href="#" title="Add to Google Calendar">+ Google Calendar</a>
-														<a class="tribe-events-ical tribe-events-button" href="#" title="Download .ics file">+ iCal Export</a>
-													</div> -->
 													<div class="tribe-events-single-section tribe-events-event-meta primary tribe-clearfix">
 														<div class="tribe-events-meta-group tribe-events-meta-group-details">
 															<h3 class="tribe-events-single-section-title"> Detalhes </h3>
@@ -133,10 +105,6 @@
 																<dt> Telefone: </dt>
 																<dd class="telefone">{{ curso.telefone }}</dd>
 																{% endif %}
-																<!-- <dt> Website: </dt>
-																<dd class="url">
-																	<a href="http://www.example.com" target="self">http://www.example.com</a>
-																</dd> -->
 															</dl>
 														</div>
 														<div class="tribe-events-meta-group tribe-events-meta-group-venue">
@@ -153,40 +121,14 @@
 																			<span class="locality">{{ curso.cidade }}</span>
 																			<span class="delimiter"><br></span>
 																			<abbr class="region tribe-events-abbr" title="CEP">{{ curso.cep }}</abbr>
-																			<!-- <span class="country-name">United States</span> -->
-
 																		</span>
 																	</address>
 																</dd>
 															</dl>
-													</div>
-													<!-- <div class="tribe-events-single-section tribe-events-event-meta secondary tribe-clearfix"> -->
-
-																	<!-- <a class="tribe-events-gmap" href="http://maps.google.com/maps?f=q&#038;source=s_q&#038;hl=en&#038;geocode=&#038;q=315+Seneca+Street+Seattle+WA+United+States" title="Click to view a Google Map" target="_blank">+ Google Map</a>
-
 														</div>
-														<div class="tribe-events-venue-map">
-															<div id="sc_googlemap_1173814099" class="sc_googlemap sc_googlemap_style_2" data-address="" data-description="New York" data-latlng=" 40.712784,-74.005941" data-zoom="14" data-style="style2" data-point=""></div>
-														</div> -->
-													<!-- </div> -->
-												<!-- </div> -->
+													</div>
+												</div>
 											</div>
-											<!-- <div id="tribe-events-footer">
-												<h3 class="tribe-events-visuallyhidden">Event Navigation</h3>
-												<ul class="tribe-events-sub-nav">
-													<li class="tribe-events-nav-previous">
-														<a href="#">
-															<span>&laquo;</span>
-															Saint Patrick’s Day
-														</a>
-													</li>
-													<li class="tribe-events-nav-next">
-														<a href="#">Beer Tasting Party
-															<span>&raquo;</span>
-														</a>
-													</li>
-												</ul>
-											</div> -->
 										</div>
 										<div class="tribe-events-after-html">
 										</div>
@@ -196,10 +138,6 @@
 						</div>
 					</div>
 				</section>
-
 			</div>
 
 {% endblock content %}
-
-	<!-- <script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=false'></script>
-	<script type='text/javascript' src='js/custom/core.googlemap.min.js'></script> -->

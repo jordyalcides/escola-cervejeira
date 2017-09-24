@@ -141,7 +141,7 @@
 										<a href="{% url 'curso' pk=curso.pk %}">{{ curso.nome }}</a>
 									</h4>
 									<div class="post_descr">
-										<p class="text-justify">{{ curso.descricao|slice:"100" }}</p>
+										<p class="text-justify">{{ curso.descricao|slice:"100" }} (...)</p>
 									</div>
 									<div class="post_info">
 										<span class="post_info_item post_info_posted">
@@ -158,7 +158,40 @@
 						</div>
 						{% endif %}
 
-						{% for post in posts|slice:"3" %}
+						{% if evento != None %}
+						<div class="isotope_item isotope_item_classic isotope_item_classic_4 isotope_column_4">
+							<div class="post_item post_item_classic post_item_classic_4 post_format_standard even last">
+								<div class="post_featured">
+									<div class="" data-image="{{ evento.imagem_url }}" data-title="{{ evento.nome }}">
+										<a class="hover_icon hover_icon_link" href="{% url 'evento' pk=evento.pk %}">
+											<img alt="{{ evento.nome }}" src="{{ evento.imagem_url }}" class="img-post-index">
+										</a>
+									</div>
+								</div>
+
+								<div class="post_content isotope_item_content">
+									<h4 class="post_title">
+										<a href="{% url 'evento' pk=evento.pk %}">{{ evento.nome }}</a>
+									</h4>
+									<div class="post_descr">
+										<p class="text-justify">{{ evento.descricao|slice:"100" }} (...)</p>
+									</div>
+									<div class="post_info">
+										<span class="post_info_item post_info_posted">
+											Postado
+											<a href="{% url 'evento' pk=evento.pk %}" class="post_info_date">{{ evento.data_de_criacao }}</a>
+										</span>
+									</div>
+									<a href="{% url 'evento' pk=evento.pk %}" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_user sc_button_size_small">
+										<span>LER</span>
+										<span>LER</span>
+									</a>
+								</div>
+							</div>
+						</div>
+						{% endif %}
+
+						{% for post in posts|slice:"2" %}
 						<div class="isotope_item isotope_item_classic isotope_item_classic_4 isotope_column_4">
 							<div class="post_item post_item_classic post_item_classic_4	post_format_standard">
 								<div class="post_featured">
@@ -173,7 +206,7 @@
 										<a href="{% url 'post' pk=post.pk %}">{{ post.titulo }}</a>
 									</h4>
 									<div class="post_descr">
-										<p class="text-justify">{{ post.texto|striptags|safe|slice:":100" }}</p>
+										<p class="text-justify">{{ post.texto|striptags|safe|slice:":100" }} (...)</p>
 									</div>
 									<div class="post_info">
 										<span class="post_info_item post_info_posted">
@@ -185,10 +218,114 @@
 										<span>LER</span>
 										<span>LER</span>
 									</a>
+									<!-- <a href="#" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">
+															<span>308</span>
+															<span>308</span>
+														</a> -->
 								</div>
 							</div>
 						</div>
 						{% endfor %}
+						<!-- <div class="isotope_item isotope_item_classic isotope_item_classic_4 isotope_column_4">
+												<div class="post_item post_item_classic post_item_classic_4 post_format_standard even">
+													<div class="post_featured">
+														<div class="post_thumb sc_image_styled" data-image="Depositphotos_18772761_original.jpg" data-title="Best Food to Compliment Beer">
+															<a class="hover_icon hover_icon_link" href="#">
+																<img alt="Best Food to Compliment Beer" src="{% static 'images/Depositphotos_18772761_original-260x140.jpg' %}">
+															</a>
+														</div>
+													</div>
+													<div class="post_content isotope_item_content">
+														<h4 class="post_title">
+														<a href="#">Best Food to Compliment Beer</a>
+														</h4>
+														<div class="post_descr">
+															<p>Duis eget dictum eros, in dictum sem. Vivamus sed molestie sapien. Aliquam et facilisis arcu, ut molestie augue...</p>
+														</div>
+														<div class="post_info">
+															<span class="post_info_item post_info_posted">
+																Posted
+																<a href="#" class="post_info_date">January 14, 2015</a>
+															</span>
+														</div>
+														<a href="#" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_user sc_button_size_small">
+															<span>LER</span>
+															<span>LER</span>
+														</a>
+														<a href="#" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">
+															<span>222</span>
+															<span>222</span>
+														</a>
+													</div>
+												</div>
+											</div>
+											<div class="isotope_item isotope_item_classic isotope_item_classic_4 isotope_column_4">
+												<div class="post_item post_item_classic post_item_classic_4 post_format_standard">
+													<div class="post_featured">
+														<div class="post_thumb sc_image_styled" data-image="{% static 'images/Depositphotos_5022744_original.jpg.png' %}" data-title="Searching for the Perfect Pint">
+															<a class="hover_icon hover_icon_link" href="#">
+																<img alt="Searching for the Perfect Pint" src="{% static 'images/Depositphotos_5022744_original-260x140.jpg' %}">
+															</a>
+														</div>
+													</div>
+													<div class="post_content isotope_item_content">
+														<h4 class="post_title">
+														<a href="#">Searching for the Perfect Pint</a>
+														</h4>
+														<div class="post_descr">
+															<p>Sed ac egestas nisl. Sed vestibulum ac diam sit amet porta. Vivamus est neque, tristique quis tempor at, consequat a...</p>
+														</div>
+														<div class="post_info">
+															<span class="post_info_item post_info_posted">
+																Posted
+																<a href="#" class="post_info_date">January 13, 2015</a>
+															</span>
+														</div>
+														<a href="#" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_user sc_button_size_small">
+															<span>LER</span>
+															<span>LER</span>
+														</a>
+														<a href="#" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">
+															<span>210</span>
+															<span>210</span>
+														</a>
+													</div>
+												</div>
+											</div>
+											<div class="isotope_item isotope_item_classic isotope_item_classic_4 isotope_column_4">
+												<div class="post_item post_item_classic post_item_classic_4 post_format_standard even last">
+													<div class="post_featured">
+														<div class="post_thumb sc_image_styled" data-image="{% static 'images/Depositphotos_41735639_original.jpg' %}" data-title="Grilled Beer-cooked Sausages">
+															<a class="hover_icon hover_icon_link" href="#">
+																<img alt="Grilled Beer-cooked Sausages" src="{% static 'images/Depositphotos_41735639_original-260x140.jpg' %}">
+															</a>
+														</div>
+													</div>
+
+													<div class="post_content isotope_item_content">
+														<h4 class="post_title">
+														<a href="#">Grilled Beer-cooked Sausages</a>
+														</h4>
+														<div class="post_descr">
+															<p>Duis bibendum commodo ultrices. Phasellus venenatis velit mauris, non sagittis tortor consectetur hendrerit...</p>
+														</div>
+														<div class="post_info">
+															<span class="post_info_item post_info_posted">
+																Posted
+																<a href="#" class="post_info_date">January 13, 2015</a>
+															</span>
+														</div>
+														<a href="#" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_user sc_button_size_small">
+															<span>LER</span>
+															<span>LER</span>
+														</a>
+														<a href="#" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_link sc_button_size_small">
+															<span>223</span>
+															<span>223</span>
+														</a>
+													</div>
+												</div>
+											</div> -->
 					</div>
 				</div>
 				<div class="sc_section aligncenter">
@@ -249,6 +386,35 @@
 		</div>
 	</div>
 </section>
+<!-- TODO: Apagar os comentarios -->
+<!--section class="bg_image_10">
+						<div class="container">
+							<div class="row">
+								<div class="sc_section aligncenter">
+									<div class="sc_section_content">
+										<div class="sc_content content_wrap">
+											<h1 class="sc_title margin_top_none styling3">Inscreva-se para nossas atualizações</h1>
+											<div class="sc_section aligncenter">
+												<p>Inscreva-se e mantenha-se atualizado com as nossas novidades e promoções especiais!</p>
+											</div>
+
+											<div class="sc_emailer aligncenter sc_emailer_opened">
+												<form class="sc_emailer_form">
+													<div>
+														<input type="text" class="sc_emailer_input" name="email" value="" placeholder="Please, enter you email address.">
+													</div>
+													<a class="sc_emailer_button sc_button sc_button_square sc_button_style_filled sc_button_bg_user sc_button_size_small" href="#" title="Submit" data-group="E-mailer subscription">
+														<span>INSCREVER</span>
+														<span>INSCREVER</span>
+													</a>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section-->
 
 <section id="page-contato" class="bg_image_10 bg_tint_light">
 	<div class="sc_content content_wrap">
@@ -261,67 +427,8 @@
 	<div class="row">
 		<div class="col-sm-12 col-md-offset-2 col-md-8">
 			<div class="map-responsive">
-			<style>
-					#map-canvas {
-							height: 600px;
-					}
-			</style>
-				<div id="map-canvas"></div>
-
-				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlFrI6Y_WjMt52XCbBodMBJeKmPvwK36Q"></script>
-				<script>
-				function initialize() {
-					var mapOptions = {
-						zoom: 13,
-						clickable: true,
-						scrollwheel: true,
-						center: {lat: -3.737121, lng: -38.547097},
-						width: 720,
-						height: 720
-					}
-					// -3.7557203,-38.5173943,13.62z
-					var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-					var bounds = new google.maps.LatLngBounds();
-					var pin = '../../static/images/icons/pin.png';
-
-					function addMarker(lat, lng, title, infowindow) {
-						console.log('lat:: ' + lat);
-						var position = new google.maps.LatLng(lat, lng);
-						var marker = new google.maps.Marker({
-							position: position,
-							map: map,
-							title: title,
-							icon: pin,
-						});
-
-						marker.addListener('click', function() {
-							infowindow.open(map, marker);
-						});
-						return marker;
-					}
-
-
-					{% for poi in pois %}
-					var contentString = '<div id="content" class="contents">'+
-					'<div id="siteNotice">'+
-					'</div>'+
-					'<h2 id="firstHeading" class="firstHeading">{{poi.nome}}</h2>'+
-					'<div id="bodyContent">'+
-					'<p>{{poi.endereco}}</p>'+
-					'</div>'+
-					'</div>';
-
-					var infowindow = new google.maps.InfoWindow({
-						content: contentString
-					});
-
-					var marcador = addMarker({{ poi.position }}, "teste", infowindow);
-					{% endfor %}
-				}
-				google.maps.event.addDomListener(window, 'load', initialize);
-				</script>
-				<!-- <iframe width="900" height="700" frameborder="0" style="border:0; min-width: 400px; min-height: 500px; width: 900px;" src="https://www.google.com/maps/d/embed?mid=1WDPPNTtG4dEhUoZigcoaQ1zuTHg" allowfullscreen=""> -->
-					          <!-- </iframe> -->
+				<iframe width="900" height="700" frameborder="0" style="border:0; min-width: 400px; min-height: 500px; width: 900px;" src="https://www.google.com/maps/d/embed?mid=1WDPPNTtG4dEhUoZigcoaQ1zuTHg" allowfullscreen="">
+					          </iframe>
 			</div>
 		</div>
 	</div>
@@ -352,7 +459,8 @@
 								</div>
 								<div class="sc_contact_form_item sc_contact_form_button">
 									<div class="squareButton sc_button_size sc_button_style_global global">
-										<button name="contato" type="submit">ENVIAR</button>
+
+										<button type="submit">ENVIAR</button>
 									</div>
 								</div>
 

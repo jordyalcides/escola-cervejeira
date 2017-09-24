@@ -1,5 +1,6 @@
 #coding:utf-8
 from django.shortcuts import render, get_object_or_404
+from django.contrib import messages
 from django.utils import timezone
 from .models import Post, Cerveja, Curso, Evento, Cliente, Parceiro, Newsletter
 from paginas.models import Contato
@@ -8,16 +9,10 @@ from django.core.mail import EmailMessage
 from django.shortcuts import redirect
 from django.template import Context
 from django.template.loader import get_template
-<<<<<<< HEAD
-from .models import Parceiro, Newsletter
-
-=======
->>>>>>> 07be2c247575f181a9f7a6840fe8779a8c9c2e26
 
 def index(request):
     posts = Post.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('-data_de_publicacao')
     curso = Curso.objects.last()
-
     # Formulário de Contato
     form_class = FormContato
     form_email = NewsletterForm
@@ -31,6 +26,8 @@ def index(request):
                 new = Newsletter.objects.create()
                 new.email = mail
                 new.salvar
+                messages.success(request, "Boa pedida!!")
+                return redirect('index')
         else:
             if form.is_valid():
                 nome = request.POST.get('nome', '')
@@ -54,6 +51,7 @@ def index(request):
                     headers = {'Responder': email}
                 )
                 email.send()
+                messages.success(request, "Mensagem enviada!!")
                 return redirect('index')
 
     return render(request, 'index.html', {'posts': posts, 'curso': curso, 'form': form_class, 'form_email': form_email})

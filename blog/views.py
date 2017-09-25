@@ -9,30 +9,23 @@ from django.core.mail import EmailMessage
 from django.shortcuts import redirect
 from django.template import Context
 from django.template.loader import get_template
+from django.http import HttpResponse
 
 form_email = NewsletterForm
 
 def create_newsletter(request):
-    form_email = NewsletterForm
     if request.method == 'POST':
-        if 'button-email' in request.POST:
-            form_mail = form_email(data=request.POST)
-            if form_mail.is_valid():
-                mail = request.POST.get('email',)
-                new = Newsletter.objects.create()
-                new.email = mail
-                new.salvar
-                messages.success(request, "Boa pedida!!")
-                form_mail.clean()
+        email = request.POST['email']
 
+        Newsletter.objects.create(email = email)
+
+        return HttpResponse('')
 
 def index(request):
     posts = Post.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
     curso = Curso.objects.last()
     evento = Evento.objects.last()
 
-    global form_email
-    create_newsletter(request)
     # Formulário de Contato
     form_class = FormContato
     if request.method == 'POST':
@@ -62,7 +55,7 @@ def index(request):
             email.send()
             return redirect('index')
 
-    return render(request, 'index.html', {'posts': posts, 'curso': curso, 'evento': evento, 'form': form_class,'form_email': form_email})
+    return render(request, 'index.html', {'posts': posts, 'curso': curso, 'evento': evento, 'form': form_class})
 
 def blog(request):
     global form_email

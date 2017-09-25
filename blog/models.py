@@ -141,7 +141,6 @@ class Parceiro(models.Model):
     endereco = models.CharField(max_length=100, null=True)
     position = GeopositionField(default='-3.75572,-38.517394')
 
-    @property
     def __str__(self):
         return self.nome
 

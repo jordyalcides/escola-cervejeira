@@ -29,6 +29,7 @@ def create_newsletter(request):
 def index(request):
     posts = Post.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
     curso = Curso.objects.last()
+    pois = Parceiro.objects.all()
 
     global form_email
     create_newsletter(request)
@@ -61,7 +62,7 @@ def index(request):
             email.send()
             return redirect('index')
 
-    return render(request, 'index.html', {'posts': posts, 'curso': curso, 'form': form_class, 'form_email': form_email})
+    return render(request, 'index.html', {'posts': posts, 'curso': curso, 'form': form_class, 'form_email': form_email, 'pois': pois})
 
 def blog(request):
     global form_email

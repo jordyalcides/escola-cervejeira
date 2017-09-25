@@ -121,7 +121,7 @@ class Evento(models.Model):
 
 
 class Cliente(models.Model):
-    nome = models.CharField(max_length=100, verbose_name='nome do cliente', validators=[RegexValidator(regex='^(\w+\s?)+$', message='Utilize somente letras, espaços e números')])
+    nome = models.CharField(max_length=100, verbose_name='nome do cliente')
     imagem = models.ImageField(upload_to = "clientes/", verbose_name='logo do cliente')
 
     @property
@@ -138,7 +138,7 @@ class Cliente(models.Model):
 
 class Parceiro(models.Model):
     nome = models.CharField(max_length=70, null=False)
-    endereco = models.CharField(max_length=100, null=True)
+    endereco = models.CharField(max_length=300, null=True)
     position = GeopositionField(default='-3.75572,-38.517394')
 
     def __str__(self):

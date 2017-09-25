@@ -40,7 +40,7 @@
 		<div class="page_wrap">
 			<div class="newsletter">
 				<div class="row">
-					<div class="col-sm-12 col-md-4 col-md-offset-2 ">
+					<div class="col-sm-12 col-md-4 col-md-offset-2">
 						<h3 class="title-newsletter">Fique por dentro das novidades!</h3>
 					</div>
 					<div class="col-sm-12 col-md-6">
@@ -122,21 +122,27 @@
 								</center>
 								<center>
 								<div class="sc_socials sc_socials_size_small">
+									{% if contato.facebook != None %}
 									<div class="sc_socials_item">
 										<a href="{{ contato.facebook }}" target="_blank" class="social_icons social_facebook icons">
 											<span class="icon-facebook"> </span>
 										</a>
 									</div>
+									{% endif %}
+									{% if contato.instagram != None %}
 									<div class="sc_socials_item">
-										<a href="#" target="_blank" class="social_icons social_gplus icons">
+										<a href="{{ contato.instagram }}" target="_blank" class="social_icons social_gplus icons">
 											<span class="icon-gplus"> </span>
 										</a>
 									</div>
+									{% endif %}
+									{% if contato.twitter != None %}
 									<div class="sc_socials_item">
-										<a href="#" target="_blank" class="social_icons social_tumblr icons">
+										<a href="{{ contato.twitter }}" target="_blank" class="social_icons social_tumblr icons">
 											<span class="icon-tumblr"> </span>
 										</a>
 									</div>
+									{% endif %}
 								</div>
 								</center>
 							</div>
@@ -150,8 +156,8 @@
 									Fortaleza - CE, {{ contato.cep }}
 									<br>
 									<span class="sc_icon icon-tablet"></span>
-									{{ contato.telefone }}<br>
-									{{ contato.telefone2 }}<br>
+									Celular: {{ contato.telefone }}<br>
+									{% if contato.telefone2 != None %} Fixo: {{ contato.telefone2 }}<br> {% endif %}
 									<span class="sc_icon icon-mail-3"></span>
 									{{ contato.email }}
 								</div>
@@ -189,7 +195,7 @@
 	<script type="text/javascript" src="{% static 'js/slider.js' %}"></script>
 	<script type='text/javascript' src="{% static 'js/vendor/essential-grid/public/assets/js/lightbox.js' %}"></script>
 	<script type='text/javascript' src="{% static 'js/vendor/essential-grid/public/assets/js/jquery.themepunch.tools.min.js' %}"></script>
-	<script type='text/javascript' src=" {% static 'js/vendor/essential-grid/public/assets/js/jquery.themepunch.essential.min.js' %}"></script>
+	<script type='text/javascript' src="{% static 'js/vendor/essential-grid/public/assets/js/jquery.themepunch.essential.min.js' %}"></script>
 	<script type='text/javascript' src="{% static 'js/custom/_main.js' %}"></script>
 	<script type='text/javascript' src="{% static 'js/custom/_form_contact.js' %}"></script>
 	<script type='text/javascript' src="{% static 'js/vendor/superfish.min.js' %}"></script>

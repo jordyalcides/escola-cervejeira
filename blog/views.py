@@ -92,19 +92,19 @@ def servicos(request):
     global form_email
     create_newsletter(request)
     create_newsletter(request)
-    return render(request, 'blog/service-list.html', {'form_email': form_email})
+    return render(request, 'blog/services.html', {'form_email': form_email})
 
 def cursos(request):
     global form_email
     create_newsletter(request)
     cursos = Curso.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('-data_de_publicacao')
-    return render(request, 'blog/course-list.html', {'cursos': cursos,'form_email': form_email})
+    return render(request, 'blog/courses.html', {'cursos': cursos,'form_email': form_email})
 
 def curso(request, pk):
     global form_email
     create_newsletter(request)
     curso = get_object_or_404(Curso, pk=pk)
-    return render(request, 'blog/course-single.html', {'curso': curso,'form_email': form_email})
+    return render(request, 'blog/course.html', {'curso': curso,'form_email': form_email})
 
 def eventos(request):
     global form_email

@@ -24,7 +24,7 @@ def create_newsletter(request):
 def index(request):
     posts = Post.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')
     curso = Curso.objects.last()
-    evento = Evento.objects.last()
+    pois = Parceiro.objects.all()
 
     # Formulário de Contato
     form_class = FormContato
@@ -55,7 +55,7 @@ def index(request):
             email.send()
             return redirect('index')
 
-    return render(request, 'index.html', {'posts': posts, 'curso': curso, 'evento': evento, 'form': form_class})
+    return render(request, 'index.html', {'posts': posts, 'curso': curso, 'evento': evento, 'form': form_class, 'pois': pois})
 
 def blog(request):
     global form_email
@@ -67,7 +67,7 @@ def blog_post(request, pk):
     global form_email
     create_newsletter(request)
     post = get_object_or_404(Post, pk=pk)
-    return render(request, 'blog/blog_post.html', {'post': post,'form_email': form_email})
+    return render(request, 'blog/blog-post.html', {'post': post,'form_email': form_email})
 
 def cervejas(request):
     global form_email
@@ -85,19 +85,19 @@ def servicos(request):
     global form_email
     create_newsletter(request)
     create_newsletter(request)
-    return render(request, 'blog/service-list.html', {'form_email': form_email})
+    return render(request, 'blog/services.html', {'form_email': form_email})
 
 def cursos(request):
     global form_email
     create_newsletter(request)
     cursos = Curso.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('-data_de_publicacao')
-    return render(request, 'blog/course-list.html', {'cursos': cursos,'form_email': form_email})
+    return render(request, 'blog/courses.html', {'cursos': cursos,'form_email': form_email})
 
 def curso(request, pk):
     global form_email
     create_newsletter(request)
     curso = get_object_or_404(Curso, pk=pk)
-    return render(request, 'blog/course-single.html', {'curso': curso,'form_email': form_email})
+    return render(request, 'blog/course.html', {'curso': curso,'form_email': form_email})
 
 def eventos(request):
     global form_email
@@ -111,10 +111,6 @@ def consultoria(request):
     create_newsletter(request)
     clientes = Cliente.objects.all().order_by('nome')
     return render(request, 'blog/consult.html', {'clientes': clientes,'form_email': form_email})
-#
-# def poi_list(request):
-#     pois = Parceiro.objects.all()
-#     return render(request, 'blog/poi_list.html', {'pois': pois})
 
 def newsletter(request):
     formEmail = NewsletterForm()

@@ -9,8 +9,6 @@
 	<title>Escola Cervejeira</title>
   <link rel='stylesheet' href="{% static 'css/bootstrap.css' %}" type='text/css' media='all'/>
   <link rel='stylesheet' href="{% static 'css/stylem.css' %}" type="text/css">
-	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-
 	<link rel='stylesheet' href="{% static 'js/vendor/prettyphoto/css/prettyPhoto.css' %}" type='text/css' media='all'/>
 	<link rel='stylesheet' href="{% static 'js/vendor/essential-grid/public/assets/css/settings.css' %}" type='text/css' media='all'/>
 	<link rel='stylesheet' href="{% static 'js/vendor/essential-grid/public/assets/css/lightbox.css' %}" type='text/css' media='all'/>
@@ -23,13 +21,11 @@
 	<link rel='stylesheet' href="{% static 'css/skin.css' %}" type='text/css' media='all'/>
 	<link rel='stylesheet' href="{% static 'css/responsive.css' %}" type='text/css' media='all'/>
 	<link rel='stylesheet' href="{% static 'js/custom/core.messages/core.messages.css' %}" type='text/css' media='all'/>
-
 	<link rel='stylesheet' href="{% static 'css/woo/woocommerce-layout.css' %}" type='text/css' media='all'/>
 	<link rel='stylesheet' href="{% static 'css/woo/woocommerce-smallscreen.css' %}" type='text/css' media='only screen and (max-width: 768px)'/>
 	<link rel='stylesheet' href="{% static 'css/woo/woocommerce.css' %}" type='text/css' media='all'/>
 	<link rel='stylesheet' href="{% static 'css/woo/woo-style.css' %}" type='text/css' media='all'/>
 	<link rel='stylesheet' href="{% static 'js/vendor/prettyphoto/css/prettyPhoto.css' %}" type='text/css' media='all'/>
-
 	<link rel='stylesheet' href="{% static 'js/vendor/the-events-calendar/css/datepicker.css' %}" type='text/css' media='all'/>
 	<link rel='stylesheet' href="{% static 'js/vendor/the-events-calendar/css/tribe-events-full.min.css' %}" type='text/css' media='all'/>
 	<link rel='stylesheet' href="{% static 'js/vendor/the-events-calendar/css/tribe-events-theme.min.css' %}" type='text/css' media='all'/>
@@ -44,7 +40,7 @@
 		<div class="page_wrap">
 			<div class="newsletter">
 				<div class="row">
-					<div class="col-sm-12 col-md-4 col-md-offset-2 ">
+					<div class="col-sm-12 col-md-4 col-md-offset-2">
 						<h3 class="title-newsletter">Fique por dentro das novidades!</h3>
 					</div>
 					<div class="col-sm-12 col-md-6">
@@ -63,7 +59,7 @@
 				<div class="menu_main_wrap logo_left">
 					<div class="content_wrap clearfix">
 						<div class="logo">
-							<a href="#">
+							<a href="{% url 'index' %}#">
 								<img src="{% static 'images/logec1.png' %}" class="logo_main" alt="">
 								<img src="{% static 'images/logec2.png' %}" class="logo_fixed" alt="">
 								<span class="logo_slogan">Irish Tavern - pub Theme</span>
@@ -74,7 +70,7 @@
 						<nav class="menu_main_nav_area" >
 							<ul id="menu_main" class="menu_main_nav">
 								<li class="menu-item">
-									<a href="{% url 'index' %}">Início</a>
+									<a href="{% url 'index' %}#">Início</a>
 								</li>
 								<li class="menu-item">
 									<a href="{% url 'servicos' %}">Serviços</a>
@@ -124,28 +120,27 @@
 								</center>
 								<center>
 								<div class="sc_socials sc_socials_size_small">
+									{% if contato.facebook != None %}
 									<div class="sc_socials_item">
-										<!-- <a href="https://www.facebook.com/CervejeiraEscola/" target="_blank" class="social_icons social_facebook icons"> -->
 										<a href="{{ contato.facebook }}" target="_blank" class="social_icons social_facebook icons">
-
 											<span class="icon-facebook"> </span>
 										</a>
 									</div>
-									<!-- <div class="sc_socials_item">
-										<a href="#" target="_blank" class="social_icons social_dribbble icons">
-											<span class="icon-dribbble"> </span>
-										</a>
-									</div> -->
+									{% endif %}
+									{% if contato.instagram != None %}
 									<div class="sc_socials_item">
-										<a href="#" target="_blank" class="social_icons social_gplus icons">
+										<a href="{{ contato.instagram }}" target="_blank" class="social_icons social_gplus icons">
 											<span class="icon-gplus"> </span>
 										</a>
 									</div>
+									{% endif %}
+									{% if contato.twitter != None %}
 									<div class="sc_socials_item">
-										<a href="#" target="_blank" class="social_icons social_tumblr icons">
+										<a href="{{ contato.twitter }}" target="_blank" class="social_icons social_tumblr icons">
 											<span class="icon-tumblr"> </span>
 										</a>
 									</div>
+									{% endif %}
 								</div>
 								</center>
 							</div>
@@ -155,47 +150,20 @@
 							<div class="textwidget">
 								<div class="widget_contacts">
 									<span class="sc_icon icon-geolocalizator"></span>
-									<!-- R. Cuiabá, 160 - Jóquei Clube
-									Fortaleza - CE, 60510-055 -->
 									{{ contato.endereco }} - {{ contato.bairro }}<br>
 									Fortaleza - CE, {{ contato.cep }}
 									<br>
 									<span class="sc_icon icon-tablet"></span>
-									<!-- +55 85 98504-8232<br>
-									85 99934-2980</br> -->
-									{{ contato.telefone }}<br>
-									{{ contato.telefone2 }}<br>
+									Celular: {{ contato.telefone }}<br>
+									{% if contato.telefone2 != None %} Fixo: {{ contato.telefone2 }}<br> {% endif %}
 									<span class="sc_icon icon-mail-3"></span>
-									<!-- contato@escolacervejeira.com.br -->
 									{{ contato.email }}
-
 								</div>
 							</div>
 						</aside>
-
-						<!-- <aside class="column-1_3 widget widget_text">
-							<h5 class="widget_title">Buscar</h5>
-							<div class="textwidget">Faça sua busca com base nas palavras mais relevantes.
-								<div class="search_wrap search_style_regular search_opened" title="Open/close search form">
-									<a href="#" class="search_icon icon-search">
-									</a>
-									<div class="search_form_wrap">
-										<form method="get" class="search_form" action="#">
-											<button type="submit" class="search_submit icon-search-1" title="Start search"></button>
-											<input type="text" class="search_field" placeholder="" value="" name="s" title=""/>
-										</form>
-									</div>
-									<div class="search_results widget_area bg_tint_light">
-										<a class="search_results_close icon-cancel-1"> </a>
-										<div class="search_results_content"> </div>
-									</div>
-								</div>
-							</div>
-						</aside> -->
 					</div>
 				</div>
 			</footer>
-
 			<div class="copyright_wrap">
 				<div class="content_wrap">
 					Desenvolvido por ©<a href="http://acens.uece.br/">ACENS</a> 2016 All Rights Reserved.
@@ -210,32 +178,24 @@
 	    <div class="preloader_image"></div>
 	</div>
 
-	<!-- <script type="text/javascript" src="{% static 'js/jquery-3.1.1.min.js' %}"></script> -->
 	<script type='text/javascript' src="{% static 'js/vendor/jquery-1.11.3.min.js' %}"></script>
 	<script type='text/javascript' src="{% static 'js/vendor/jquery-ui.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/slick.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/slider_clients.js' %}"></script>
-
 	<script type='text/javascript' src="{% static 'js/vendor/jquery-migrate.min.js' %}"></script>
 	<script type='text/javascript' src="{% static 'js/vendor/revslider/js/jquery.themepunch.tools.min.js' %}"></script>
 	<script type='text/javascript' src="{% static 'js/vendor/revslider/js/jquery.themepunch.revolution.min.js' %}"></script>
-
 	<script type='text/javascript' src="{% static 'js/vendor/countdown/jquery.plugin.js' %}"></script>
 	<script type='text/javascript' src="{% static 'js/vendor/countdown/jquery.countdown.js' %}"></script>
 	<script type='text/javascript' src="{% static 'js/vendor/prettyphoto/jquery.prettyPhoto.js' %}"></script>
-
-
 	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/slider.js' %}"></script>
-
 	<script type='text/javascript' src="{% static 'js/vendor/essential-grid/public/assets/js/lightbox.js' %}"></script>
 	<script type='text/javascript' src="{% static 'js/vendor/essential-grid/public/assets/js/jquery.themepunch.tools.min.js' %}"></script>
-	<script type='text/javascript' src=" {% static 'js/vendor/essential-grid/public/assets/js/jquery.themepunch.essential.min.js' %}"></script>
-
+	<script type='text/javascript' src="{% static 'js/vendor/essential-grid/public/assets/js/jquery.themepunch.essential.min.js' %}"></script>
 	<script type='text/javascript' src="{% static 'js/custom/_main.js' %}"></script>
 	<script type='text/javascript' src="{% static 'js/custom/_form_contact.js' %}"></script>
-
 	<script type='text/javascript' src="{% static 'js/vendor/superfish.min.js' %}"></script>
 	<script type='text/javascript' src="{% static 'js/custom/core.utils.min.js' %}"></script>
 	<script type='text/javascript' src="{% static 'js/custom/core.init.min.js' %}"></script>
@@ -251,11 +211,6 @@
 	<script type='text/javascript' src="{% static 'js/vendor/effect-fade.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/bootstrap-notify.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/validation_newsletter.js' %}"></script>
-
-
-	<!-- <script type='text/javascript' src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
-	<!-- <script type='text/javascript' src="{% static 'js/custom/core.googlemap.min.js' %}"></script> -->
-
 
 
 </body>

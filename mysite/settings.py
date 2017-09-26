@@ -65,7 +65,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['404.html'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

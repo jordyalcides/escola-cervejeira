@@ -60,7 +60,7 @@ def blog(request):
     global form_email
     create_newsletter(request)
     posts = Post.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('-data_de_publicacao')
-    return render(request, 'blog/blog-with-sidebar.html', {'posts': posts,'form_email': form_email})
+    return render(request, 'blog/blog.html', {'posts': posts,'form_email': form_email})
 
 def blog_post(request, pk):
     global form_email
@@ -72,13 +72,13 @@ def cervejas(request):
     global form_email
     cervejas = Cerveja.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('nome')
     create_newsletter(request)
-    return render(request, 'blog/features-beer-shop.html', {'cervejas': cervejas,'form_email': form_email})
+    return render(request, 'blog/beer-shop.html', {'cervejas': cervejas,'form_email': form_email})
 
 def cerveja(request, pk):
     global form_email
     create_newsletter(request)
     cerveja = get_object_or_404(Cerveja, pk=pk)
-    return render(request, 'blog/features-beer-shop-product.html', {'cerveja': cerveja,'form_email': form_email})
+    return render(request, 'blog/beer-shop-product.html', {'cerveja': cerveja,'form_email': form_email})
 
 def servicos(request):
     global form_email

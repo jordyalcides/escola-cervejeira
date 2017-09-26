@@ -54,8 +54,7 @@ def index(request):
             )
             email.send()
             return redirect('index')
-
-    return render(request, 'index.html', {'posts': posts, 'curso': curso, 'evento': evento, 'form': form_class, 'pois': pois})
+    return render(request, 'index.html', {'posts': posts, 'curso': curso, 'form': form_class, 'form_email': form_email, 'pois': pois})
 
 def blog(request):
     global form_email

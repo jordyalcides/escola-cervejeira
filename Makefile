@@ -5,11 +5,14 @@ install:
 migrations:
 	python manage.py makemigrations
 
+migrate:
+	python manage.py migrate
+
 admin:
 	python manage.py createsuperuser
 
-migrate:
-	python manage.py migrate
+static:
+	python manage.py collectstatic
 
 shell:
 	python manage.py shell

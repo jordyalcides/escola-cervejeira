@@ -45,11 +45,9 @@
 					</div>
 					<div class="col-sm-12 col-md-6">
 						<form method="POST" id="form_newsletter" class="post-form">{% csrf_token %}
-									{% for field in form_email %}
-									<div class="sc_contact_form_item sc_contact_form_field label_over">
-										{{ field }}
-									</div>
-									{% endfor %}
+								<div class="sc_contact_form_item sc_contact_form_field label_over">
+									<input type="email" name="email" required="" id="id_email">
+								</div>
 								<button class="save button-email" type="submit" name="button-email">ENVIAR</button>
 						</form>
 					</div>
@@ -212,19 +210,7 @@
 	<script type='text/javascript' src="{% static 'js/vendor/effect.min.js' %}"></script>
 	<script type='text/javascript' src="{% static 'js/vendor/effect-fade.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/bootstrap-notify.min.js' %}"></script>
-
-	{% if messages %}
-		{% for message in messages %}
-		<script type="text/javascript">
-			$.notify({
-				icon: 'fa fa-beer',
-				message: "{{ message }}"
-			},{
-				type: 'success'
-			});
-		</script>
-		{% endfor %}
-	{% endif %}
+	<script type="text/javascript" src="{% static 'js/validation_newsletter.js' %}"></script>
 
 
 </body>

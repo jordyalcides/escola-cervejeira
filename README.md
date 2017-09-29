@@ -23,3 +23,8 @@ make admin
 ```python
 make serve
 ```
+
+* Coletar arquivos estáticos (css, js, imagens...)
+```python
+make static
+```

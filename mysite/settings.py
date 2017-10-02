@@ -6,8 +6,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOTDIR = os.path.dirname(__file__)
 
 # Media folder
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = 'http://media.escolacervejeira.com.br/'
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = '/home/escolacervejeira/www/media'
 ADMIN_MEDIA_PREFIX = '/admin_media/'
 
 

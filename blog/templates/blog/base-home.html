@@ -44,7 +44,7 @@
 						<h3 class="title-newsletter">Fique por dentro das novidades!</h3>
 					</div>
 					<div class="col-sm-12 col-md-6">
-						<form method="POST" id="form_newsletter" class="post-form">{% csrf_token %}
+						<form method="POST" data-validate-username-url="{% url 'newsletter' %}" id="form_newsletter" class="post-form">{% csrf_token %}
 								<div class="sc_contact_form_item sc_contact_form_field label_over">
 									<input type="email" name="email" required="" id="id_email" placeholder="Digite aqui seu email">
 								</div>

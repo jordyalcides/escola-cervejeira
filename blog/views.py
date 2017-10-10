@@ -10,16 +10,30 @@ from django.shortcuts import redirect
 from django.template import Context
 from django.template.loader import get_template
 from django.http import HttpResponse
+import json
+from django.http import JsonResponse
 
 form_email = NewsletterForm
 
+# def create_newsletter(request):
+#     if request.method == 'POST':
+#         email = request.POST['email']
+#         Newsletter.objects.create(email = email)
+#         form = NewsletterForm(request.POST)
+#         form.
+#         return HttpResponse(status=204)
+
 def create_newsletter(request):
-    if request.method == 'POST':
-        email = request.POST['email']
+    email_form = request.GET.get('email', None)
+    existeEmail = Newsletter.objects.filter(email__iexact=email_form).exists()
+    if existeEmail is False:
+        Newsletter.objects.create(email=email_form)
+        
+    data = {
+        'is_taken': existeEmail
+    }
+    return JsonResponse(data)
 
-        Newsletter.objects.create(email = email)
-
-        return HttpResponse('')
 
 def index(request):
     posts = Post.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('data_de_publicacao')

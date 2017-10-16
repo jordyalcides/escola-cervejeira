@@ -8,8 +8,8 @@ ROOTDIR = os.path.dirname(__file__)
 # Media folder
 
 # For DEBUG = True use this:
-#MEDIA_URL = 'media/'
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = 'media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # For DEBUG = False use this:
 MEDIA_URL = 'http://media.escolacervejeira.com.br/'
@@ -24,9 +24,9 @@ ADMIN_MEDIA_PREFIX = '/admin_media/'
 SECRET_KEY = 'z)@fj-%h-a(wv4*wn2p(^6_^yl9avhzu1p=uj)bxpvl__ty5e-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['escolacervejeira.com.br']
+ALLOWED_HOSTS = ['localhost','escolacervejeira.com.br']
 
 
 # Application definition

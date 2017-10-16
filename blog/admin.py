@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Cerveja, Curso, Evento, Cliente, Parceiro
+from .models import Post, Cerveja, Curso, Evento, Cliente, Parceiro, Newsletter
 
 class PostAdmin(admin.ModelAdmin):
     fields = ('autor', ('titulo', 'tag'), 'imagem', 'texto', 'data_de_publicacao')
@@ -19,3 +19,4 @@ admin.site.register(Curso)
 admin.site.register(Evento)
 admin.site.register(Parceiro, ParceiroAdmin)
 admin.site.register(Cliente)
+admin.site.register(Newsletter)

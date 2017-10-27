@@ -13,22 +13,13 @@ from django.http import HttpResponse
 import json
 from django.http import JsonResponse
 
-form_email = NewsletterForm
-
-# def create_newsletter(request):
-#     if request.method == 'POST':
-#         email = request.POST['email']
-#         Newsletter.objects.create(email = email)
-#         form = NewsletterForm(request.POST)
-#         form.
-#         return HttpResponse(status=204)
 
 def create_newsletter(request):
     email_form = request.GET.get('email', None)
     existeEmail = Newsletter.objects.filter(email__iexact=email_form).exists()
     if existeEmail is False:
         Newsletter.objects.create(email=email_form)
-        
+
     data = {
         'is_taken': existeEmail
     }
@@ -68,63 +59,40 @@ def index(request):
             )
             email.send()
             return redirect('index')
-    return render(request, 'index.html', {'posts': posts, 'curso': curso, 'form': form_class, 'form_email': form_email, 'pois': pois})
+    return render(request, 'index.html', {'posts': posts, 'curso': curso, 'form': form_class, 'pois': pois})
 
 def blog(request):
-    global form_email
-    create_newsletter(request)
     posts = Post.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('-data_de_publicacao')
-    return render(request, 'blog/blog.html', {'posts': posts,'form_email': form_email})
+    return render(request, 'blog/blog.html', {'posts': posts})
 
 def blog_post(request, pk):
-    global form_email
-    create_newsletter(request)
     post = get_object_or_404(Post, pk=pk)
-    return render(request, 'blog/blog-post.html', {'post': post,'form_email': form_email})
+    return render(request, 'blog/blog-post.html', {'post': post})
 
 def cervejas(request):
-    global form_email
     cervejas = Cerveja.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('nome')
-    create_newsletter(request)
-    return render(request, 'blog/beer-shop.html', {'cervejas': cervejas,'form_email': form_email})
+    return render(request, 'blog/beer-shop.html', {'cervejas': cervejas})
 
 def cerveja(request, pk):
-    global form_email
-    create_newsletter(request)
     cerveja = get_object_or_404(Cerveja, pk=pk)
-    return render(request, 'blog/beer-shop-product.html', {'cerveja': cerveja,'form_email': form_email})
+    return render(request, 'blog/beer-shop-product.html', {'cerveja': cerveja})
 
 def servicos(request):
-    global form_email
-    create_newsletter(request)
-    create_newsletter(request)
-    return render(request, 'blog/services.html', {'form_email': form_email})
+    return render(request, 'blog/services.html')
 
 def cursos(request):
-    global form_email
-    create_newsletter(request)
     cursos = Curso.objects.filter(data_de_publicacao__lte=timezone.now()).order_by('-data_de_publicacao')
-    return render(request, 'blog/courses.html', {'cursos': cursos,'form_email': form_email})
+    return render(request, 'blog/courses.html', {'cursos': cursos})
 
 def curso(request, pk):
-    global form_email
-    create_newsletter(request)
     curso = get_object_or_404(Curso, pk=pk)
-    return render(request, 'blog/course.html', {'curso': curso,'form_email': form_email})
+    return render(request, 'blog/course.html', {'curso': curso})
 
 def eventos(request):
-    global form_email
-    create_newsletter(request)
     evento = Evento.objects.last()
     posts = Post.objects.filter(tag=True).order_by('-data_de_publicacao')
-    return render(request, 'blog/events.html', {'posts': posts, 'evento': evento,'form_email': form_email})
+    return render(request, 'blog/events.html', {'posts': posts, 'evento': evento})
 
 def consultoria(request):
-    global form_email
-    create_newsletter(request)
     clientes = Cliente.objects.all().order_by('nome')
-    return render(request, 'blog/consult.html', {'clientes': clientes,'form_email': form_email})
-
-def newsletter(request):
-    formEmail = NewsletterForm()
-    return render(request, 'blog/newsletter.html', {'formEmail': formEmail})
+    return render(request, 'blog/consult.html', {'clientes': clientes})

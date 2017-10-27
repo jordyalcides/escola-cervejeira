@@ -27,7 +27,7 @@ SECRET_KEY = 'z)@fj-%h-a(wv4*wn2p(^6_^yl9avhzu1p=uj)bxpvl__ty5e-'
 DEBUG = False
 PREPEND_WWW = True
 
-ALLOWED_HOSTS = ['localhost','escolacervejeira.com.br','www.escolacervejeira.com.br']
+ALLOWED_HOSTS = ['localhost','escolacervejeira.com.br','www.escolacervejeira.com.br', 'media.escolacervejeira.com.br']
 
 
 # Application definition

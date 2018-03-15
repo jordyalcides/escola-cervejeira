@@ -141,7 +141,7 @@
 										<a href="{% url 'curso' pk=curso.pk %}">{{ curso.nome }}</a>
 									</h4>
 									<div class="post_descr">
-										<p class="text-justify">{{ curso.descricao|striptags|safe|slice:"100" }}</p>
+										<p class="text-justify">{{ curso.descricao|striptags|safe|truncatewords:"10" }}</p>
 									</div>
 									<div class="post_info">
 										<span class="post_info_item post_info_posted">
@@ -173,7 +173,7 @@
 										<a href="{% url 'post' pk=post.pk %}">{{ post.titulo }}</a>
 									</h4>
 									<div class="post_descr">
-										<p class="text-justify">{{ post.texto|striptags|safe|slice:":100" }}</p>
+										<p class="text-justify">{{ post.texto|striptags|safe|truncatewords:"10" }}</p>
 									</div>
 									<div class="post_info">
 										<span class="post_info_item post_info_posted">

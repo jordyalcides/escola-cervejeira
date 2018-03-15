@@ -7,12 +7,12 @@ from django.core.validators import RegexValidator
 
 
 class Contato(models.Model):
-    nome = models.CharField(max_length=10, unique=True, editable=False, default='Meu contato')
+    nome = models.CharField(max_length=20, unique=True, editable=False, default='Meu contato')
     endereco = models.CharField(max_length=200, verbose_name='endereço')
     bairro = models.CharField(max_length=100)
     cep = models.CharField(max_length=9, validators=[ RegexValidator(regex='^\d{5}-\d{3}$', message='Digite um CEP válido. Ex: 99999-999') ], verbose_name='CEP')
     email = models.EmailField(max_length=100)
-    telefone = models.CharField(max_length=13, validators=[ RegexValidator(regex='^\d{2}\s\d{5}-\d{4}$', message='Informe um celuar válido. Ex: 99 99999-9999') ], verbose_name='celular')
+    telefone = models.CharField(max_length=13, validators=[ RegexValidator(regex='^\d{2}\s\d{5}-\d{4}$', message='Informe um celular válido. Ex: 99 99999-9999') ], verbose_name='celular')
     telefone2 = models.CharField(max_length=13, validators=[ RegexValidator(regex='^\d{2}\s\d{4}-\d{4}$', message='Informe um telefone válido. Ex: 99 9999-9999') ], blank=True, verbose_name='telefone fixo')
     facebook = models.URLField(max_length=200, blank=True)
     instagram = models.URLField(max_length=200, blank=True, verbose_name='Instagram')

@@ -27,7 +27,7 @@ SECRET_KEY = 'z)@fj-%h-a(wv4*wn2p(^6_^yl9avhzu1p=uj)bxpvl__ty5e-'
 DEBUG = False
 PREPEND_WWW = True
 
-ALLOWED_HOSTS = ['localhost','escolacervejeira.com.br','www.escolacervejeira.com.br', 'media.escolacervejeira.com.br']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','escolacervejeira.com.br','www.escolacervejeira.com.br', 'media.escolacervejeira.com.br']
 
 
 # Application definition
@@ -87,6 +87,17 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'jordy',
+#         'USER': 'jordy',
+#         'PASSWORD': '',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
 #     }
 # }
 
